@@ -1,0 +1,78 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Angel Event Planning</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <span class="logo-wrap">
+      <img class="logo-img" src="assets/logo.png" alt="angel event logo">
+      <h1 class="logo">Angel</h1>
+      <h1 class="logo-2">Event Solution</h1>
+      </span>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav id="main-nav" class="main-nav">
+        <a href="#">Home</a>
+        <a href="#">Service</a>
+        <a href="#">Projects</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="hero-tag">Elegant Wedding Planning</p>
+          <h2>Plan Your Perfect Wedding Without Stress</h2>
+          <p>From venue styling to guest management, we turn your dream day into a beautifully organized celebration.</p>
+          <div class="hero-actions">
+            <a class="hero-action-btn call" href="tel:+919999999999">Call Us</a>
+            <a class="hero-action-btn whatsapp" href="https://wa.me/919999999999" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+
+        <form id="consultation-form" class="consultation-form" action="contact.php" method="post">
+          <h3>Book a Free Consultation</h3>
+          <p id="form-message" class="form-message" aria-live="polite"></p>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your full name" required />
+
+          <label for="number">Number</label>
+          <input id="number" name="number" type="tel" placeholder="Your phone number" required />
+
+          <label for="date">Date</label>
+          <input id="date" name="date" type="date" required />
+
+          <button type="submit">Get Free Consultation</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var status = params.get('status');
+      var message = document.getElementById('form-message');
+      if (!message || !status) return;
+
+      if (status === 'success') {
+        message.textContent = 'Thank you. Your consultation request was sent successfully.';
+        message.classList.add('success');
+      }
+
+      if (status === 'error') {
+        message.textContent = 'Sorry, we could not send your request. Please try again.';
+        message.classList.add('error');
+      }
+    })();
+  </script>
+</body>
+</html>
