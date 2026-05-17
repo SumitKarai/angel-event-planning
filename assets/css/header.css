@@ -1,6 +1,10 @@
-﻿.site-header {
+.site-header {
   background: var(--color-secondary);
   border-bottom: 2px solid var(--color-primary);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: box-shadow 0.25s ease, background-color 0.25s ease;
 }
 
 .site-header .container {
@@ -62,6 +66,23 @@
 .main-nav a:hover {
   background: var(--color-primary);
   color: var(--color-white);
+}
+
+.main-nav a.is-active {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.site-header.is-scrolled {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28);
+  background: rgba(17, 17, 17, 0.96);
+}
+
+#home,
+#services,
+#about-us,
+#advertising {
+  scroll-margin-top: 88px;
 }
 
 @media (max-width: 768px) {

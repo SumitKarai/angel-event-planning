@@ -9,6 +9,7 @@
 .hero .container {
   position: relative;
   z-index: 1;
+  animation: heroFadeIn 0.9s ease-out both;
 }
 
 .hero-grid {
@@ -60,6 +61,7 @@
   border-radius: var(--radius-1);
   font-weight: 600;
   background: rgba(255, 255, 255, 0.08);
+  transition: transform 0.28s ease, background-color 0.28s ease, border-color 0.28s ease;
 }
 
 .hero-action-btn.call {
@@ -82,6 +84,8 @@
   width: 100%;
   justify-self: end;
   box-shadow: 0 10px 24px rgba(17, 17, 17, 0.08);
+  animation: floatIn 1s ease-out both;
+  animation-delay: 0.12s;
 }
 
 .consultation-form h3 {
@@ -192,6 +196,7 @@
   border: 1px solid rgba(249, 115, 22, 0.55);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
   background: #111;
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
 }
 
 .service-card img {
@@ -228,6 +233,8 @@
 
 .service-card:hover {
   border-color: var(--color-primary);
+  transform: translateY(-6px);
+  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.42);
 }
 
 @media (max-width: 1080px) {
@@ -253,5 +260,207 @@
 
   .service-card {
     min-height: 230px;
+  }
+}
+
+.about-us,
+.advertising {
+  padding: 4rem 0;
+}
+
+.about-us {
+  background: #fff8f3;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(220px, 320px) 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.about-ceo-card {
+  margin: 0;
+  border: 1px solid rgba(249, 115, 22, 0.5);
+  border-radius: 0.85rem;
+  padding: 0.75rem;
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(17, 17, 17, 0.1);
+}
+
+.about-ceo-card img {
+  width: 100%;
+  border-radius: 0.65rem;
+  display: block;
+  object-fit: cover;
+}
+
+.about-ceo-card figcaption {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  color: var(--color-secondary);
+}
+
+.advertising {
+  background:
+    radial-gradient(circle at 10% 10%, rgba(249, 115, 22, 0.2), transparent 32%),
+    radial-gradient(circle at 90% 100%, rgba(249, 115, 22, 0.14), transparent 28%),
+    #111111;
+}
+
+.about-us h2,
+.advertising h2 {
+  margin: 0 0 0.8rem;
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
+}
+
+.about-us h2,
+.about-us h3 {
+  color: var(--color-secondary);
+}
+
+.advertising h2,
+.advertising h3 {
+  color: var(--color-white);
+}
+
+.about-us p,
+.advertising p {
+  margin: 0 0 0.9rem;
+  max-width: 72ch;
+}
+
+.about-us p {
+  color: #252525;
+}
+
+.advertising p {
+  color: #ececec;
+}
+
+.advertising .container {
+  border: 1px solid rgba(249, 115, 22, 0.55);
+  border-radius: 0.9rem;
+  padding: 1.25rem;
+  background: rgba(17, 17, 17, 0.75);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+}
+
+.advertising h3 {
+  margin: 1.2rem 0 0.5rem;
+  color: var(--color-primary);
+  font-size: 1.1rem;
+}
+
+.client-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin: 0.4rem 0 1rem;
+}
+
+.client-card {
+  border: 1px solid rgba(249, 115, 22, 0.45);
+  border-radius: 0.7rem;
+  padding: 0.9rem;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
+  transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.client-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(249, 115, 22, 0.8);
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, rgba(249, 115, 22, 0.2), transparent 34%);
+  animation: ambientGlow 6s ease-in-out infinite alternate;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger-1 { transition-delay: 0.06s; }
+.stagger-2 { transition-delay: 0.12s; }
+.stagger-3 { transition-delay: 0.18s; }
+.stagger-4 { transition-delay: 0.24s; }
+
+@keyframes heroFadeIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatIn {
+  from { opacity: 0; transform: translateY(24px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes ambientGlow {
+  from { opacity: 0.45; transform: scale(1); }
+  to { opacity: 0.85; transform: scale(1.08); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero .container,
+  .consultation-form,
+  .hero::before,
+  .reveal,
+  .hero-action-btn,
+  .service-card,
+  .client-card {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+.client-card h4 {
+  margin: 0 0 0.35rem;
+  color: var(--color-white);
+  font-size: 1rem;
+}
+
+.client-card p {
+  margin: 0;
+  color: #e5e5e5;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 500px) {
+  .about-us,
+  .advertising {
+    padding: 3rem 0;
+  }
+
+  .advertising .container {
+    padding: 1rem;
+  }
+
+  .client-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-ceo-card {
+    max-width: 360px;
   }
 }

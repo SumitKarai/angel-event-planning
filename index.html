@@ -16,8 +16,10 @@
       </span>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
       <nav id="main-nav" class="main-nav">
-        <a href="#">Home</a>
-        <a href="#">Service</a>
+        <a href="#home">Home</a>
+        <a href="#services">Service</a>
+        <a href="#about-us">About Us</a>
+        <a href="#advertising">Advertising</a>
         <a href="#">Projects</a>
         <a href="#">Contact</a>
       </nav>
@@ -25,7 +27,7 @@
   </header>
 
   <main class="page-home">
-    <section class="hero">
+    <section id="home" class="hero">
       <div class="container hero-grid">
         <div class="hero-content">
           <p class="hero-tag">Elegant Wedding Planning</p>
@@ -54,7 +56,7 @@
       </div>
     </section>
 
-    <section class="services">
+    <section id="services" class="services">
       <div class="container">
         <h2>Our Services</h2>
         <p class="services-intro">From premium celebrations to large-scale brand activations, we design memorable experiences end to end.</p>
@@ -110,6 +112,47 @@
         </div>
       </div>
     </section>
+
+    <section id="about-us" class="about-us">
+      <div class="container">
+        <div class="about-grid">
+          <figure class="about-ceo-card">
+            <img src="assets/ceo2.jpeg" alt="CEO of Angel Event Solution">
+            <figcaption>Leadership Team</figcaption>
+          </figure>
+          <div class="about-copy">
+            <h2>About Us</h2>
+            <p>Angel Event Solution is an event company established in 2022.</p>
+            <p>Since our beginning, we have focused on creating events that feel personal, organized, and truly memorable for every client.</p>
+            <p>From concept planning and venue setup to guest coordination and on-ground execution, our team handles every detail with care. We combine creative ideas, disciplined planning, and reliable vendor management to deliver smooth events from start to finish.</p>
+            <p>Whether it is a private celebration, a wedding function, or a large brand activity, our goal is always the same: high-quality execution, transparent communication, and complete client satisfaction.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="advertising" class="advertising">
+      <div class="container">
+        <h2>Advertising</h2>
+        <p>We work in PAN India advertising across print media, electronic media, and on-air advertising since 2012.</p>
+        <p>Our advertising support includes campaign planning, media coordination, creative placement strategy, and execution across multiple cities and markets. We help brands build visibility with the right media mix and timely campaign rollouts.</p>
+        <h3>Our Clients</h3>
+        <div class="client-grid">
+          <article class="client-card">
+            <h4>Millennium College</h4>
+            <p>Academic institution campaigns and local outreach support.</p>
+          </article>
+          <article class="client-card">
+            <h4>NAFED</h4>
+            <p>National Agricultural Cooperative Marketing Federation of India Ltd.</p>
+          </article>
+        </div>
+        <h3>Wedding Events</h3>
+        <p>We also provide complete planning and execution support for wedding events.</p>
+        <p>Our wedding services include venue styling, vendor coordination, timeline planning, hospitality management, and event-day supervision to ensure every ceremony runs beautifully.</p>
+      </div>
+    </section>
+
   </main>
 
   <script src="assets/js/main.js"></script>
