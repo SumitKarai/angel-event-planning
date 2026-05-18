@@ -81,7 +81,9 @@
 #home,
 #services,
 #about-us,
-#advertising {
+#advertising,
+#faq,
+#contact {
   scroll-margin-top: 88px;
 }
 
