@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Contact | Angel Event Solution</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,400;0,600;0,700;1,400&amp;family=Nunito+Sans:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#c1001f",
+                        "secondary": "#1a1a1a",
+                        "outline": "#e5e5e5",
+                        "surface": "#f8f8f8"
+                    },
+                    "borderRadius": { "none": "0px", "DEFAULT": "0px" },
+                    "fontFamily": {
+                        "display": ["Literata", "serif"],
+                        "body": ["Nunito Sans", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        * {
+            border-radius: 0 !important;
+        }
+
+        .editorial-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .editorial-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: currentColor;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        #mobile-menu {
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        #mobile-menu.hidden-menu {
+            transform: translateX(100%);
+        }
+    </style>
+</head>
+
+<body class="bg-white text-secondary font-body overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-outline">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12 h-24 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-4">
+                <img src="assets/logo.png" alt="Logo" class="h-12 w-auto object-contain" />
+                <div class="hidden sm:block">
+                    <span class="block font-display text-xl font-bold tracking-tight leading-none">ANGEL EVENT</span>
+                    <span class="block text-[10px] uppercase tracking-[0.4em] font-bold text-primary">Solution</span>
+                </div>
+            </a>
+            <div class="hidden lg:flex items-center gap-12 text-xs uppercase tracking-widest font-bold">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="gallary.html" class="nav-link">Gallery</a>
+                <a href="contact.html" class="nav-link text-primary">Contact</a>
+            </div>
+            <div class="flex items-center gap-6">
+                <button
+                    class="hidden sm:block bg-secondary text-white px-8 py-4 text-[10px] uppercase tracking-[0.2em] font-bold hover:bg-primary transition-all">
+                    Book consultation
+                </button>
+                <button onclick="toggleMobileMenu(true)" class="lg:hidden text-secondary">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[100] bg-secondary text-white hidden-menu flex flex-col p-12">
+        <div class="flex justify-between items-center mb-20">
+            <img src="assets/logo.png" alt="Logo" class="h-10 w-auto brightness-0 invert" />
+            <button onclick="toggleMobileMenu(false)" class="text-white">
+                <span class="material-symbols-outlined text-3xl">close</span>
+            </button>
+        </div>
+        <div class="flex flex-col gap-8">
+            <a href="index.html" class="font-display text-4xl hover:text-primary transition-colors">Home</a>
+            <a href="services.html" class="font-display text-4xl hover:text-primary transition-colors">Services</a>
+            <a href="gallary.html" class="font-display text-4xl hover:text-primary transition-colors">Gallery</a>
+            <a href="contact.html" class="font-display text-4xl hover:text-primary transition-colors">Contact</a>
+        </div>
+        <div class="mt-auto border-t border-white/10 pt-12">
+            <p class="text-[10px] uppercase tracking-[0.4em] font-bold text-white/40 mb-4">Direct Contact</p>
+            <a href="tel:+919999999999" class="text-xl font-bold">+91 99999 99999</a>
+        </div>
+    </div>
+
+    <!-- Main -->
+    <main class="pt-48 pb-32">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
+                <!-- Contact Info -->
+                <div class="editorial-reveal">
+                    <span class="text-primary font-bold text-xs uppercase tracking-[0.5em] mb-6 block">Get in
+                        Touch</span>
+                    <h1 class="font-display text-5xl md:text-8xl leading-[0.95] tracking-tighter mb-12">
+                        Contact<br /><span class="italic text-primary">Our Studio.</span></h1>
+
+                    <div class="space-y-16">
+                        <div class="flex items-start gap-8">
+                            <span class="material-symbols-outlined text-primary">location_on</span>
+                            <div>
+                                <h4 class="text-[10px] uppercase tracking-widest font-bold text-secondary/40 mb-4">
+                                    Location</h4>
+                                <p class="text-lg font-display">Bhopal, MP, India</p>
+                                <p class="text-sm text-secondary/60 italic">Corporate Office & Studio</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-8">
+                            <span class="material-symbols-outlined text-primary">mail</span>
+                            <div>
+                                <h4 class="text-[10px] uppercase tracking-widest font-bold text-secondary/40 mb-4">
+                                    Inquiries</h4>
+                                <a href="mailto:contact@angeleventsolution.com"
+                                    class="text-lg font-display hover:text-primary transition-colors">contact@angeleventsolution.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-8">
+                            <span class="material-symbols-outlined text-primary">call</span>
+                            <div>
+                                <h4 class="text-[10px] uppercase tracking-widest font-bold text-secondary/40 mb-4">
+                                    Direct Line</h4>
+                                <p class="text-lg font-display">+91 99999 99999</p>
+                                <p class="text-sm text-secondary/60 italic">Available on WhatsApp</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div class="editorial-reveal bg-surface p-12 lg:p-20 border border-outline"
+                    style="transition-delay: 200ms;">
+                    <form action="contact.php" method="post" class="space-y-12">
+                        <div class="space-y-4">
+                            <label class="text-[10px] uppercase tracking-widest font-bold text-secondary/40">Full
+                                Name</label>
+                            <input type="text" name="name" placeholder="YOUR NAME" required
+                                class="w-full bg-transparent border-b border-outline py-4 focus:border-primary focus:ring-0 text-sm tracking-widest font-light placeholder:text-secondary/20" />
+                        </div>
+                        <div class="space-y-4">
+                            <label class="text-[10px] uppercase tracking-widest font-bold text-secondary/40">Email
+                                Address</label>
+                            <input type="email" name="email" placeholder="YOUR EMAIL" required
+                                class="w-full bg-transparent border-b border-outline py-4 focus:border-primary focus:ring-0 text-sm tracking-widest font-light placeholder:text-secondary/20" />
+                        </div>
+                        <div class="space-y-4">
+                            <label class="text-[10px] uppercase tracking-widest font-bold text-secondary/40">Phone
+                                Number</label>
+                            <input type="tel" name="number" placeholder="YOUR PHONE" required
+                                class="w-full bg-transparent border-b border-outline py-4 focus:border-primary focus:ring-0 text-sm tracking-widest font-light placeholder:text-secondary/20" />
+                        </div>
+                        <div class="space-y-4">
+                            <label class="text-[10px] uppercase tracking-widest font-bold text-secondary/40">Event
+                                Date</label>
+                            <input type="date" name="date" required
+                                class="w-full bg-transparent border-b border-outline py-4 focus:border-primary focus:ring-0 text-sm tracking-widest font-light text-secondary/40" />
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-secondary text-white py-6 text-[10px] uppercase tracking-[0.4em] font-bold hover:bg-primary transition-all">Submit
+                            Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 border-t border-outline">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12 text-center">
+            <p class="text-[10px] uppercase tracking-[0.4em] font-bold text-secondary/40">© 2026 ANGEL EVENT SOLUTION.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, observerOptions);
+        document.querySelectorAll('.editorial-reveal').forEach(el => observer.observe(el));
+
+        function toggleMobileMenu(show) {
+            const menu = document.getElementById('mobile-menu');
+            if (show) {
+                menu.classList.remove('hidden-menu');
+                document.body.style.overflow = 'hidden';
+            } else {
+                menu.classList.add('hidden-menu');
+                document.body.style.overflow = '';
+            }
+        }
+    </script>
+</body>
+
+</html>

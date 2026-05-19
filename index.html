@@ -1,265 +1,605 @@
-﻿<!doctype html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Angel Event Planning</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Angel Event Solution | Premier Event & Advertising Studio</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,400;0,600;0,700;1,400&amp;family=Nunito+Sans:wght@400;500;600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary": "#c1001f",
+            "on-primary": "#ffffff",
+            "secondary": "#1a1a1a",
+            "background": "#ffffff",
+            "surface": "#f8f8f8",
+            "outline": "#e5e5e5"
+          },
+          "borderRadius": {
+            "none": "0px",
+            "sm": "0px",
+            "DEFAULT": "0px",
+            "lg": "0px",
+            "xl": "0px",
+            "2xl": "0px",
+            "full": "0px"
+          },
+          "spacing": {
+            "section-gap": "160px",
+            "element-gap": "40px",
+            "container-padding": "80px"
+          },
+          "fontFamily": {
+            "display": ["Literata", "serif"],
+            "body": ["Nunito Sans", "sans-serif"]
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    * {
+      border-radius: 0 !important;
+    }
+
+    .hero-gradient {
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.1) 100%);
+    }
+
+    .editorial-reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .editorial-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .nav-link {
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: currentColor;
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .marquee {
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline-block;
+      animation: marquee 30s linear infinite;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .accordion-item.active .accordion-content {
+      max-height: 400px;
+    }
+
+    #mobile-menu {
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    #mobile-menu.hidden-menu {
+      transform: translateX(100%);
+    }
+  </style>
 </head>
-<body>
-  <header class="site-header">
-    <div class="container">
-      <span class="logo-wrap">
-      <img class="logo-img" src="assets/logo.png" alt="angel event logo">
-      <h1 class="logo">Angel</h1>
-      <h1 class="logo-2">Event Solution</h1>
+
+<body class="bg-background text-secondary selection:bg-primary selection:text-on-primary font-body overflow-x-hidden">
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-outline">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12 h-24 flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-4">
+        <img src="assets/logo.png" alt="Angel Event Solution Logo" class="h-12 w-auto object-contain" />
+        <div class="hidden sm:block">
+          <span class="block font-display text-xl font-bold tracking-tight leading-none">ANGEL EVENT</span>
+          <span class="block text-[10px] uppercase tracking-[0.4em] font-bold text-primary">Solution</span>
+        </div>
+      </a>
+
+      <div class="hidden lg:flex items-center gap-12">
+        <a href="index.html" class="nav-link text-xs uppercase tracking-widest font-bold">Home</a>
+        <a href="services.html" class="nav-link text-xs uppercase tracking-widest font-bold">Services</a>
+        <a href="gallary.html" class="nav-link text-xs uppercase tracking-widest font-bold">Gallery</a>
+        <a href="contact.html" class="nav-link text-xs uppercase tracking-widest font-bold">Contact</a>
+      </div>
+
+      <div class="flex items-center gap-6">
+        <a href="tel:+919999999999"
+          class="hidden md:flex items-center gap-2 text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors">
+          <span class="material-symbols-outlined text-sm">call</span>
+          +91 99999 99999
+        </a>
+        <button
+          class="bg-secondary text-on-primary px-8 py-4 text-[10px] uppercase tracking-[0.2em] font-bold hover:bg-primary transition-all duration-500">
+          Inquire Now
+        </button>
+        <!-- Mobile Menu Toggle -->
+        <button onclick="toggleMobileMenu(true)" class="lg:hidden text-secondary">
+          <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu" class="fixed inset-0 z-[100] bg-secondary text-white hidden-menu flex flex-col p-12">
+    <div class="flex justify-between items-center mb-20">
+      <img src="assets/logo.png" alt="Logo" class="h-10 w-auto brightness-0 invert" />
+      <button onclick="toggleMobileMenu(false)" class="text-white">
+        <span class="material-symbols-outlined text-3xl">close</span>
+      </button>
+    </div>
+    <div class="flex flex-col gap-8">
+      <a href="index.html" class="font-display text-4xl hover:text-primary transition-colors">Home</a>
+      <a href="services.html" class="font-display text-4xl hover:text-primary transition-colors">Services</a>
+      <a href="gallary.html" class="font-display text-4xl hover:text-primary transition-colors">Gallery</a>
+      <a href="contact.html" class="font-display text-4xl hover:text-primary transition-colors">Contact</a>
+    </div>
+    <div class="mt-auto border-t border-white/10 pt-12">
+      <p class="text-[10px] uppercase tracking-[0.4em] font-bold text-white/40 mb-4">Direct Contact</p>
+      <a href="tel:+919999999999" class="text-xl font-bold">+91 99999 99999</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="relative h-screen min-h-[700px] flex items-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1920&q=80"
+        class="w-full h-full object-cover" alt="Luxury Setup" />
+      <div class="absolute inset-0 hero-gradient"></div>
+    </div>
+
+    <div class="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 w-full pt-20">
+      <div class="max-w-3xl editorial-reveal" id="hero-trigger">
+        <span class="block text-primary font-bold text-xs uppercase tracking-[0.5em] mb-6">Established 2022</span>
+        <h1 class="font-display text-6xl md:text-8xl text-white mb-8 leading-[0.95] tracking-tighter">
+          Crafting <br />Excellence In <br />Every Detail.
+        </h1>
+        <p class="text-white/70 text-lg md:text-xl max-w-xl mb-12 font-light leading-relaxed">
+          Premier event architecture and strategic advertising solutions for discerning brands and private celebrations
+          across India.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#services"
+            class="bg-primary text-white px-12 py-5 text-[10px] uppercase tracking-[0.3em] font-bold hover:bg-white hover:text-secondary transition-all duration-500">
+            View Services
+          </a>
+          <a href="#contact"
+            class="border border-white/30 text-white px-12 py-5 text-[10px] uppercase tracking-[0.3em] font-bold hover:bg-white hover:text-secondary transition-all duration-500 backdrop-blur-sm">
+            Contact Us
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vertical Text Decorative -->
+    <div class="absolute right-12 bottom-24 hidden xl:block">
+      <span
+        class="rotate-90 block origin-right text-[10px] uppercase tracking-[1em] text-white/40 font-bold whitespace-nowrap">
+        PRECISION & ARTISTRY
       </span>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
-      <nav id="main-nav" class="main-nav">
-        <a href="#home">Home</a>
-        <a href="#services">Service</a>
-        <a href="#about-us">About Us</a>
-        <a href="#advertising">Advertising</a>
-        <a href="#">Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
     </div>
-  </header>
+  </section>
 
-  <main class="page-home">
-    <section id="home" class="hero">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <p class="hero-tag">Elegant Wedding Planning</p>
-          <h2>Plan Your Perfect Wedding Without Stress</h2>
-          <p>From venue styling to guest management, we turn your dream day into a beautifully organized celebration.</p>
-          <div class="hero-actions">
-            <a class="hero-action-btn call" href="tel:+919999999999">Call Us</a>
-            <a class="hero-action-btn whatsapp" href="https://wa.me/919999999999" target="_blank" rel="noopener">WhatsApp</a>
+  <!-- Trust Marquee -->
+  <div class="bg-white border-b border-outline py-12 overflow-hidden">
+    <div class="marquee flex gap-24 items-center">
+      <span class="text-xs font-bold uppercase tracking-[0.4em] text-secondary/40 whitespace-nowrap">MILLENNIUM
+        COLLEGE</span>
+      <span class="text-xs font-bold uppercase tracking-[0.4em] text-secondary/40 whitespace-nowrap">NAFED INDIA</span>
+      <span class="text-xs font-bold uppercase tracking-[0.4em] text-secondary/40 whitespace-nowrap">ANGEL EVENT
+        SOLUTION</span>
+      <span class="text-xs font-bold uppercase tracking-[0.4em] text-secondary/40 whitespace-nowrap">PAN INDIA
+        REACH</span>
+      <span class="text-xs font-bold uppercase tracking-[0.4em] text-secondary/40 whitespace-nowrap">PREMIUM
+        ADVERTISING</span>
+      <!-- Duplicate for infinite -->
+      <span class="text-xs font-bold uppercase tracking-[0.4em] text-secondary/40 whitespace-nowrap">MILLENNIUM
+        COLLEGE</span>
+      <span class="text-xs font-bold uppercase tracking-[0.4em] text-secondary/40 whitespace-nowrap">NAFED INDIA</span>
+      <span class="text-xs font-bold uppercase tracking-[0.4em] text-secondary/40 whitespace-nowrap">ANGEL EVENT
+        SOLUTION</span>
+      <span class="text-xs font-bold uppercase tracking-[0.4em] text-secondary/40 whitespace-nowrap">PAN INDIA
+        REACH</span>
+      <span class="text-xs font-bold uppercase tracking-[0.4em] text-secondary/40 whitespace-nowrap">PREMIUM
+        ADVERTISING</span>
+    </div>
+  </div>
+
+  <!-- About Detailed -->
+  <section class="py-section-gap bg-white">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-element-gap items-center">
+        <div class="editorial-reveal">
+          <h2 class="font-display text-4xl md:text-6xl mb-12 leading-tight">Our Philosophy <span
+              class="text-primary italic">Of Quiet Luxury.</span></h2>
+          <div class="space-y-8 text-secondary/70 text-lg leading-relaxed max-w-xl">
+            <p>Angel Event Solution was founded in 2022 with a clear objective: to redefine the landscape of event
+              management in India through disciplined planning and artistic execution.</p>
+            <p>We specialize in end-to-end orchestration, from conceptual mood-boarding to on-ground technical
+              management. Our team operates with surgical precision, ensuring that whether it's a corporate summit or a
+              private gala, the transition from idea to reality is seamless.</p>
+            <ul class="space-y-4 pt-4">
+              <li class="flex items-start gap-4">
+                <span
+                  class="bg-primary/10 text-primary w-6 h-6 flex items-center justify-center text-[10px] font-bold mt-1">01</span>
+                <div>
+                  <p class="font-bold text-secondary text-sm uppercase tracking-widest">Disciplined Planning</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <span
+                  class="bg-primary/10 text-primary w-6 h-6 flex items-center justify-center text-[10px] font-bold mt-1">02</span>
+                <div>
+                  <p class="font-bold text-secondary text-sm uppercase tracking-widest">Reliable Vendor Management</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <span
+                  class="bg-primary/10 text-primary w-6 h-6 flex items-center justify-center text-[10px] font-bold mt-1">03</span>
+                <div>
+                  <p class="font-bold text-secondary text-sm uppercase tracking-widest">Complete Client Satisfaction</p>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
-
-        <form id="consultation-form" class="consultation-form" action="contact.php" method="post">
-          <h3>Book a Free Consultation</h3>
-          <p id="form-message" class="form-message" aria-live="polite"></p>
-          <label for="name">Name</label>
-          <input id="name" name="name" type="text" placeholder="Your full name" required />
-
-          <label for="number">Number</label>
-          <input id="number" name="number" type="tel" placeholder="Your phone number" required />
-
-          <label for="date">Date</label>
-          <input id="date" name="date" type="date" required />
-
-          <button type="submit">Get Free Consultation</button>
-        </form>
-      </div>
-    </section>
-
-    <section id="services" class="services">
-      <div class="container">
-        <h2>Our Services</h2>
-        <p class="services-intro">From premium celebrations to large-scale brand activations, we design memorable experiences end to end.</p>
-        <div class="services-grid">
-          <article class="service-card">
-            <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=900&q=80" alt="Corporate events setup">
-            <h3>Corporate Events</h3>
-          </article>
-          <article class="service-card">
-            <img src="https://imagesvs.oneindia.com/img/2023/05/modi-roadshow1-1683281136.jpg" alt="Road show live stage">
-            <h3>Road Show</h3>
-          </article>
-          <article class="service-card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOsgumrPGs0qn7sWvpiRo5VQ8rMVyJ5_wyHg&s" alt="Product launch spotlight event">
-            <h3>Product Launch Event</h3>
-          </article>
-          <article class="service-card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPOzzojnH1VSbT1cqMpOULR5RfBAeQbCZKJg&s" alt="Birthday party decoration">
-            <h3>Birthday Party</h3>
-          </article>
-          <article class="service-card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPORRLyXufAyZD2WeLLC7AFEp25sgpXNtSsw&s">
-            <h3>Press Conference</h3>
-          </article>
-          <article class="service-card">
-            <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=900&q=80" alt="Trade show exhibition hall">
-            <h3>Fair and Trade Show</h3>
-          </article>
-          <article class="service-card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnqceRo6VGB_c1q9L31wvF41J9u-beal5GHA&s" alt="Wedding planning decor table">
-            <h3>Wedding Planning</h3>
-          </article>
-          <article class="service-card">
-            <img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?auto=format&fit=crop&w=900&q=80" alt="Promotional event crowd engagement">
-            <h3>Promotional Event</h3>
-          </article>
-          <article class="service-card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxIISt5mJvQHLesdZitrOQq-8oZcEoUMss8g&s" alt="Private themed party lighting">
-            <h3>Theme/Private Party</h3>
-          </article>
-          <article class="service-card">
-            <img src="https://5.imimg.com/data5/QQ/GQ/ZU/SELLER-25729602/celebrity-management-brand-promotion-500x500.jpg" alt="Bollywood celebrity on stage">
-            <h3>Bollywood Celebrity Management</h3>
-          </article>
-          <article class="service-card">
-            <img src="https://images.unsplash.com/photo-1471341971476-ae15ff5dd4ea?auto=format&fit=crop&w=900&q=80" alt="Professional photoshoot studio lights">
-            <h3>Photoshoot</h3>
-          </article>
-          <article class="service-card">
-            <img src="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=900&q=80" alt="Catering service buffet setup">
-            <h3>Catering Service</h3>
-          </article>
+        <div class="grid grid-cols-2 gap-4 editorial-reveal" style="transition-delay: 200ms;">
+          <img src="assets/ceo2.jpeg"
+            class="w-full aspect-[3/4] object-cover grayscale hover:grayscale-0 transition-all duration-700"
+            alt="Excellence" />
+          <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80"
+            class="w-full aspect-[3/4] object-cover grayscale hover:grayscale-0 transition-all duration-700 mt-12"
+            alt="Artistry" />
         </div>
-      </div>
-    </section>
-
-    <section id="about-us" class="about-us">
-      <div class="container">
-        <div class="about-grid">
-          <figure class="about-ceo-card">
-            <img src="assets/ceo2.jpeg" alt="CEO of Angel Event Solution">
-            <figcaption>Leadership Team</figcaption>
-          </figure>
-          <div class="about-copy">
-            <h2>About Us</h2>
-            <p>Angel Event Solution is an event company established in 2022.</p>
-            <p>Since our beginning, we have focused on creating events that feel personal, organized, and truly memorable for every client.</p>
-            <p>From concept planning and venue setup to guest coordination and on-ground execution, our team handles every detail with care. We combine creative ideas, disciplined planning, and reliable vendor management to deliver smooth events from start to finish.</p>
-            <p>Whether it is a private celebration, a wedding function, or a large brand activity, our goal is always the same: high-quality execution, transparent communication, and complete client satisfaction.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="advertising" class="advertising">
-      <div class="container">
-        <h2>Advertising</h2>
-        <p>We work in PAN India advertising across print media, electronic media, and on-air advertising since 2012.</p>
-        <p>Our advertising support includes campaign planning, media coordination, creative placement strategy, and execution across multiple cities and markets. We help brands build visibility with the right media mix and timely campaign rollouts.</p>
-        <h3>Our Clients</h3>
-        <div class="client-grid">
-          <article class="client-card">
-            <h4>Millennium College</h4>
-            <p>Academic institution campaigns and local outreach support.</p>
-          </article>
-          <article class="client-card">
-            <h4>NAFED</h4>
-            <p>National Agricultural Cooperative Marketing Federation of India Ltd.</p>
-          </article>
-        </div>
-        <h3>Wedding Events</h3>
-        <p>We also provide complete planning and execution support for wedding events.</p>
-        <p>Our wedding services include venue styling, vendor coordination, timeline planning, hospitality management, and event-day supervision to ensure every ceremony runs beautifully.</p>
-      </div>
-    </section>
-
-    <section id="faq" class="faq">
-      <div class="container">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-list">
-          <details>
-            <summary>How early should I book Angel Event Solution for my event?</summary>
-            <p>For weddings and large events, we recommend booking at least 2 to 4 months in advance. For smaller events, 3 to 6 weeks is usually enough.</p>
-          </details>
-          <details>
-            <summary>Do you handle both planning and on-ground execution?</summary>
-            <p>Yes. We manage everything from concept and vendor coordination to setup, timeline management, and full event-day execution.</p>
-          </details>
-          <details>
-            <summary>Can you work within a fixed budget?</summary>
-            <p>Absolutely. We create a plan based on your budget and priorities, then suggest the best options to maximize quality without overspending.</p>
-          </details>
-          <details>
-            <summary>Do you provide services outside my city?</summary>
-            <p>Yes, we provide event and advertising support across multiple cities in India. Share your location and we will guide you on logistics.</p>
-          </details>
-          <details>
-            <summary>How can I get a quote for my event?</summary>
-            <p>You can submit the consultation form on this page or contact us by call or WhatsApp. We will connect with you to understand your requirements and share a custom quote.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="contact-us">
-      <div class="container">
-        <h2>Contact Us</h2>
-        <p>Let us plan your next event. Reach out by call, WhatsApp, or email, and visit us on the map below.</p>
-        <div class="contact-grid">
-          <div class="contact-card">
-            <h3>Angel Event Solution</h3>
-            <p><strong>Phone:</strong> <a href="tel:+919999999999">+91 99999 99999</a></p>
-            <p><strong>WhatsApp:</strong> <a href="https://wa.me/919999999999" target="_blank" rel="noopener">Chat on WhatsApp</a></p>
-            <p><strong>Email:</strong> <a href="mailto:contact@angeleventsolution.com">contact@angeleventsolution.com</a></p>
-            <p><strong>Address:</strong> Bhopal, Madhya Pradesh, India</p>
-            <p><strong>Business Hours:</strong> Monday to Sunday, 9:00 AM to 8:00 PM</p>
-          </div>
-          <div class="map-embed">
-            <iframe
-              src="https://www.google.com/maps?q=Angel%20Event%20Solution&output=embed"
-              width="100%"
-              height="420"
-              style="border:0;"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              title="Angel Event Solution on Google Maps">
-            </iframe>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <span class="logo-wrap">
-          <img class="logo-img" src="assets/logo.png" alt="angel event logo">
-        </span>
-        <h3>Angel Event Solution</h3>
-        <p>Creating memorable weddings, celebrations, and brand events with end-to-end planning and flawless execution.</p>
-      </div>
-      <div class="footer-links">
-        <h4>Quick Links</h4>
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#about-us">About Us</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <div class="footer-contact">
-        <h4>Contact</h4>
-        <p><a href="tel:+919999999999">+91 99999 99999</a></p>
-        <p><a href="mailto:contact@angeleventsolution.com">contact@angeleventsolution.com</a></p>
-        <p>Bhopal, Madhya Pradesh, India</p>
       </div>
     </div>
-    <div class="footer-bottom">
-      <div class="container">
-        <p>&copy; 2026 Angel Event Solution. All rights reserved.</p>
+  </section>
+
+  <!-- Services Section (Rearranged & Sharp) -->
+  <section id="services" class="py-section-gap bg-surface border-y border-outline">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
+        <div class="editorial-reveal">
+          <span class="text-primary font-bold text-xs uppercase tracking-[0.5em] mb-4 block">Specialized
+            Solutions</span>
+          <h2 class="font-display text-4xl md:text-6xl">Our Service Array.</h2>
+        </div>
+        <div class="editorial-reveal md:max-w-sm text-right">
+          <p class="text-secondary/60 italic">From high-impact corporate activations to bespoke wedding planning, we
+            deliver perfection at scale.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-l border-t border-outline">
+        <!-- Service Block -->
+        <div
+          class="group border-r border-b border-outline p-12 hover:bg-secondary transition-all duration-700 editorial-reveal">
+          <span
+            class="material-symbols-outlined text-primary text-4xl mb-8 group-hover:text-white transition-colors">domain</span>
+          <h3 class="font-display text-2xl mb-6 group-hover:text-white transition-colors">Corporate Events</h3>
+          <p class="text-secondary/60 group-hover:text-white/60 transition-colors mb-8 text-sm leading-relaxed">
+            Conferences, launches, and summits designed for global brand positioning.</p>
+        </div>
+        <div
+          class="group border-r border-b border-outline p-12 hover:bg-secondary transition-all duration-700 editorial-reveal">
+          <span
+            class="material-symbols-outlined text-primary text-4xl mb-8 group-hover:text-white transition-colors">favorite</span>
+          <h3 class="font-display text-2xl mb-6 group-hover:text-white transition-colors">Wedding Planning</h3>
+          <p class="text-secondary/60 group-hover:text-white/60 transition-colors mb-8 text-sm leading-relaxed">Creating
+            timeless bridal experiences with meticulous aesthetic control.</p>
+        </div>
+        <div
+          class="group border-r border-b border-outline p-12 hover:bg-secondary transition-all duration-700 editorial-reveal">
+          <span
+            class="material-symbols-outlined text-primary text-4xl mb-8 group-hover:text-white transition-colors">campaign</span>
+          <h3 class="font-display text-2xl mb-6 group-hover:text-white transition-colors">Strategic Ads</h3>
+          <p class="text-secondary/60 group-hover:text-white/60 transition-colors mb-8 text-sm leading-relaxed">PAN
+            India advertising across print, electronic, and radio channels.</p>
+        </div>
+        <div
+          class="group border-r border-b border-outline p-12 hover:bg-secondary transition-all duration-700 editorial-reveal">
+          <span
+            class="material-symbols-outlined text-primary text-4xl mb-8 group-hover:text-white transition-colors">star</span>
+          <h3 class="font-display text-2xl mb-6 group-hover:text-white transition-colors">Celebrity Mgmt</h3>
+          <p class="text-secondary/60 group-hover:text-white/60 transition-colors mb-8 text-sm leading-relaxed">
+            Exclusive talent procurement for guest appearances and performances.</p>
+        </div>
+        <div
+          class="group border-r border-b border-outline p-12 hover:bg-secondary transition-all duration-700 editorial-reveal">
+          <span
+            class="material-symbols-outlined text-primary text-4xl mb-8 group-hover:text-white transition-colors">photo_camera</span>
+          <h3 class="font-display text-2xl mb-6 group-hover:text-white transition-colors">Photoshoots</h3>
+          <p class="text-secondary/60 group-hover:text-white/60 transition-colors mb-8 text-sm leading-relaxed">
+            Editorial and commercial shoot logistics and creative direction.</p>
+        </div>
+        <div
+          class="group border-r border-b border-outline p-12 hover:bg-secondary transition-all duration-700 editorial-reveal">
+          <span
+            class="material-symbols-outlined text-primary text-4xl mb-8 group-hover:text-white transition-colors">restaurant</span>
+          <h3 class="font-display text-2xl mb-6 group-hover:text-white transition-colors">Catering Service</h3>
+          <p class="text-secondary/60 group-hover:text-white/60 transition-colors mb-8 text-sm leading-relaxed">Bespoke
+            culinary experiences tailored for high-end hospitality.</p>
+        </div>
+      </div>
+
+      <div class="mt-20 text-center">
+        <a href="services.html"
+          class="inline-block text-[10px] uppercase tracking-[0.4em] font-bold text-primary border-b border-primary pb-2 hover:opacity-50 transition-opacity">Explore
+          All Capabilities</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Advertising Detail (Creative Layout) -->
+  <section class="py-section-gap relative overflow-hidden bg-white">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-element-gap">
+        <div class="lg:col-span-5 editorial-reveal">
+          <h2 class="font-display text-4xl md:text-6xl mb-12 leading-tight">National Reach.<br /><span
+              class="text-primary">Strategic Depth.</span></h2>
+          <p class="text-lg text-secondary mb-12 font-light leading-relaxed">Since 2012, our advertising division has
+            bridge the gap between brands and their audiences across India. We don't just place ads; we curate
+            visibility.</p>
+          <div class="space-y-12">
+            <div class="flex items-center gap-8 border-b border-outline pb-8">
+              <span class="text-4xl font-display text-primary">01</span>
+              <div>
+                <h4 class="font-bold text-xs uppercase tracking-widest mb-2">Print Media</h4>
+                <p class="text-sm text-secondary/60">National newspaper placement and magazine features.</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-8 border-b border-outline pb-8">
+              <span class="text-4xl font-display text-primary">02</span>
+              <div>
+                <h4 class="font-bold text-xs uppercase tracking-widest mb-2">Electronic Media</h4>
+                <p class="text-sm text-secondary/60">Television airtime and dynamic digital screens.</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-8 border-b border-outline pb-8">
+              <span class="text-4xl font-display text-primary">03</span>
+              <div>
+                <h4 class="font-bold text-xs uppercase tracking-widest mb-2">On-Air Ads</h4>
+                <p class="text-sm text-secondary/60">Radio spots and podcast partnerships across all major stations.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Large Image Content -->
+        <div class="lg:col-span-7 editorial-reveal lg:pl-12" style="transition-delay: 200ms;">
+          <div class="relative">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
+              class="w-full aspect-[4/3] object-cover grayscale" alt="Strategic Planning" />
+            <div class="absolute -bottom-10 -left-10 bg-secondary p-12 text-white hidden xl:block max-w-sm">
+              <h4 class="font-display text-2xl mb-4 italic">Client Spotlight</h4>
+              <p class="text-white/60 text-sm mb-6">Partnering with NAFED India and Millennium College for successful
+                nationwide campaigns since 2012.</p>
+              <span class="text-[10px] uppercase tracking-[0.3em] font-bold text-primary">Media Excellence</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion (Sharp) -->
+  <section class="py-section-gap bg-surface border-t border-outline">
+    <div class="max-w-[900px] mx-auto px-6">
+      <div class="text-center mb-24 editorial-reveal">
+        <span class="text-primary font-bold text-xs uppercase tracking-[0.5em] mb-4 block">Knowledge Base</span>
+        <h2 class="font-display text-4xl md:text-5xl">Your Inquiries.</h2>
+      </div>
+
+      <div class="space-y-4 editorial-reveal">
+        <!-- FAQ 1 -->
+        <div class="accordion-item border border-outline bg-white transition-all duration-500">
+          <button class="w-full flex justify-between items-center p-8 text-left group" onclick="toggleAccordion(this)">
+            <span class="font-bold text-xs uppercase tracking-widest group-hover:text-primary transition-colors">Booking
+              Lead Time</span>
+            <span class="material-symbols-outlined text-sm transition-transform duration-500 text-primary">add</span>
+          </button>
+          <div class="accordion-content">
+            <div class="px-8 pb-8 text-secondary/60 text-sm leading-relaxed font-light">
+              For large-scale events and weddings, we recommend a minimum of 2-4 months. Corporate activations typically
+              require 4-8 weeks of lead time for optimal execution.
+            </div>
+          </div>
+        </div>
+        <!-- FAQ 2 -->
+        <div class="accordion-item border border-outline bg-white transition-all duration-500">
+          <button class="w-full flex justify-between items-center p-8 text-left group" onclick="toggleAccordion(this)">
+            <span
+              class="font-bold text-xs uppercase tracking-widest group-hover:text-primary transition-colors">On-Ground
+              Execution</span>
+            <span class="material-symbols-outlined text-sm transition-transform duration-500 text-primary">add</span>
+          </button>
+          <div class="accordion-content">
+            <div class="px-8 pb-8 text-secondary/60 text-sm leading-relaxed font-light">
+              We provide full-spectrum management involving technical crews, guest coordinators, and logistical
+              supervisors on-site throughout your event's duration.
+            </div>
+          </div>
+        </div>
+        <!-- FAQ 3 -->
+        <div class="accordion-item border border-outline bg-white transition-all duration-500">
+          <button class="w-full flex justify-between items-center p-8 text-left group" onclick="toggleAccordion(this)">
+            <span
+              class="font-bold text-xs uppercase tracking-widest group-hover:text-primary transition-colors">Budgetary
+              Management</span>
+            <span class="material-symbols-outlined text-sm transition-transform duration-500 text-primary">add</span>
+          </button>
+          <div class="accordion-content">
+            <div class="px-8 pb-8 text-secondary/60 text-sm leading-relaxed font-light">
+              We operate with full transparent billing and work diligently within your specified financial parameters
+              while ensuring the highest quality of service deliveries.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final Contact Form -->
+  <section id="contact" class="py-section-gap bg-secondary text-white relative overflow-hidden">
+    <!-- Abstract Decoration -->
+    <div class="absolute inset-0 bg-primary/5 -skew-y-12 origin-top-left"></div>
+
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+        <div class="editorial-reveal">
+          <h2 class="font-display text-5xl md:text-7xl mb-8 leading-tight">Start Your <br /><span
+              class="text-primary italic text-6xl md:text-8xl">Consultation.</span></h2>
+          <p class="text-white/60 text-lg mb-12 max-w-sm">Secure your engagement with the leading event studio. We are
+            currently accepting inquiries for 2025-2026 seasons.</p>
+          <div class="space-y-6">
+            <div class="flex items-center gap-6">
+              <span class="material-symbols-outlined text-primary">location_on</span>
+              <span class="text-xs uppercase tracking-widest font-bold">Bhopal, MP, India</span>
+            </div>
+            <div class="flex items-center gap-6">
+              <span class="material-symbols-outlined text-primary">mail</span>
+              <span class="text-xs uppercase tracking-widest font-bold">contact@angeleventsolution.com</span>
+            </div>
+          </div>
+        </div>
+        <div class="editorial-reveal" style="transition-delay: 200ms;">
+          <form action="contact.php" method="post" class="space-y-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <input type="text" name="name" placeholder="FULL NAME" required
+                class="bg-transparent border-white/20 border-b py-4 focus:border-primary focus:ring-0 text-[10px] tracking-[0.2em] font-bold placeholder:text-white/30" />
+              <input type="tel" name="number" placeholder="PHONE NUMBER" required
+                class="bg-transparent border-white/20 border-b py-4 focus:border-primary focus:ring-0 text-[10px] tracking-[0.2em] font-bold placeholder:text-white/30" />
+            </div>
+            <input type="date" name="date" required
+              class="w-full bg-transparent border-white/20 border-b py-4 focus:border-primary focus:ring-0 text-[10px] tracking-[0.2em] font-bold text-white/30" />
+            <button type="submit"
+              class="w-full bg-primary text-white py-6 text-[10px] uppercase tracking-[0.4em] font-bold hover:bg-white hover:text-secondary transition-all duration-500">
+              Submit Inquiry
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white pt-24 pb-12 border-t border-outline">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-24">
+        <div class="col-span-1 md:col-span-1">
+          <img src="assets/logo.png" alt="Angel Event Solution Logo" class="h-16 w-auto mb-8 grayscale" />
+          <p class="text-xs text-secondary/40 uppercase tracking-[0.1em] font-bold leading-relaxed max-w-[200px]">
+            Architecting prestigious experiences since 2012.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-[10px] uppercase tracking-[0.5em] font-bold text-primary mb-12">Discover</h4>
+          <ul class="space-y-4 text-[10px] uppercase tracking-[0.2em] font-bold text-secondary/60">
+            <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
+            <li><a href="services.html" class="hover:text-primary transition-colors">Services</a></li>
+            <li><a href="gallary.html" class="hover:text-primary transition-colors">Gallery</a></li>
+            <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-[10px] uppercase tracking-[0.5em] font-bold text-primary mb-12">Social</h4>
+          <ul class="space-y-4 text-[10px] uppercase tracking-[0.2em] font-bold text-secondary/60">
+            <li><a href="#" class="hover:text-primary transition-colors">Instagram</a></li>
+            <li><a href="#" class="hover:text-primary transition-colors">Facebook</a></li>
+            <li><a href="#" class="hover:text-primary transition-colors">LinkedIn</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-[10px] uppercase tracking-[0.5em] font-bold text-primary mb-12">Office</h4>
+          <address class="not-italic text-[10px] uppercase tracking-[0.2em] font-bold text-secondary/60 leading-loose">
+            Bhopal, MP, India<br />
+            contact@angeleventsolution.com<br />
+            +91 99999 99999
+          </address>
+        </div>
+      </div>
+      <div class="flex flex-col md:flex-row justify-between items-center border-t border-outline pt-12">
+        <p class="text-[10px] uppercase tracking-[0.4em] font-bold text-secondary/40 mb-6 md:mb-0">© 2026 ANGEL EVENT
+          SOLUTION.</p>
+        <div class="flex gap-12 text-[10px] uppercase tracking-[0.4em] font-bold text-secondary/40">
+          <a href="#" class="hover:text-primary">Policy</a>
+          <a href="#" class="hover:text-primary">Terms</a>
+        </div>
       </div>
     </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
   <script>
-    (function () {
-      var params = new URLSearchParams(window.location.search);
-      var status = params.get('status');
-      var message = document.getElementById('form-message');
-      if (!message || !status) return;
+    function toggleAccordion(element) {
+      const item = element.parentElement;
+      const isActive = item.classList.contains('active');
+      document.querySelectorAll('.accordion-item').forEach(acc => acc.classList.remove('active'));
+      if (!isActive) item.classList.add('active');
+    }
 
-      if (status === 'success') {
-        message.textContent = 'Thank you. Your consultation request was sent successfully.';
-        message.classList.add('success');
-      }
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, observerOptions);
 
-      if (status === 'error') {
-        message.textContent = 'Sorry, we could not send your request. Please try again.';
-        message.classList.add('error');
+    document.querySelectorAll('.editorial-reveal').forEach(el => observer.observe(el));
+
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('hero-trigger')?.classList.add('visible');
+      }, 300);
+    });
+
+    function toggleMobileMenu(show) {
+      const menu = document.getElementById('mobile-menu');
+      if (show) {
+        menu.classList.remove('hidden-menu');
+        document.body.style.overflow = 'hidden';
+      } else {
+        menu.classList.add('hidden-menu');
+        document.body.style.overflow = '';
       }
-    })();
+    }
   </script>
 </body>
+
 </html>

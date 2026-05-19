@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Services | Angel Event Solution</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,400;0,600;0,700;1,400&amp;family=Nunito+Sans:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#c1001f",
+                        "on-primary": "#ffffff",
+                        "secondary": "#1a1a1a",
+                        "background": "#ffffff",
+                        "surface": "#f8f8f8",
+                        "outline": "#e5e5e5"
+                    },
+                    "borderRadius": {
+                        "none": "0px",
+                        "DEFAULT": "0px"
+                    },
+                    "fontFamily": {
+                        "display": ["Literata", "serif"],
+                        "body": ["Nunito Sans", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        * {
+            border-radius: 0 !important;
+        }
+
+        .editorial-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .editorial-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: currentColor;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        #mobile-menu {
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        #mobile-menu.hidden-menu {
+            transform: translateX(100%);
+        }
+    </style>
+</head>
+
+<body class="bg-background text-secondary font-body overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-outline">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12 h-24 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-4">
+                <img src="assets/logo.png" alt="Logo" class="h-12 w-auto object-contain" />
+                <div class="hidden sm:block">
+                    <span class="block font-display text-xl font-bold tracking-tight leading-none">ANGEL EVENT</span>
+                    <span class="block text-[10px] uppercase tracking-[0.4em] font-bold text-primary">Solution</span>
+                </div>
+            </a>
+            <div class="hidden lg:flex items-center gap-12">
+                <a href="index.html" class="nav-link text-xs uppercase tracking-widest font-bold">Home</a>
+                <a href="services.html"
+                    class="nav-link text-xs uppercase tracking-widest font-bold text-primary">Services</a>
+                <a href="gallary.html" class="nav-link text-xs uppercase tracking-widest font-bold">Gallery</a>
+                <a href="contact.html" class="nav-link text-xs uppercase tracking-widest font-bold">Contact</a>
+            </div>
+            <div class="flex items-center gap-6">
+                <button
+                    class="bg-secondary text-on-primary px-8 py-4 text-[10px] uppercase tracking-[0.2em] font-bold hover:bg-primary transition-all duration-500">
+                    Inquire Now
+                </button>
+                <!-- Mobile Menu Toggle -->
+                <button onclick="toggleMobileMenu(true)" class="lg:hidden text-secondary">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[100] bg-secondary text-white hidden-menu flex flex-col p-12">
+        <div class="flex justify-between items-center mb-20">
+            <img src="assets/logo.png" alt="Logo" class="h-10 w-auto brightness-0 invert" />
+            <button onclick="toggleMobileMenu(false)" class="text-white">
+                <span class="material-symbols-outlined text-3xl">close</span>
+            </button>
+        </div>
+        <div class="flex flex-col gap-8">
+            <a href="index.html" class="font-display text-4xl hover:text-primary transition-colors">Home</a>
+            <a href="services.html" class="font-display text-4xl hover:text-primary transition-colors">Services</a>
+            <a href="gallary.html" class="font-display text-4xl hover:text-primary transition-colors">Gallery</a>
+            <a href="contact.html" class="font-display text-4xl hover:text-primary transition-colors">Contact</a>
+        </div>
+        <div class="mt-auto border-t border-white/10 pt-12">
+            <p class="text-[10px] uppercase tracking-[0.4em] font-bold text-white/40 mb-4">Direct Contact</p>
+            <a href="tel:+919999999999" class="text-xl font-bold">+91 99999 99999</a>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="pt-48 pb-24 bg-surface border-b border-outline">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12 text-center">
+            <span class="text-primary font-bold text-xs uppercase tracking-[0.5em] mb-6 block editorial-reveal">Our
+                Expertise</span>
+            <h1 class="font-display text-5xl md:text-8xl mb-8 leading-[0.95] tracking-tighter editorial-reveal">
+                Specialized<br /><span class="italic text-primary">Capabilities.</span></h1>
+            <p class="text-secondary/60 text-lg max-w-2xl mx-auto editorial-reveal">Architecting prestigious experiences
+                since 2012. We offer a full-spectrum solution for high-end events and strategic branding.</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-section-gap">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12 space-y-32">
+
+            <!-- Service Detailed 1: Weddings -->
+            <section class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+                <div class="editorial-reveal">
+                    <span class="text-xs font-bold uppercase tracking-widest text-secondary/40 mb-4 block">01 /
+                        Marriages</span>
+                    <h2 class="font-display text-4xl md:text-6xl mb-8 leading-tight">Wedding Planning <br />& Design
+                    </h2>
+                    <p class="text-secondary/70 text-lg leading-relaxed mb-12">Your love story is unique; your
+                        celebration should be nothing less. We curate weddings that are a direct reflection of your
+                        aesthetic, values, and shared journey.</p>
+                    <div class="space-y-6">
+                        <div class="border-l-2 border-primary pl-8">
+                            <h4 class="font-bold text-xs uppercase tracking-widest mb-2">Bespoke Styling</h4>
+                            <p class="text-sm text-secondary/60 italic">Floral narratives, lightning architecture, and
+                                editorial decor.</p>
+                        </div>
+                        <div class="border-l-2 border-outline pl-8">
+                            <h4 class="font-bold text-xs uppercase tracking-widest mb-2">Technical Management</h4>
+                            <p class="text-sm text-secondary/60 italic">Precision timing, sound engineering, and stage
+                                curation.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="editorial-reveal">
+                    <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1000&q=80"
+                        class="w-full aspect-square object-cover grayscale brightness-90" alt="Wedding" />
+                </div>
+            </section>
+
+            <!-- Service Detailed 2: Corporate -->
+            <section class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+                <div class="editorial-reveal lg:order-2">
+                    <span class="text-xs font-bold uppercase tracking-widest text-secondary/40 mb-4 block">02 /
+                        Business</span>
+                    <h2 class="font-display text-4xl md:text-6xl mb-8 leading-tight text-right">Corporate
+                        <br />Excellence</h2>
+                    <p class="text-secondary/70 text-lg leading-relaxed mb-12 text-right">Align your brand with
+                        excellence. We design corporate experiences that foster connection and reflect your company's
+                        prestige on a global scale.</p>
+                    <div class="flex flex-col items-end space-y-6">
+                        <div class="border-r-2 border-primary pr-8 text-right">
+                            <h4 class="font-bold text-xs uppercase tracking-widest mb-2">Product Launches</h4>
+                            <p class="text-sm text-secondary/60 italic">Media-worthy reveals and immersive brand
+                                activations.</p>
+                        </div>
+                        <div class="border-r-2 border-outline pr-8 text-right">
+                            <h4 class="font-bold text-xs uppercase tracking-widest mb-2">Press Conferences</h4>
+                            <p class="text-sm text-secondary/60 italic">Sophisticated communication hubs for
+                                crystal-clear messaging.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="editorial-reveal lg:order-1">
+                    <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1000&q=80"
+                        class="w-full aspect-square object-cover grayscale brightness-90" alt="Corporate" />
+                </div>
+            </section>
+
+            <!-- Grid for other services -->
+            <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-32 border-t border-outline">
+                <div class="bg-surface p-12 editorial-reveal">
+                    <h3 class="font-display text-2xl mb-4">Celebrity Mgmt</h3>
+                    <p class="text-sm text-secondary/60">Elite talent procurement and coordination for prestigious
+                        appearances.</p>
+                </div>
+                <div class="bg-surface p-12 editorial-reveal" style="transition-delay: 100ms;">
+                    <h3 class="font-display text-2xl mb-4">Photoshoots</h3>
+                    <p class="text-sm text-secondary/60">Strategic logistics and creative direction for editorial
+                        campaigns.</p>
+                </div>
+                <div class="bg-surface p-12 editorial-reveal" style="transition-delay: 200ms;">
+                    <h3 class="font-display text-2xl mb-4">Catering Service</h3>
+                    <p class="text-sm text-secondary/60">Bespoke culinary narratives featuring elite hospitality
+                        standards.</p>
+                </div>
+                <div class="bg-surface p-12 editorial-reveal">
+                    <h3 class="font-display text-2xl mb-4">Road Shows</h3>
+                    <p class="text-sm text-secondary/60">Large-scale mobile branding and nationwide outreach support.
+                    </p>
+                </div>
+                <div class="bg-surface p-12 editorial-reveal" style="transition-delay: 100ms;">
+                    <h3 class="font-display text-2xl mb-4">Trade Shows</h3>
+                    <p class="text-sm text-secondary/60">Strategic exhibition booths that command attention in busy
+                        trade environments.</p>
+                </div>
+                <div class="bg-secondary p-12 editorial-reveal group hover:bg-primary transition-all duration-500"
+                    style="transition-delay: 200ms;">
+                    <h3 class="font-display text-2xl mb-4 text-white">Inquire Details</h3>
+                    <p class="text-white/60 text-sm mb-8">Discuss a custom roadmap for your next event engagement.</p>
+                    <a href="contact.html" class="material-symbols-outlined text-white">arrow_forward</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white pt-24 pb-12 border-t border-outline">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12 text-center md:text-left">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-24">
+                <div class="col-span-1 md:col-span-1">
+                    <img src="assets/logo.png" alt="Logo" class="h-16 w-auto mb-8 grayscale mx-auto md:mx-0" />
+                    <p
+                        class="text-xs text-secondary/40 uppercase tracking-[0.1em] font-bold leading-relaxed max-w-[200px] mx-auto md:mx-0">
+                        Architecting prestigious experiences since 2012.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-[10px] uppercase tracking-[0.5em] font-bold text-primary mb-12">Discover</h4>
+                    <ul class="space-y-4 text-[10px] uppercase tracking-[0.2em] font-bold text-secondary/60">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html" class="text-primary">Services</a></li>
+                        <li><a href="gallary.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-[10px] uppercase tracking-[0.5em] font-bold text-primary mb-12">Social</h4>
+                    <ul class="space-y-4 text-[10px] uppercase tracking-[0.2em] font-bold text-secondary/60">
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-[10px] uppercase tracking-[0.5em] font-bold text-primary mb-12">Office</h4>
+                    <address
+                        class="not-italic text-[10px] uppercase tracking-[0.2em] font-bold text-secondary/60 leading-loose">
+                        Bhopal, MP, India<br />
+                        contact@angeleventsolution.com<br />
+                        +91 99999 99999
+                    </address>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-center border-t border-outline pt-12">
+                <p class="text-[10px] uppercase tracking-[0.4em] font-bold text-secondary/40 mb-6 md:mb-0">© 2026 ANGEL
+                    EVENT SOLUTION.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, observerOptions);
+
+        document.querySelectorAll('.editorial-reveal').forEach(el => observer.observe(el));
+
+        function toggleMobileMenu(show) {
+            const menu = document.getElementById('mobile-menu');
+            if (show) {
+                menu.classList.remove('hidden-menu');
+                document.body.style.overflow = 'hidden';
+            } else {
+                menu.classList.add('hidden-menu');
+                document.body.style.overflow = '';
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Gallery | Angel Event Solution</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,400;0,600;0,700;1,400&amp;family=Nunito+Sans:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#c1001f",
+                        "secondary": "#1a1a1a",
+                        "outline": "#e5e5e5",
+                        "surface": "#f8f8f8"
+                    },
+                    "borderRadius": { "none": "0px", "DEFAULT": "0px" },
+                    "fontFamily": {
+                        "display": ["Literata", "serif"],
+                        "body": ["Nunito Sans", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        * {
+            border-radius: 0 !important;
+        }
+
+        .editorial-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .editorial-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: currentColor;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .gallery-grid {
+            columns: 1;
+            gap: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .gallery-grid {
+                columns: 2;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .gallery-grid {
+                columns: 3;
+            }
+        }
+
+        .gallery-item {
+            break-inside: avoid;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .filter-btn.active {
+            background-color: #c1001f;
+            color: white;
+            border-color: #c1001f;
+        }
+
+        #mobile-menu {
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        #mobile-menu.hidden-menu {
+            transform: translateX(100%);
+        }
+    </style>
+</head>
+
+<body class="bg-white text-secondary font-body overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-outline">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12 h-24 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-4">
+                <img src="assets/logo.png" alt="Logo" class="h-12 w-auto object-contain" />
+                <div class="hidden sm:block">
+                    <span class="block font-display text-xl font-bold tracking-tight leading-none">ANGEL EVENT</span>
+                    <span class="block text-[10px] uppercase tracking-[0.4em] font-bold text-primary">Solution</span>
+                </div>
+            </a>
+            <div class="hidden lg:flex items-center gap-12 text-xs uppercase tracking-widest font-bold">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="gallary.html" class="nav-link text-primary">Gallery</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="flex items-center gap-6">
+                <button
+                    class="bg-secondary text-white px-8 py-4 text-[10px] uppercase tracking-[0.2em] font-bold hover:bg-primary transition-all">
+                    Inquire
+                </button>
+                <button onclick="toggleMobileMenu(true)" class="lg:hidden text-secondary">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[100] bg-secondary text-white hidden-menu flex flex-col p-12">
+        <div class="flex justify-between items-center mb-20">
+            <img src="assets/logo.png" alt="Logo" class="h-10 w-auto brightness-0 invert" />
+            <button onclick="toggleMobileMenu(false)" class="text-white">
+                <span class="material-symbols-outlined text-3xl">close</span>
+            </button>
+        </div>
+        <div class="flex flex-col gap-8">
+            <a href="index.html" class="font-display text-4xl hover:text-primary transition-colors">Home</a>
+            <a href="services.html" class="font-display text-4xl hover:text-primary transition-colors">Services</a>
+            <a href="gallary.html" class="font-display text-4xl hover:text-primary transition-colors">Gallery</a>
+            <a href="contact.html" class="font-display text-4xl hover:text-primary transition-colors">Contact</a>
+        </div>
+        <div class="mt-auto border-t border-white/10 pt-12">
+            <p class="text-[10px] uppercase tracking-[0.4em] font-bold text-white/40 mb-4">Direct Contact</p>
+            <a href="tel:+919999999999" class="text-xl font-bold">+91 99999 99999</a>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="pt-48 pb-10 border-b border-outline">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+            <span class="text-primary font-bold text-xs uppercase tracking-[0.5em] mb-4 block">Our Portfolio</span>
+            <h1 class="font-display text-5xl md:text-8xl leading-[0.95] tracking-tighter">Moments<br /><span
+                    class="italic text-primary">Chronicles.</span></h1>
+        </div>
+    </header>
+
+    <!-- Filter Bar -->
+    <div class="bg-surface py-8 border-b border-outline sticky top-24 z-40">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12 flex flex-wrap gap-4 items-center">
+            <button onclick="filterGallery('all')"
+                class="filter-btn active border border-secondary px-8 py-3 text-[10px] uppercase tracking-widest font-bold silk-transition">ALL</button>
+            <button onclick="filterGallery('wedding')"
+                class="filter-btn border border-outline px-8 py-3 text-[10px] uppercase tracking-widest font-bold silk-transition hover:border-secondary">WEDDING</button>
+            <button onclick="filterGallery('corporate')"
+                class="filter-btn border border-outline px-8 py-3 text-[10px] uppercase tracking-widest font-bold silk-transition hover:border-secondary">CORPORATE</button>
+            <button onclick="filterGallery('party')"
+                class="filter-btn border border-outline px-8 py-3 text-[10px] uppercase tracking-widest font-bold silk-transition hover:border-secondary">PARTIES</button>
+            <button onclick="filterGallery('ads')"
+                class="filter-btn border border-outline px-8 py-3 text-[10px] uppercase tracking-widest font-bold silk-transition hover:border-secondary">ADVERTISING</button>
+        </div>
+    </div>
+
+    <!-- Gallery Grid -->
+    <main class="py-24 max-w-[1400px] mx-auto px-6 md:px-12 min-h-screen">
+        <div id="gallery-grid" class="gallery-grid">
+            <!-- Weddings -->
+            <div class="gallery-item mb-5 editorial-reveal" data-category="wedding">
+                <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=800&q=80"
+                    class="w-full grayscale hover:grayscale-0 transition-all duration-700 cursor-pointer"
+                    alt="Wedding" />
+                <div class="pt-4"><span class="text-[10px] uppercase tracking-widest font-bold text-secondary/40">Royal
+                        Wedding / 2024</span></div>
+            </div>
+            <div class="gallery-item mb-5 editorial-reveal" data-category="wedding">
+                <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80"
+                    class="w-full grayscale hover:grayscale-0 transition-all duration-700 cursor-pointer" alt="Event" />
+                <div class="pt-4"><span
+                        class="text-[10px] uppercase tracking-widest font-bold text-secondary/40">Bespoke Setup /
+                        2024</span></div>
+            </div>
+
+            <!-- Corporate -->
+            <div class="gallery-item mb-5 editorial-reveal" data-category="corporate">
+                <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=800&q=80"
+                    class="w-full grayscale hover:grayscale-0 transition-all duration-700 cursor-pointer"
+                    alt="Corporate" />
+                <div class="pt-4"><span
+                        class="text-[10px] uppercase tracking-widest font-bold text-secondary/40">Corporate Summit /
+                        2023</span></div>
+            </div>
+            <div class="gallery-item mb-5 editorial-reveal" data-category="corporate">
+                <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=800&q=80"
+                    class="w-full grayscale hover:grayscale-0 transition-all duration-700 cursor-pointer"
+                    alt="Corporate" />
+                <div class="pt-4"><span
+                        class="text-[10px] uppercase tracking-widest font-bold text-secondary/40">Innovation Night /
+                        2024</span></div>
+            </div>
+
+            <!-- Parties -->
+            <div class="gallery-item mb-5 editorial-reveal" data-category="party">
+                <img src="https://images.unsplash.com/photo-1514525253361-bee8718a300a?auto=format&fit=crop&w=800&q=80"
+                    class="w-full grayscale hover:grayscale-0 transition-all duration-700 cursor-pointer" alt="Party" />
+                <div class="pt-4"><span class="text-[10px] uppercase tracking-widest font-bold text-secondary/40">Theme
+                        Soirée / 2024</span></div>
+            </div>
+            <div class="gallery-item mb-5 editorial-reveal" data-category="party">
+                <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=800&q=80"
+                    class="w-full grayscale hover:grayscale-0 transition-all duration-700 cursor-pointer" alt="Event" />
+                <div class="pt-4"><span
+                        class="text-[10px] uppercase tracking-widest font-bold text-secondary/40">Exclusive Party /
+                        2023</span></div>
+            </div>
+
+            <!-- Ads -->
+            <div class="gallery-item mb-5 editorial-reveal" data-category="ads">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
+                    class="w-full grayscale hover:grayscale-0 transition-all duration-700 cursor-pointer"
+                    alt="Advertising" />
+                <div class="pt-4"><span
+                        class="text-[10px] uppercase tracking-widest font-bold text-secondary/40">National Campaign /
+                        2022</span></div>
+            </div>
+            <div class="gallery-item mb-5 editorial-reveal" data-category="ads">
+                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80"
+                    class="w-full grayscale hover:grayscale-0 transition-all duration-700 cursor-pointer" alt="Event" />
+                <div class="pt-4"><span
+                        class="text-[10px] uppercase tracking-widest font-bold text-secondary/40">Strategic Ads /
+                        2023</span></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Transition to Contact -->
+    <section class="py-32 bg-secondary text-white text-center">
+        <h2 class="font-display text-4xl mb-8">Ready to create your own legacy?</h2>
+        <a href="contact.html"
+            class="bg-primary text-white px-12 py-5 text-[10px] uppercase tracking-[0.4em] font-bold hover:bg-white hover:text-secondary transition-all inline-block">Consult
+            Now</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 border-t border-outline">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12 text-center md:text-left">
+            <p class="text-[10px] uppercase tracking-[0.4em] font-bold text-secondary/40 mb-2">© 2026 ANGEL EVENT
+                SOLUTION.</p>
+        </div>
+    </footer>
+
+    <script>
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, observerOptions);
+
+        function initReveal() {
+            document.querySelectorAll('.editorial-reveal').forEach(el => observer.observe(el));
+        }
+        initReveal();
+
+        function filterGallery(category) {
+            // Update buttons
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.innerText.toLowerCase() === category.toLowerCase() || (category === 'all' && btn.innerText.toLowerCase() === 'all')) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Filter items
+            const items = document.querySelectorAll('.gallery-item');
+            items.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.classList.add('visible');
+                    }, 50);
+                } else {
+                    item.style.display = 'none';
+                    item.classList.remove('visible');
+                }
+            });
+        }
+
+        function toggleMobileMenu(show) {
+            const menu = document.getElementById('mobile-menu');
+            if (show) {
+                menu.classList.remove('hidden-menu');
+                document.body.style.overflow = 'hidden';
+            } else {
+                menu.classList.add('hidden-menu');
+                document.body.style.overflow = '';
+            }
+        }
+    </script>
+</body>
+
+</html>
