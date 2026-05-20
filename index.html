@@ -7,8 +7,9 @@
   <title>Angel Event Solution | Premier Event & Advertising Studio</title>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link
-    href="https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,400;0,600;0,700;1,400&amp;family=Nunito+Sans:wght@400;500;600;700&amp;display=swap"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Manrope:wght@300;400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&display=swap"
     rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/professional.css" />
   <link
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
     rel="stylesheet" />
@@ -18,12 +19,11 @@
       theme: {
         extend: {
           "colors": {
-            "primary": "#c1001f",
-            "on-primary": "#ffffff",
-            "secondary": "#1a1a1a",
-            "background": "#ffffff",
-            "surface": "#f8f8f8",
-            "outline": "#e5e5e5"
+            "primary": "#b00019",
+            "secondary": "#0a0a0a",
+            "background": "#faf9f6",
+            "surface": "#f4f4f4",
+            "outline": "rgba(0,0,0,0.05)"
           },
           "borderRadius": {
             "none": "0px",
@@ -40,8 +40,9 @@
             "container-padding": "80px"
           },
           "fontFamily": {
-            "display": ["Literata", "serif"],
-            "body": ["Nunito Sans", "sans-serif"]
+            "display": ["Playfair Display", "serif"],
+            "body": ["Manrope", "sans-serif"],
+            "accent": ["Cormorant Garamond", "serif"]
           }
         },
       },
@@ -125,34 +126,28 @@
 
 <body class="bg-background text-secondary selection:bg-primary selection:text-on-primary font-body overflow-x-hidden">
   <!-- Navigation -->
-  <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-outline">
+  <nav class="fixed top-0 w-full z-[100] bg-white/90 backdrop-blur-xl border-b border-outline">
     <div class="max-w-[1400px] mx-auto px-6 md:px-12 h-24 flex justify-between items-center">
-      <a href="index.html" class="flex items-center gap-4">
-        <img src="assets/logo.png" alt="Angel Event Solution Logo" class="h-12 w-auto object-contain" />
-        <div class="hidden sm:block">
-          <span class="block font-display text-xl font-bold tracking-tight leading-none">ANGEL EVENT</span>
-          <span class="block text-[10px] uppercase tracking-[0.4em] font-bold text-primary">Solution</span>
+      <a href="index.html" class="flex items-center gap-4 group">
+        <img src="assets/logo.png" alt="Logo"
+          class="h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-110" />
+        <div class="block">
+          <span class="block font-display text-lg sm:text-xl font-bold tracking-tight leading-none">ANGEL EVENT</span>
+          <span
+            class="block text-[8px] sm:text-[10px] uppercase tracking-[0.4em] font-bold text-primary">Solution</span>
         </div>
       </a>
-
-      <div class="hidden lg:flex items-center gap-12">
-        <a href="index.html" class="nav-link text-xs uppercase tracking-widest font-bold">Home</a>
-        <a href="services.html" class="nav-link text-xs uppercase tracking-widest font-bold">Services</a>
-        <a href="gallary.html" class="nav-link text-xs uppercase tracking-widest font-bold">Gallery</a>
-        <a href="contact.html" class="nav-link text-xs uppercase tracking-widest font-bold">Contact</a>
+      <div class="hidden lg:flex items-center gap-12 text-[10px] uppercase tracking-[0.2em] font-bold">
+        <a href="index.html" class="nav-link text-primary">Home</a>
+        <a href="services.html" class="nav-link hover:text-primary transition-colors">Services</a>
+        <a href="gallery.html" class="nav-link hover:text-primary transition-colors">Gallery</a>
+        <a href="contact.html" class="nav-link hover:text-primary transition-colors">Contact</a>
       </div>
-
       <div class="flex items-center gap-6">
-        <a href="tel:+919999999999"
-          class="hidden md:flex items-center gap-2 text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors">
-          <span class="material-symbols-outlined text-sm">call</span>
-          +91 99999 99999
-        </a>
-        <button
-          class="bg-secondary text-on-primary px-8 py-4 text-[10px] uppercase tracking-[0.2em] font-bold hover:bg-primary transition-all duration-500">
+        <a href="contact.html"
+          class="hidden sm:inline-block bg-secondary text-white px-8 py-4 text-[10px] uppercase tracking-[0.2em] font-bold hover:bg-primary transition-all duration-500">
           Inquire Now
-        </button>
-        <!-- Mobile Menu Toggle -->
+        </a>
         <button onclick="toggleMobileMenu(true)" class="lg:hidden text-secondary">
           <span class="material-symbols-outlined text-3xl">menu</span>
         </button>
@@ -171,7 +166,7 @@
     <div class="flex flex-col gap-8">
       <a href="index.html" class="font-display text-4xl hover:text-primary transition-colors">Home</a>
       <a href="services.html" class="font-display text-4xl hover:text-primary transition-colors">Services</a>
-      <a href="gallary.html" class="font-display text-4xl hover:text-primary transition-colors">Gallery</a>
+      <a href="gallery.html" class="font-display text-4xl hover:text-primary transition-colors">Gallery</a>
       <a href="contact.html" class="font-display text-4xl hover:text-primary transition-colors">Contact</a>
     </div>
     <div class="mt-auto border-t border-white/10 pt-12">
@@ -181,66 +176,67 @@
   </div>
 
   <!-- Hero -->
-  <section class="relative h-screen min-h-[700px] flex items-center overflow-hidden">
+  <section class="hero-luxury h-screen min-h-[800px] flex items-center relative">
     <div class="absolute inset-0 z-0">
-      <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1920&q=80"
-        class="w-full h-full object-cover" alt="Luxury Setup" />
-      <div class="absolute inset-0 hero-gradient"></div>
+      <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1920&q=80"
+        class="w-full h-full object-cover opacity-60" alt="Luxury Setup" />
+      <div class="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/80 to-transparent"></div>
     </div>
 
-    <div class="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 w-full pt-20">
-      <div class="max-w-3xl editorial-reveal" id="hero-trigger">
-        <span class="block text-primary font-bold text-xs uppercase tracking-[0.5em] mb-6">Established 2022</span>
-        <h1 class="font-display text-6xl md:text-8xl text-white mb-8 leading-[0.95] tracking-tighter">
-          Crafting <br />Excellence In <br />Every Detail.
+    <div class="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 w-full">
+      <div class="max-w-4xl reveal-up" id="hero-trigger">
+        <span class="block text-primary font-bold text-xs uppercase tracking-[0.6em] mb-8">Est. 2022 — Bhopal</span>
+        <h1 class="hero-title mb-10 text-white">
+          Creating <br />Atmospheres <br />of <span
+            class="italic font-display font-light text-white/90">Distinction.</span>
         </h1>
-        <p class="text-white/70 text-lg md:text-xl max-w-xl mb-12 font-light leading-relaxed">
-          Premier event architecture and strategic advertising solutions for discerning brands and private celebrations
-          across India.
+        <p class="text-white/60 text-xl md:text-2xl max-w-2xl mb-12 font-light leading-relaxed">
+          Premier event architecture and strategic brand activations for those who demand <span
+            class="text-white font-medium">absolute perfection</span> in every frame.
         </p>
-        <div class="flex flex-wrap gap-4">
+        <div class="flex flex-wrap gap-6 mt-8">
           <a href="#services"
-            class="bg-primary text-white px-12 py-5 text-[10px] uppercase tracking-[0.3em] font-bold hover:bg-white hover:text-secondary transition-all duration-500">
-            View Services
+            class="bg-primary text-white px-12 py-5 text-[10px] uppercase tracking-[0.3em] font-bold hover:bg-white hover:text-secondary transition-all duration-700">
+            Explore Services
           </a>
           <a href="#contact"
-            class="border border-white/30 text-white px-12 py-5 text-[10px] uppercase tracking-[0.3em] font-bold hover:bg-white hover:text-secondary transition-all duration-500 backdrop-blur-sm">
-            Contact Us
+            class="px-12 py-5 text-[10px] uppercase tracking-[0.3em] font-bold border border-white text-white hover:bg-white hover:text-secondary transition-all duration-700">
+            Send Inquiry
           </a>
         </div>
       </div>
     </div>
 
-    <!-- Vertical Text Decorative -->
-    <div class="absolute right-12 bottom-24 hidden xl:block">
+    <!-- Vertical Decorative Text -->
+    <div class="absolute right-12 bottom-32 hidden xl:block">
       <span
-        class="rotate-90 block origin-right text-[10px] uppercase tracking-[1em] text-white/40 font-bold whitespace-nowrap">
-        PRECISION & ARTISTRY
+        class="rotate-90 block origin-right text-[10px] uppercase tracking-[1.5em] text-white/20 font-bold whitespace-nowrap">
+        LUXURY EVENT ARCHITECTURE
       </span>
     </div>
   </section>
 
   <!-- Trust Marquee -->
-  <div class="bg-white border-b border-outline py-12 overflow-hidden">
+  <div class="bg-primary text-white py-12 overflow-hidden">
     <div class="marquee flex gap-24 items-center">
-      <span class="text-xs font-bold uppercase tracking-[0.4em] text-secondary/40 whitespace-nowrap">MILLENNIUM
+      <span class="text-xs font-bold uppercase tracking-[0.4em] text-white/80 whitespace-nowrap">MILLENNIUM
         COLLEGE</span>
-      <span class="text-xs font-bold uppercase tracking-[0.4em] text-secondary/40 whitespace-nowrap">NAFED INDIA</span>
-      <span class="text-xs font-bold uppercase tracking-[0.4em] text-secondary/40 whitespace-nowrap">ANGEL EVENT
+      <span class="text-xs font-bold uppercase tracking-[0.4em] text-white/80 whitespace-nowrap">NAFED INDIA</span>
+      <span class="text-xs font-bold uppercase tracking-[0.4em] text-white/80 whitespace-nowrap">ANGEL EVENT
         SOLUTION</span>
-      <span class="text-xs font-bold uppercase tracking-[0.4em] text-secondary/40 whitespace-nowrap">PAN INDIA
+      <span class="text-xs font-bold uppercase tracking-[0.4em] text-white/80 whitespace-nowrap">PAN INDIA
         REACH</span>
-      <span class="text-xs font-bold uppercase tracking-[0.4em] text-secondary/40 whitespace-nowrap">PREMIUM
+      <span class="text-xs font-bold uppercase tracking-[0.4em] text-white/80 whitespace-nowrap">PREMIUM
         ADVERTISING</span>
       <!-- Duplicate for infinite -->
-      <span class="text-xs font-bold uppercase tracking-[0.4em] text-secondary/40 whitespace-nowrap">MILLENNIUM
+      <span class="text-xs font-bold uppercase tracking-[0.4em] text-white/80 whitespace-nowrap">MILLENNIUM
         COLLEGE</span>
-      <span class="text-xs font-bold uppercase tracking-[0.4em] text-secondary/40 whitespace-nowrap">NAFED INDIA</span>
-      <span class="text-xs font-bold uppercase tracking-[0.4em] text-secondary/40 whitespace-nowrap">ANGEL EVENT
+      <span class="text-xs font-bold uppercase tracking-[0.4em] text-white/80 whitespace-nowrap">NAFED INDIA</span>
+      <span class="text-xs font-bold uppercase tracking-[0.4em] text-white/80 whitespace-nowrap">ANGEL EVENT
         SOLUTION</span>
-      <span class="text-xs font-bold uppercase tracking-[0.4em] text-secondary/40 whitespace-nowrap">PAN INDIA
+      <span class="text-xs font-bold uppercase tracking-[0.4em] text-white/80 whitespace-nowrap">PAN INDIA
         REACH</span>
-      <span class="text-xs font-bold uppercase tracking-[0.4em] text-secondary/40 whitespace-nowrap">PREMIUM
+      <span class="text-xs font-bold uppercase tracking-[0.4em] text-white/80 whitespace-nowrap">PREMIUM
         ADVERTISING</span>
     </div>
   </div>
@@ -284,19 +280,17 @@
           </div>
         </div>
         <div class="grid grid-cols-2 gap-4 editorial-reveal" style="transition-delay: 200ms;">
-          <img src="assets/ceo2.jpeg"
-            class="w-full aspect-[3/4] object-cover grayscale hover:grayscale-0 transition-all duration-700"
+          <img src="assets/ceo2.jpeg" class="w-full aspect-[3/4] object-cover transition-all duration-700"
             alt="Excellence" />
           <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80"
-            class="w-full aspect-[3/4] object-cover grayscale hover:grayscale-0 transition-all duration-700 mt-12"
-            alt="Artistry" />
+            class="w-full aspect-[3/4] object-cover transition-all duration-700 mt-12" alt="Artistry" />
         </div>
       </div>
     </div>
   </section>
 
   <!-- Services Section (Rearranged & Sharp) -->
-  <section id="services" class="py-section-gap bg-surface border-y border-outline">
+  <section id="services" class="py-section-gap bg-secondary text-white border-y border-white/10">
     <div class="max-w-[1400px] mx-auto px-6 md:px-12">
       <div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
         <div class="editorial-reveal">
@@ -305,59 +299,59 @@
           <h2 class="font-display text-4xl md:text-6xl">Our Service Array.</h2>
         </div>
         <div class="editorial-reveal md:max-w-sm text-right">
-          <p class="text-secondary/60 italic">From high-impact corporate activations to bespoke wedding planning, we
+          <p class="text-white/60 italic">From high-impact corporate activations to bespoke wedding planning, we
             deliver perfection at scale.</p>
         </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-l border-t border-outline">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-l border-t border-white/10">
         <!-- Service Block -->
         <div
-          class="group border-r border-b border-outline p-12 hover:bg-secondary transition-all duration-700 editorial-reveal">
+          class="group border-r border-b border-white/10 p-12 hover:bg-primary transition-all duration-700 editorial-reveal">
           <span
             class="material-symbols-outlined text-primary text-4xl mb-8 group-hover:text-white transition-colors">domain</span>
           <h3 class="font-display text-2xl mb-6 group-hover:text-white transition-colors">Corporate Events</h3>
-          <p class="text-secondary/60 group-hover:text-white/60 transition-colors mb-8 text-sm leading-relaxed">
+          <p class="text-white/60 group-hover:text-white/90 transition-colors mb-8 text-sm leading-relaxed">
             Conferences, launches, and summits designed for global brand positioning.</p>
         </div>
         <div
-          class="group border-r border-b border-outline p-12 hover:bg-secondary transition-all duration-700 editorial-reveal">
+          class="group border-r border-b border-white/10 p-12 hover:bg-primary transition-all duration-700 editorial-reveal">
           <span
             class="material-symbols-outlined text-primary text-4xl mb-8 group-hover:text-white transition-colors">favorite</span>
           <h3 class="font-display text-2xl mb-6 group-hover:text-white transition-colors">Wedding Planning</h3>
-          <p class="text-secondary/60 group-hover:text-white/60 transition-colors mb-8 text-sm leading-relaxed">Creating
+          <p class="text-white/60 group-hover:text-white/90 transition-colors mb-8 text-sm leading-relaxed">Creating
             timeless bridal experiences with meticulous aesthetic control.</p>
         </div>
         <div
-          class="group border-r border-b border-outline p-12 hover:bg-secondary transition-all duration-700 editorial-reveal">
+          class="group border-r border-b border-white/10 p-12 hover:bg-primary transition-all duration-700 editorial-reveal">
           <span
             class="material-symbols-outlined text-primary text-4xl mb-8 group-hover:text-white transition-colors">campaign</span>
           <h3 class="font-display text-2xl mb-6 group-hover:text-white transition-colors">Strategic Ads</h3>
-          <p class="text-secondary/60 group-hover:text-white/60 transition-colors mb-8 text-sm leading-relaxed">PAN
+          <p class="text-white/60 group-hover:text-white/90 transition-colors mb-8 text-sm leading-relaxed">PAN
             India advertising across print, electronic, and radio channels.</p>
         </div>
         <div
-          class="group border-r border-b border-outline p-12 hover:bg-secondary transition-all duration-700 editorial-reveal">
+          class="group border-r border-b border-white/10 p-12 hover:bg-primary transition-all duration-700 editorial-reveal">
           <span
             class="material-symbols-outlined text-primary text-4xl mb-8 group-hover:text-white transition-colors">star</span>
           <h3 class="font-display text-2xl mb-6 group-hover:text-white transition-colors">Celebrity Mgmt</h3>
-          <p class="text-secondary/60 group-hover:text-white/60 transition-colors mb-8 text-sm leading-relaxed">
+          <p class="text-white/60 group-hover:text-white/90 transition-colors mb-8 text-sm leading-relaxed">
             Exclusive talent procurement for guest appearances and performances.</p>
         </div>
         <div
-          class="group border-r border-b border-outline p-12 hover:bg-secondary transition-all duration-700 editorial-reveal">
+          class="group border-r border-b border-white/10 p-12 hover:bg-primary transition-all duration-700 editorial-reveal">
           <span
             class="material-symbols-outlined text-primary text-4xl mb-8 group-hover:text-white transition-colors">photo_camera</span>
           <h3 class="font-display text-2xl mb-6 group-hover:text-white transition-colors">Photoshoots</h3>
-          <p class="text-secondary/60 group-hover:text-white/60 transition-colors mb-8 text-sm leading-relaxed">
+          <p class="text-white/60 group-hover:text-white/90 transition-colors mb-8 text-sm leading-relaxed">
             Editorial and commercial shoot logistics and creative direction.</p>
         </div>
         <div
-          class="group border-r border-b border-outline p-12 hover:bg-secondary transition-all duration-700 editorial-reveal">
+          class="group border-r border-b border-white/10 p-12 hover:bg-primary transition-all duration-700 editorial-reveal">
           <span
             class="material-symbols-outlined text-primary text-4xl mb-8 group-hover:text-white transition-colors">restaurant</span>
           <h3 class="font-display text-2xl mb-6 group-hover:text-white transition-colors">Catering Service</h3>
-          <p class="text-secondary/60 group-hover:text-white/60 transition-colors mb-8 text-sm leading-relaxed">Bespoke
+          <p class="text-white/60 group-hover:text-white/90 transition-colors mb-8 text-sm leading-relaxed">Bespoke
             culinary experiences tailored for high-end hospitality.</p>
         </div>
       </div>
@@ -378,7 +372,7 @@
           <h2 class="font-display text-4xl md:text-6xl mb-12 leading-tight">National Reach.<br /><span
               class="text-primary">Strategic Depth.</span></h2>
           <p class="text-lg text-secondary mb-12 font-light leading-relaxed">Since 2012, our advertising division has
-            bridge the gap between brands and their audiences across India. We don't just place ads; we curate
+            bridged the gap between brands and their audiences across India. We don't just place ads; we curate
             visibility.</p>
           <div class="space-y-12">
             <div class="flex items-center gap-8 border-b border-outline pb-8">
@@ -408,7 +402,7 @@
         <div class="lg:col-span-7 editorial-reveal lg:pl-12" style="transition-delay: 200ms;">
           <div class="relative">
             <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
-              class="w-full aspect-[4/3] object-cover grayscale" alt="Strategic Planning" />
+              class="w-full aspect-[4/3] object-cover" alt="Strategic Planning" />
             <div class="absolute -bottom-10 -left-10 bg-secondary p-12 text-white hidden xl:block max-w-sm">
               <h4 class="font-display text-2xl mb-4 italic">Client Spotlight</h4>
               <p class="text-white/60 text-sm mb-6">Partnering with NAFED India and Millennium College for successful
@@ -422,53 +416,54 @@
   </section>
 
   <!-- FAQ Accordion (Sharp) -->
-  <section class="py-section-gap bg-surface border-t border-outline">
+  <section class="py-section-gap bg-primary text-white border-none">
     <div class="max-w-[900px] mx-auto px-6">
       <div class="text-center mb-24 editorial-reveal">
-        <span class="text-primary font-bold text-xs uppercase tracking-[0.5em] mb-4 block">Knowledge Base</span>
+        <span class="text-white/80 font-bold text-xs uppercase tracking-[0.5em] mb-4 block">Knowledge Base</span>
         <h2 class="font-display text-4xl md:text-5xl">Your Inquiries.</h2>
       </div>
 
       <div class="space-y-4 editorial-reveal">
         <!-- FAQ 1 -->
-        <div class="accordion-item border border-outline bg-white transition-all duration-500">
+        <div class="accordion-item border border-white/20 hover:bg-white/5 transition-all duration-500">
           <button class="w-full flex justify-between items-center p-8 text-left group" onclick="toggleAccordion(this)">
-            <span class="font-bold text-xs uppercase tracking-widest group-hover:text-primary transition-colors">Booking
+            <span
+              class="font-bold text-xs uppercase tracking-widest group-hover:text-white/70 transition-colors">Booking
               Lead Time</span>
-            <span class="material-symbols-outlined text-sm transition-transform duration-500 text-primary">add</span>
+            <span class="material-symbols-outlined text-sm transition-transform duration-500 text-white">add</span>
           </button>
           <div class="accordion-content">
-            <div class="px-8 pb-8 text-secondary/60 text-sm leading-relaxed font-light">
+            <div class="px-8 pb-8 text-white/80 text-sm leading-relaxed font-light">
               For large-scale events and weddings, we recommend a minimum of 2-4 months. Corporate activations typically
               require 4-8 weeks of lead time for optimal execution.
             </div>
           </div>
         </div>
         <!-- FAQ 2 -->
-        <div class="accordion-item border border-outline bg-white transition-all duration-500">
+        <div class="accordion-item border border-white/20 hover:bg-white/5 transition-all duration-500">
           <button class="w-full flex justify-between items-center p-8 text-left group" onclick="toggleAccordion(this)">
             <span
-              class="font-bold text-xs uppercase tracking-widest group-hover:text-primary transition-colors">On-Ground
+              class="font-bold text-xs uppercase tracking-widest group-hover:text-white/70 transition-colors">On-Ground
               Execution</span>
-            <span class="material-symbols-outlined text-sm transition-transform duration-500 text-primary">add</span>
+            <span class="material-symbols-outlined text-sm transition-transform duration-500 text-white">add</span>
           </button>
           <div class="accordion-content">
-            <div class="px-8 pb-8 text-secondary/60 text-sm leading-relaxed font-light">
+            <div class="px-8 pb-8 text-white/80 text-sm leading-relaxed font-light">
               We provide full-spectrum management involving technical crews, guest coordinators, and logistical
               supervisors on-site throughout your event's duration.
             </div>
           </div>
         </div>
         <!-- FAQ 3 -->
-        <div class="accordion-item border border-outline bg-white transition-all duration-500">
+        <div class="accordion-item border border-white/20 hover:bg-white/5 transition-all duration-500">
           <button class="w-full flex justify-between items-center p-8 text-left group" onclick="toggleAccordion(this)">
             <span
-              class="font-bold text-xs uppercase tracking-widest group-hover:text-primary transition-colors">Budgetary
+              class="font-bold text-xs uppercase tracking-widest group-hover:text-white/70 transition-colors">Budgetary
               Management</span>
-            <span class="material-symbols-outlined text-sm transition-transform duration-500 text-primary">add</span>
+            <span class="material-symbols-outlined text-sm transition-transform duration-500 text-white">add</span>
           </button>
           <div class="accordion-content">
-            <div class="px-8 pb-8 text-secondary/60 text-sm leading-relaxed font-light">
+            <div class="px-8 pb-8 text-white/80 text-sm leading-relaxed font-light">
               We operate with full transparent billing and work diligently within your specified financial parameters
               while ensuring the highest quality of service deliveries.
             </div>
@@ -502,7 +497,7 @@
           </div>
         </div>
         <div class="editorial-reveal" style="transition-delay: 200ms;">
-          <form action="contact.php" method="post" class="space-y-8">
+          <form action="contact.php" method="post" class="space-y-8 relative z-20">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
               <input type="text" name="name" placeholder="FULL NAME" required
                 class="bg-transparent border-white/20 border-b py-4 focus:border-primary focus:ring-0 text-[10px] tracking-[0.2em] font-bold placeholder:text-white/30" />
@@ -522,47 +517,56 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-white pt-24 pb-12 border-t border-outline">
-    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-24">
-        <div class="col-span-1 md:col-span-1">
-          <img src="assets/logo.png" alt="Angel Event Solution Logo" class="h-16 w-auto mb-8 grayscale" />
-          <p class="text-xs text-secondary/40 uppercase tracking-[0.1em] font-bold leading-relaxed max-w-[200px]">
-            Architecting prestigious experiences since 2012.
-          </p>
-        </div>
-        <div>
-          <h4 class="text-[10px] uppercase tracking-[0.5em] font-bold text-primary mb-12">Discover</h4>
-          <ul class="space-y-4 text-[10px] uppercase tracking-[0.2em] font-bold text-secondary/60">
-            <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
-            <li><a href="services.html" class="hover:text-primary transition-colors">Services</a></li>
-            <li><a href="gallary.html" class="hover:text-primary transition-colors">Gallery</a></li>
-            <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="text-[10px] uppercase tracking-[0.5em] font-bold text-primary mb-12">Social</h4>
-          <ul class="space-y-4 text-[10px] uppercase tracking-[0.2em] font-bold text-secondary/60">
-            <li><a href="#" class="hover:text-primary transition-colors">Instagram</a></li>
-            <li><a href="#" class="hover:text-primary transition-colors">Facebook</a></li>
-            <li><a href="#" class="hover:text-primary transition-colors">LinkedIn</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="text-[10px] uppercase tracking-[0.5em] font-bold text-primary mb-12">Office</h4>
-          <address class="not-italic text-[10px] uppercase tracking-[0.2em] font-bold text-secondary/60 leading-loose">
-            Bhopal, MP, India<br />
-            contact@angeleventsolution.com<br />
-            +91 99999 99999
-          </address>
+  <footer class="flex flex-col">
+    <!-- Main Footer Area -->
+    <div class="bg-primary text-white pt-24 pb-20">
+      <div class="max-w-[1400px] mx-auto px-6 md:px-12 text-center md:text-left">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+          <div class="col-span-1 md:col-span-1">
+            <img src="assets/logo.png" alt="Logo" class="h-16 w-auto mb-8 mx-auto md:mx-0 brightness-0 invert" />
+            <p
+              class="text-xs text-white/80 uppercase tracking-[0.1em] font-bold leading-relaxed max-w-[200px] mx-auto md:mx-0">
+              Architecting prestigious experiences since 2012.
+            </p>
+          </div>
+          <div>
+            <h4 class="text-[10px] uppercase tracking-[0.5em] font-bold text-secondary mb-12">Discover</h4>
+            <ul class="space-y-4 text-[10px] uppercase tracking-[0.2em] font-bold text-white/80">
+              <li><a href="index.html" class="hover:text-secondary transition-colors">Home</a></li>
+              <li><a href="services.html" class="hover:text-secondary transition-colors">Services</a></li>
+              <li><a href="gallery.html" class="hover:text-secondary transition-colors">Gallery</a></li>
+              <li><a href="contact.html" class="hover:text-secondary transition-colors">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-[10px] uppercase tracking-[0.5em] font-bold text-secondary mb-12">Social</h4>
+            <ul class="space-y-4 text-[10px] uppercase tracking-[0.2em] font-bold text-white/80">
+              <li><a href="#" class="hover:text-secondary transition-colors">Instagram</a></li>
+              <li><a href="#" class="hover:text-secondary transition-colors">Facebook</a></li>
+              <li><a href="#" class="hover:text-secondary transition-colors">LinkedIn</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-[10px] uppercase tracking-[0.5em] font-bold text-secondary mb-12">Office</h4>
+            <address class="not-italic text-[10px] uppercase tracking-[0.2em] font-bold text-white/80 leading-loose">
+              Bhopal, MP, India<br />
+              <a href="mailto:contact@angeleventsolution.com"
+                class="hover:text-secondary transition-colors">contact@angeleventsolution.com</a><br />
+              <a href="tel:+919999999999" class="hover:text-secondary transition-colors">+91 99999 99999</a>
+            </address>
+          </div>
         </div>
       </div>
-      <div class="flex flex-col md:flex-row justify-between items-center border-t border-outline pt-12">
-        <p class="text-[10px] uppercase tracking-[0.4em] font-bold text-secondary/40 mb-6 md:mb-0">© 2026 ANGEL EVENT
+    </div>
+    <!-- Copyright Area -->
+    <div class="bg-[#252525] text-white py-12">
+      <div
+        class="max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center text-center">
+        <p class="text-[10px] uppercase tracking-[0.4em] font-bold text-white/60 mb-6 md:mb-0">© 2026 ANGEL EVENT
           SOLUTION.</p>
-        <div class="flex gap-12 text-[10px] uppercase tracking-[0.4em] font-bold text-secondary/40">
-          <a href="#" class="hover:text-primary">Policy</a>
-          <a href="#" class="hover:text-primary">Terms</a>
+        <div class="flex gap-12 text-[10px] uppercase tracking-[0.4em] font-bold text-white/60">
+          <a href="#" class="hover:text-primary transition-colors">Policy</a>
+          <a href="#" class="hover:text-primary transition-colors">Terms</a>
         </div>
       </div>
     </div>

@@ -79,26 +79,29 @@
 
 <body class="bg-white text-secondary font-body overflow-x-hidden">
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-outline">
+    <nav class="fixed top-0 w-full z-[100] bg-white/90 backdrop-blur-xl border-b border-outline">
         <div class="max-w-[1400px] mx-auto px-6 md:px-12 h-24 flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-4">
-                <img src="assets/logo.png" alt="Logo" class="h-12 w-auto object-contain" />
-                <div class="hidden sm:block">
-                    <span class="block font-display text-xl font-bold tracking-tight leading-none">ANGEL EVENT</span>
-                    <span class="block text-[10px] uppercase tracking-[0.4em] font-bold text-primary">Solution</span>
+            <a href="index.html" class="flex items-center gap-4 group">
+                <img src="assets/logo.png" alt="Logo"
+                    class="h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-110" />
+                <div class="block">
+                    <span class="block font-display text-lg sm:text-xl font-bold tracking-tight leading-none">ANGEL
+                        EVENT</span>
+                    <span
+                        class="block text-[8px] sm:text-[10px] uppercase tracking-[0.4em] font-bold text-primary">Solution</span>
                 </div>
             </a>
-            <div class="hidden lg:flex items-center gap-12 text-xs uppercase tracking-widest font-bold">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="services.html" class="nav-link">Services</a>
-                <a href="gallary.html" class="nav-link">Gallery</a>
+            <div class="hidden lg:flex items-center gap-12 text-[10px] uppercase tracking-[0.2em] font-bold">
+                <a href="index.html" class="nav-link hover:text-primary transition-colors">Home</a>
+                <a href="services.html" class="nav-link hover:text-primary transition-colors">Services</a>
+                <a href="gallery.html" class="nav-link hover:text-primary transition-colors">Gallery</a>
                 <a href="contact.html" class="nav-link text-primary">Contact</a>
             </div>
             <div class="flex items-center gap-6">
-                <button
-                    class="hidden sm:block bg-secondary text-white px-8 py-4 text-[10px] uppercase tracking-[0.2em] font-bold hover:bg-primary transition-all">
-                    Book consultation
-                </button>
+                <a href="contact.html"
+                    class="hidden sm:inline-block bg-secondary text-white px-8 py-4 text-[10px] uppercase tracking-[0.2em] font-bold hover:bg-primary transition-all duration-500">
+                    Inquire Now
+                </a>
                 <button onclick="toggleMobileMenu(true)" class="lg:hidden text-secondary">
                     <span class="material-symbols-outlined text-3xl">menu</span>
                 </button>
@@ -117,7 +120,7 @@
         <div class="flex flex-col gap-8">
             <a href="index.html" class="font-display text-4xl hover:text-primary transition-colors">Home</a>
             <a href="services.html" class="font-display text-4xl hover:text-primary transition-colors">Services</a>
-            <a href="gallary.html" class="font-display text-4xl hover:text-primary transition-colors">Gallery</a>
+            <a href="gallery.html" class="font-display text-4xl hover:text-primary transition-colors">Gallery</a>
             <a href="contact.html" class="font-display text-4xl hover:text-primary transition-colors">Contact</a>
         </div>
         <div class="mt-auto border-t border-white/10 pt-12">
@@ -169,35 +172,35 @@
                 </div>
 
                 <!-- Form -->
-                <div class="editorial-reveal bg-surface p-12 lg:p-20 border border-outline"
+                <div class="editorial-reveal bg-secondary text-white p-12 lg:p-20 border border-white/10"
                     style="transition-delay: 200ms;">
                     <form action="contact.php" method="post" class="space-y-12">
                         <div class="space-y-4">
-                            <label class="text-[10px] uppercase tracking-widest font-bold text-secondary/40">Full
+                            <label class="text-[10px] uppercase tracking-widest font-bold text-white/40">Full
                                 Name</label>
                             <input type="text" name="name" placeholder="YOUR NAME" required
-                                class="w-full bg-transparent border-b border-outline py-4 focus:border-primary focus:ring-0 text-sm tracking-widest font-light placeholder:text-secondary/20" />
+                                class="w-full bg-transparent border-b border-white/10 py-4 focus:border-primary focus:ring-0 text-sm tracking-widest font-light placeholder:text-white/20" />
                         </div>
                         <div class="space-y-4">
-                            <label class="text-[10px] uppercase tracking-widest font-bold text-secondary/40">Email
+                            <label class="text-[10px] uppercase tracking-widest font-bold text-white/40">Email
                                 Address</label>
                             <input type="email" name="email" placeholder="YOUR EMAIL" required
-                                class="w-full bg-transparent border-b border-outline py-4 focus:border-primary focus:ring-0 text-sm tracking-widest font-light placeholder:text-secondary/20" />
+                                class="w-full bg-transparent border-b border-white/10 py-4 focus:border-primary focus:ring-0 text-sm tracking-widest font-light placeholder:text-white/20" />
                         </div>
                         <div class="space-y-4">
-                            <label class="text-[10px] uppercase tracking-widest font-bold text-secondary/40">Phone
+                            <label class="text-[10px] uppercase tracking-widest font-bold text-white/40">Phone
                                 Number</label>
                             <input type="tel" name="number" placeholder="YOUR PHONE" required
-                                class="w-full bg-transparent border-b border-outline py-4 focus:border-primary focus:ring-0 text-sm tracking-widest font-light placeholder:text-secondary/20" />
+                                class="w-full bg-transparent border-b border-white/10 py-4 focus:border-primary focus:ring-0 text-sm tracking-widest font-light placeholder:text-white/20" />
                         </div>
                         <div class="space-y-4">
-                            <label class="text-[10px] uppercase tracking-widest font-bold text-secondary/40">Event
+                            <label class="text-[10px] uppercase tracking-widest font-bold text-white/40">Event
                                 Date</label>
                             <input type="date" name="date" required
-                                class="w-full bg-transparent border-b border-outline py-4 focus:border-primary focus:ring-0 text-sm tracking-widest font-light text-secondary/40" />
+                                class="w-full bg-transparent border-b border-white/10 py-4 focus:border-primary focus:ring-0 text-sm tracking-widest font-light text-white/40" />
                         </div>
                         <button type="submit"
-                            class="w-full bg-secondary text-white py-6 text-[10px] uppercase tracking-[0.4em] font-bold hover:bg-primary transition-all">Submit
+                            class="w-full bg-primary text-white py-6 text-[10px] uppercase tracking-[0.4em] font-bold hover:bg-white hover:text-secondary transition-all">Submit
                             Inquiry</button>
                     </form>
                 </div>
@@ -206,10 +209,53 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white py-12 border-t border-outline">
-        <div class="max-w-[1400px] mx-auto px-6 md:px-12 text-center">
-            <p class="text-[10px] uppercase tracking-[0.4em] font-bold text-secondary/40">© 2026 ANGEL EVENT SOLUTION.
-            </p>
+    <footer class="bg-secondary pt-24 pb-12 border-t border-white/10">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12 text-center md:text-left">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-24">
+                <div class="col-span-1 md:col-span-1">
+                    <img src="assets/logo.png" alt="Logo"
+                        class="h-16 w-auto mb-8 mx-auto md:mx-0 brightness-0 invert" />
+                    <p
+                        class="text-xs text-white/40 uppercase tracking-[0.1em] font-bold leading-relaxed max-w-[200px] mx-auto md:mx-0">
+                        Architecting prestigious experiences since 2012.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-[10px] uppercase tracking-[0.5em] font-bold text-primary mb-12">Discover</h4>
+                    <ul class="space-y-4 text-[10px] uppercase tracking-[0.2em] font-bold text-white/60">
+                        <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
+                        <li><a href="services.html" class="hover:text-primary transition-colors">Services</a></li>
+                        <li><a href="gallery.html" class="hover:text-primary transition-colors">Gallery</a></li>
+                        <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-[10px] uppercase tracking-[0.5em] font-bold text-primary mb-12">Social</h4>
+                    <ul class="space-y-4 text-[10px] uppercase tracking-[0.2em] font-bold text-white/60">
+                        <li><a href="#" class="hover:text-primary transition-colors">Instagram</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Facebook</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">LinkedIn</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-[10px] uppercase tracking-[0.5em] font-bold text-primary mb-12">Office</h4>
+                    <address
+                        class="not-italic text-[10px] uppercase tracking-[0.2em] font-bold text-white/60 leading-loose">
+                        Bhopal, MP, India<br />
+                        <a href="mailto:contact@angeleventsolution.com"
+                            class="hover:text-primary transition-colors">contact@angeleventsolution.com</a><br />
+                        <a href="tel:+919999999999" class="hover:text-primary transition-colors">+91 99999 99999</a>
+                    </address>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-center border-t border-white/10 pt-12">
+                <p class="text-[10px] uppercase tracking-[0.4em] font-bold text-white/40 mb-6 md:mb-0">© 2026 ANGEL
+                    EVENT SOLUTION.</p>
+                <div class="flex gap-12 text-[10px] uppercase tracking-[0.4em] font-bold text-white/40">
+                    <a href="#" class="hover:text-primary transition-colors">Policy</a>
+                    <a href="#" class="hover:text-primary transition-colors">Terms</a>
+                </div>
+            </div>
         </div>
     </footer>
 

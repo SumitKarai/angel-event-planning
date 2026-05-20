@@ -84,28 +84,29 @@
 
 <body class="bg-background text-secondary font-body overflow-x-hidden">
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-outline">
+    <nav class="fixed top-0 w-full z-[100] bg-white/90 backdrop-blur-xl border-b border-outline">
         <div class="max-w-[1400px] mx-auto px-6 md:px-12 h-24 flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-4">
-                <img src="assets/logo.png" alt="Logo" class="h-12 w-auto object-contain" />
-                <div class="hidden sm:block">
-                    <span class="block font-display text-xl font-bold tracking-tight leading-none">ANGEL EVENT</span>
-                    <span class="block text-[10px] uppercase tracking-[0.4em] font-bold text-primary">Solution</span>
+            <a href="index.html" class="flex items-center gap-4 group">
+                <img src="assets/logo.png" alt="Logo"
+                    class="h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-110" />
+                <div class="block">
+                    <span class="block font-display text-lg sm:text-xl font-bold tracking-tight leading-none">ANGEL
+                        EVENT</span>
+                    <span
+                        class="block text-[8px] sm:text-[10px] uppercase tracking-[0.4em] font-bold text-primary">Solution</span>
                 </div>
             </a>
-            <div class="hidden lg:flex items-center gap-12">
-                <a href="index.html" class="nav-link text-xs uppercase tracking-widest font-bold">Home</a>
-                <a href="services.html"
-                    class="nav-link text-xs uppercase tracking-widest font-bold text-primary">Services</a>
-                <a href="gallary.html" class="nav-link text-xs uppercase tracking-widest font-bold">Gallery</a>
-                <a href="contact.html" class="nav-link text-xs uppercase tracking-widest font-bold">Contact</a>
+            <div class="hidden lg:flex items-center gap-12 text-[10px] uppercase tracking-[0.2em] font-bold">
+                <a href="index.html" class="nav-link hover:text-primary transition-colors">Home</a>
+                <a href="services.html" class="nav-link text-primary">Services</a>
+                <a href="gallery.html" class="nav-link hover:text-primary transition-colors">Gallery</a>
+                <a href="contact.html" class="nav-link hover:text-primary transition-colors">Contact</a>
             </div>
             <div class="flex items-center gap-6">
-                <button
-                    class="bg-secondary text-on-primary px-8 py-4 text-[10px] uppercase tracking-[0.2em] font-bold hover:bg-primary transition-all duration-500">
+                <a href="contact.html"
+                    class="hidden sm:inline-block bg-secondary text-white px-8 py-4 text-[10px] uppercase tracking-[0.2em] font-bold hover:bg-primary transition-all duration-500">
                     Inquire Now
-                </button>
-                <!-- Mobile Menu Toggle -->
+                </a>
                 <button onclick="toggleMobileMenu(true)" class="lg:hidden text-secondary">
                     <span class="material-symbols-outlined text-3xl">menu</span>
                 </button>
@@ -124,7 +125,7 @@
         <div class="flex flex-col gap-8">
             <a href="index.html" class="font-display text-4xl hover:text-primary transition-colors">Home</a>
             <a href="services.html" class="font-display text-4xl hover:text-primary transition-colors">Services</a>
-            <a href="gallary.html" class="font-display text-4xl hover:text-primary transition-colors">Gallery</a>
+            <a href="gallery.html" class="font-display text-4xl hover:text-primary transition-colors">Gallery</a>
             <a href="contact.html" class="font-display text-4xl hover:text-primary transition-colors">Contact</a>
         </div>
         <div class="mt-auto border-t border-white/10 pt-12">
@@ -134,7 +135,7 @@
     </div>
 
     <!-- Header -->
-    <header class="pt-48 pb-24 bg-surface border-b border-outline">
+    <header class="pt-48 pb-24 bg-white border-b border-outline">
         <div class="max-w-[1400px] mx-auto px-6 md:px-12 text-center">
             <span class="text-primary font-bold text-xs uppercase tracking-[0.5em] mb-6 block editorial-reveal">Our
                 Expertise</span>
@@ -146,145 +147,276 @@
     </header>
 
     <!-- Main Content -->
-    <main class="py-section-gap">
-        <div class="max-w-[1400px] mx-auto px-6 md:px-12 space-y-32">
-
-            <!-- Service Detailed 1: Weddings -->
-            <section class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-                <div class="editorial-reveal">
-                    <span class="text-xs font-bold uppercase tracking-widest text-secondary/40 mb-4 block">01 /
-                        Marriages</span>
-                    <h2 class="font-display text-4xl md:text-6xl mb-8 leading-tight">Wedding Planning <br />& Design
-                    </h2>
-                    <p class="text-secondary/70 text-lg leading-relaxed mb-12">Your love story is unique; your
-                        celebration should be nothing less. We curate weddings that are a direct reflection of your
-                        aesthetic, values, and shared journey.</p>
-                    <div class="space-y-6">
-                        <div class="border-l-2 border-primary pl-8">
-                            <h4 class="font-bold text-xs uppercase tracking-widest mb-2">Bespoke Styling</h4>
-                            <p class="text-sm text-secondary/60 italic">Floral narratives, lightning architecture, and
-                                editorial decor.</p>
-                        </div>
-                        <div class="border-l-2 border-outline pl-8">
-                            <h4 class="font-bold text-xs uppercase tracking-widest mb-2">Technical Management</h4>
-                            <p class="text-sm text-secondary/60 italic">Precision timing, sound engineering, and stage
-                                curation.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="editorial-reveal">
-                    <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1000&q=80"
-                        class="w-full aspect-square object-cover grayscale brightness-90" alt="Wedding" />
-                </div>
-            </section>
-
-            <!-- Service Detailed 2: Corporate -->
-            <section class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-                <div class="editorial-reveal lg:order-2">
-                    <span class="text-xs font-bold uppercase tracking-widest text-secondary/40 mb-4 block">02 /
-                        Business</span>
-                    <h2 class="font-display text-4xl md:text-6xl mb-8 leading-tight text-right">Corporate
-                        <br />Excellence</h2>
-                    <p class="text-secondary/70 text-lg leading-relaxed mb-12 text-right">Align your brand with
-                        excellence. We design corporate experiences that foster connection and reflect your company's
-                        prestige on a global scale.</p>
-                    <div class="flex flex-col items-end space-y-6">
-                        <div class="border-r-2 border-primary pr-8 text-right">
-                            <h4 class="font-bold text-xs uppercase tracking-widest mb-2">Product Launches</h4>
-                            <p class="text-sm text-secondary/60 italic">Media-worthy reveals and immersive brand
-                                activations.</p>
-                        </div>
-                        <div class="border-r-2 border-outline pr-8 text-right">
-                            <h4 class="font-bold text-xs uppercase tracking-widest mb-2">Press Conferences</h4>
-                            <p class="text-sm text-secondary/60 italic">Sophisticated communication hubs for
-                                crystal-clear messaging.</p>
+    <main>
+        <!-- Service 1: Marriages (White) -->
+        <section class="py-section-gap bg-white">
+            <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+                    <div class="editorial-reveal">
+                        <span class="text-xs font-bold uppercase tracking-widest text-secondary/40 mb-4 block">01 /
+                            Marriages</span>
+                        <h2 class="font-display text-4xl md:text-6xl mb-8 leading-tight">Wedding Planning <br />& Design
+                        </h2>
+                        <p class="text-secondary/70 text-lg leading-relaxed mb-12">Your love story is unique; your
+                            celebration should be nothing less. We curate weddings that are a direct reflection of your
+                            aesthetic, values, and shared journey.</p>
+                        <div class="space-y-6">
+                            <div class="border-l-2 border-primary pl-8">
+                                <h4 class="font-bold text-xs uppercase tracking-widest mb-2">Bespoke Styling</h4>
+                                <p class="text-sm text-secondary/60 italic">Floral narratives, lightning architecture,
+                                    and editorial decor.</p>
+                            </div>
+                            <div class="border-l-2 border-outline pl-8">
+                                <h4 class="font-bold text-xs uppercase tracking-widest mb-2">Technical Management</h4>
+                                <p class="text-sm text-secondary/60 italic">Precision timing, sound engineering, and
+                                    stage curation.</p>
+                            </div>
                         </div>
                     </div>
+                    <div class="editorial-reveal">
+                        <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1000&q=80"
+                            class="w-full aspect-square object-cover brightness-90" alt="Wedding" />
+                    </div>
                 </div>
-                <div class="editorial-reveal lg:order-1">
-                    <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1000&q=80"
-                        class="w-full aspect-square object-cover grayscale brightness-90" alt="Corporate" />
-                </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- Grid for other services -->
-            <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-32 border-t border-outline">
-                <div class="bg-surface p-12 editorial-reveal">
-                    <h3 class="font-display text-2xl mb-4">Celebrity Mgmt</h3>
-                    <p class="text-sm text-secondary/60">Elite talent procurement and coordination for prestigious
-                        appearances.</p>
+        <!-- Service 2: Corporate (Black) -->
+        <section class="py-section-gap bg-secondary text-white border-y border-white/10">
+            <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+                    <div class="editorial-reveal lg:order-2">
+                        <span class="text-xs font-bold uppercase tracking-widest text-white/40 mb-4 block">02 /
+                            Business</span>
+                        <h2 class="font-display text-4xl md:text-6xl mb-8 leading-tight text-right">Corporate
+                            <br />Excellence
+                        </h2>
+                        <p class="text-white/70 text-lg leading-relaxed mb-12 text-right">Align your brand with
+                            excellence. We design corporate experiences that foster connection and reflect your
+                            company's prestige on a global scale.</p>
+                        <div class="flex flex-col items-end space-y-6">
+                            <div class="border-r-2 border-primary pr-8 text-right">
+                                <h4 class="font-bold text-xs uppercase tracking-widest mb-2">Product Launches</h4>
+                                <p class="text-sm text-white/60 italic">Media-worthy reveals and immersive brand
+                                    activations.</p>
+                            </div>
+                            <div class="border-r-2 border-white/10 pr-8 text-right">
+                                <h4 class="font-bold text-xs uppercase tracking-widest mb-2">Press Conferences</h4>
+                                <p class="text-sm text-white/60 italic">Sophisticated communication hubs for
+                                    crystal-clear messaging.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="editorial-reveal lg:order-1">
+                        <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1000&q=80"
+                            class="w-full aspect-square object-cover brightness-90" alt="Corporate" />
+                    </div>
                 </div>
-                <div class="bg-surface p-12 editorial-reveal" style="transition-delay: 100ms;">
-                    <h3 class="font-display text-2xl mb-4">Photoshoots</h3>
-                    <p class="text-sm text-secondary/60">Strategic logistics and creative direction for editorial
-                        campaigns.</p>
+            </div>
+        </section>
+
+        <!-- Service 3: Celebrity (White) -->
+        <section class="py-section-gap bg-white">
+            <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+                    <div class="editorial-reveal">
+                        <span class="text-xs font-bold uppercase tracking-widest text-secondary/40 mb-4 block">03 /
+                            Talent</span>
+                        <h2 class="font-display text-4xl md:text-6xl mb-8 leading-tight">Celebrity<br />Mgmt</h2>
+                        <p class="text-secondary/70 text-lg leading-relaxed mb-12">Exclusive talent procurement and
+                            coordination for prestigious appearances, ensuring a seamless experience for high-profile
+                            guests.</p>
+                    </div>
+                    <div class="editorial-reveal">
+                        <img src="https://images.unsplash.com/photo-1516280440502-d961e6db8f02?auto=format&fit=crop&w=1000&q=80"
+                            class="w-full aspect-square object-cover brightness-90" alt="Celebrity Management" />
+                    </div>
                 </div>
-                <div class="bg-surface p-12 editorial-reveal" style="transition-delay: 200ms;">
-                    <h3 class="font-display text-2xl mb-4">Catering Service</h3>
-                    <p class="text-sm text-secondary/60">Bespoke culinary narratives featuring elite hospitality
-                        standards.</p>
+            </div>
+        </section>
+
+        <!-- Service 4: Photoshoots (Black) -->
+        <section class="py-section-gap bg-secondary text-white border-y border-white/10">
+            <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+                    <div class="editorial-reveal lg:order-2">
+                        <span class="text-xs font-bold uppercase tracking-widest text-white/40 mb-4 block">04 /
+                            Editorial</span>
+                        <h2 class="font-display text-4xl md:text-6xl mb-8 leading-tight text-right">
+                            Strategic<br />Photoshoots</h2>
+                        <p class="text-white/70 text-lg leading-relaxed mb-12 text-right">Creative direction and
+                            logistical execution for high-fashion editorial campaigns and premium commercial shoots.</p>
+                    </div>
+                    <div class="editorial-reveal lg:order-1">
+                        <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=1000&q=80"
+                            class="w-full aspect-square object-cover brightness-90" alt="Photoshoots" />
+                    </div>
                 </div>
-                <div class="bg-surface p-12 editorial-reveal">
-                    <h3 class="font-display text-2xl mb-4">Road Shows</h3>
-                    <p class="text-sm text-secondary/60">Large-scale mobile branding and nationwide outreach support.
-                    </p>
+            </div>
+        </section>
+
+        <!-- Service 5: Catering (White) -->
+        <section class="py-section-gap bg-white">
+            <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+                    <div class="editorial-reveal">
+                        <span class="text-xs font-bold uppercase tracking-widest text-secondary/40 mb-4 block">05 /
+                            Culinary</span>
+                        <h2 class="font-display text-4xl md:text-6xl mb-8 leading-tight">Elite<br />Catering</h2>
+                        <p class="text-secondary/70 text-lg leading-relaxed mb-12">Bespoke culinary narratives featuring
+                            elite hospitality standards to deliver unforgettable dining experiences at scale.</p>
+                    </div>
+                    <div class="editorial-reveal">
+                        <img src="https://images.unsplash.com/photo-1555244162-803834f87a33?auto=format&fit=crop&w=1000&q=80"
+                            class="w-full aspect-square object-cover brightness-90" alt="Catering" />
+                    </div>
                 </div>
-                <div class="bg-surface p-12 editorial-reveal" style="transition-delay: 100ms;">
-                    <h3 class="font-display text-2xl mb-4">Trade Shows</h3>
-                    <p class="text-sm text-secondary/60">Strategic exhibition booths that command attention in busy
-                        trade environments.</p>
+            </div>
+        </section>
+
+        <!-- Service 6: Road Shows (Black) -->
+        <section class="py-section-gap bg-secondary text-white border-y border-white/10">
+            <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+                    <div class="editorial-reveal lg:order-2">
+                        <span class="text-xs font-bold uppercase tracking-widest text-white/40 mb-4 block">06 /
+                            Outreach</span>
+                        <h2 class="font-display text-4xl md:text-6xl mb-8 leading-tight text-right">Road<br />Shows</h2>
+                        <p class="text-white/70 text-lg leading-relaxed mb-12 text-right">Large-scale mobile branding
+                            and nationwide outreach support, connecting your brand directly with target demographics.
+                        </p>
+                    </div>
+                    <div class="editorial-reveal lg:order-1">
+                        <img src="https://images.unsplash.com/photo-1478860409689-54ae6c0989ad?auto=format&fit=crop&w=1000&q=80"
+                            class="w-full aspect-square object-cover brightness-90" alt="Road Shows" />
+                    </div>
                 </div>
-                <div class="bg-secondary p-12 editorial-reveal group hover:bg-primary transition-all duration-500"
-                    style="transition-delay: 200ms;">
-                    <h3 class="font-display text-2xl mb-4 text-white">Inquire Details</h3>
-                    <p class="text-white/60 text-sm mb-8">Discuss a custom roadmap for your next event engagement.</p>
-                    <a href="contact.html" class="material-symbols-outlined text-white">arrow_forward</a>
+            </div>
+        </section>
+
+        <!-- Service 7: Trade Shows (Red) -->
+        <section class="py-section-gap bg-primary text-white border-y border-white/20">
+            <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+                    <div class="editorial-reveal">
+                        <span class="text-xs font-bold uppercase tracking-widest text-white/40 mb-4 block">07 /
+                            Exhibition</span>
+                        <h2 class="font-display text-4xl md:text-6xl mb-8 leading-tight">Trade<br />Shows</h2>
+                        <p class="text-white/80 text-lg leading-relaxed mb-12">Strategic exhibition booths that command
+                            attention in busy trade environments, driving engagement and maximizing ROI.</p>
+                    </div>
+                    <div class="editorial-reveal">
+                        <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?auto=format&fit=crop&w=1000&q=80"
+                            class="w-full aspect-square object-cover brightness-90 border border-white/10"
+                            alt="Trade Shows" />
+                    </div>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
+
+        <!-- Comprehensive Services Summary Grid (Black) -->
+        <section class="py-section-gap bg-secondary text-white">
+            <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+                <span
+                    class="text-primary font-bold text-xs uppercase tracking-[0.5em] mb-12 block text-center editorial-reveal">Service
+                    Directory</span>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div
+                        class="bg-black/50 border border-white/10 p-12 editorial-reveal hover:border-primary transition-colors">
+                        <h3 class="font-display text-2xl mb-4">Wedding Planning</h3>
+                        <p class="text-sm text-white/60">Bespoke bridal styling and technical orchestration.</p>
+                    </div>
+                    <div class="bg-black/50 border border-white/10 p-12 editorial-reveal hover:border-primary transition-colors"
+                        style="transition-delay: 100ms;">
+                        <h3 class="font-display text-2xl mb-4">Corporate Events</h3>
+                        <p class="text-sm text-white/60">Conferences and sophisticated product launches.</p>
+                    </div>
+                    <div class="bg-black/50 border border-white/10 p-12 editorial-reveal hover:border-primary transition-colors"
+                        style="transition-delay: 200ms;">
+                        <h3 class="font-display text-2xl mb-4">Celebrity Mgmt</h3>
+                        <p class="text-sm text-white/60">Elite talent procurement and coordination.</p>
+                    </div>
+                    <div class="bg-black/50 border border-white/10 p-12 editorial-reveal hover:border-primary transition-colors"
+                        style="transition-delay: 300ms;">
+                        <h3 class="font-display text-2xl mb-4">Photoshoots</h3>
+                        <p class="text-sm text-white/60">Logistics for editorial and commercial campaigns.</p>
+                    </div>
+                    <div
+                        class="bg-black/50 border border-white/10 p-12 editorial-reveal hover:border-primary transition-colors">
+                        <h3 class="font-display text-2xl mb-4">Catering Service</h3>
+                        <p class="text-sm text-white/60">High-end culinary and hospitality standards.</p>
+                    </div>
+                    <div class="bg-black/50 border border-white/10 p-12 editorial-reveal hover:border-primary transition-colors"
+                        style="transition-delay: 100ms;">
+                        <h3 class="font-display text-2xl mb-4">Road Shows</h3>
+                        <p class="text-sm text-white/60">Mobile branding and nationwide outreach execution.</p>
+                    </div>
+                    <div class="bg-black/50 border border-white/10 p-12 editorial-reveal hover:border-primary transition-colors"
+                        style="transition-delay: 200ms;">
+                        <h3 class="font-display text-2xl mb-4">Trade Shows</h3>
+                        <p class="text-sm text-white/60">Strategic exhibition booths that command attention.</p>
+                    </div>
+                    <div class="bg-primary border border-primary p-12 editorial-reveal group hover:bg-white transition-all duration-500"
+                        style="transition-delay: 300ms;">
+                        <h3 class="font-display text-2xl mb-4 text-white group-hover:text-secondary">Inquire Details
+                        </h3>
+                        <p class="text-white/60 text-sm mb-8 group-hover:text-secondary/60">Discuss a custom roadmap for
+                            your next event.</p>
+                        <a href="contact.html"
+                            class="material-symbols-outlined text-white group-hover:text-secondary">arrow_forward</a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white pt-24 pb-12 border-t border-outline">
+    <footer class="bg-secondary pt-24 pb-12 border-t border-white/10">
         <div class="max-w-[1400px] mx-auto px-6 md:px-12 text-center md:text-left">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-24">
                 <div class="col-span-1 md:col-span-1">
-                    <img src="assets/logo.png" alt="Logo" class="h-16 w-auto mb-8 grayscale mx-auto md:mx-0" />
+                    <img src="assets/logo.png" alt="Logo"
+                        class="h-16 w-auto mb-8 mx-auto md:mx-0 brightness-0 invert" />
                     <p
-                        class="text-xs text-secondary/40 uppercase tracking-[0.1em] font-bold leading-relaxed max-w-[200px] mx-auto md:mx-0">
+                        class="text-xs text-white/40 uppercase tracking-[0.1em] font-bold leading-relaxed max-w-[200px] mx-auto md:mx-0">
                         Architecting prestigious experiences since 2012.
                     </p>
                 </div>
                 <div>
                     <h4 class="text-[10px] uppercase tracking-[0.5em] font-bold text-primary mb-12">Discover</h4>
-                    <ul class="space-y-4 text-[10px] uppercase tracking-[0.2em] font-bold text-secondary/60">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="services.html" class="text-primary">Services</a></li>
-                        <li><a href="gallary.html">Gallery</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                    <ul class="space-y-4 text-[10px] uppercase tracking-[0.2em] font-bold text-white/60">
+                        <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
+                        <li><a href="services.html" class="hover:text-primary transition-colors">Services</a></li>
+                        <li><a href="gallery.html" class="hover:text-primary transition-colors">Gallery</a></li>
+                        <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="text-[10px] uppercase tracking-[0.5em] font-bold text-primary mb-12">Social</h4>
-                    <ul class="space-y-4 text-[10px] uppercase tracking-[0.2em] font-bold text-secondary/60">
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">Facebook</a></li>
-                        <li><a href="#">LinkedIn</a></li>
+                    <ul class="space-y-4 text-[10px] uppercase tracking-[0.2em] font-bold text-white/60">
+                        <li><a href="#" class="hover:text-primary transition-colors">Instagram</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Facebook</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">LinkedIn</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="text-[10px] uppercase tracking-[0.5em] font-bold text-primary mb-12">Office</h4>
                     <address
-                        class="not-italic text-[10px] uppercase tracking-[0.2em] font-bold text-secondary/60 leading-loose">
+                        class="not-italic text-[10px] uppercase tracking-[0.2em] font-bold text-white/60 leading-loose">
                         Bhopal, MP, India<br />
-                        contact@angeleventsolution.com<br />
-                        +91 99999 99999
+                        <a href="mailto:contact@angeleventsolution.com"
+                            class="hover:text-primary transition-colors">contact@angeleventsolution.com</a><br />
+                        <a href="tel:+919999999999" class="hover:text-primary transition-colors">+91 99999 99999</a>
                     </address>
                 </div>
             </div>
-            <div class="flex flex-col md:flex-row justify-between items-center border-t border-outline pt-12">
-                <p class="text-[10px] uppercase tracking-[0.4em] font-bold text-secondary/40 mb-6 md:mb-0">© 2026 ANGEL
+            <div class="flex flex-col md:flex-row justify-between items-center border-t border-white/10 pt-12">
+                <p class="text-[10px] uppercase tracking-[0.4em] font-bold text-white/40 mb-6 md:mb-0">© 2026 ANGEL
                     EVENT SOLUTION.</p>
+                <div class="flex gap-12 text-[10px] uppercase tracking-[0.4em] font-bold text-white/40">
+                    <a href="#" class="hover:text-primary transition-colors">Policy</a>
+                    <a href="#" class="hover:text-primary transition-colors">Terms</a>
+                </div>
             </div>
         </div>
     </footer>
