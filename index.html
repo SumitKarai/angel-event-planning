@@ -121,13 +121,31 @@
     #mobile-menu.hidden-menu {
       transform: translateX(100%);
     }
+
+    .service-card {
+      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .service-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    }
+
+    .gallery-img {
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .gallery-img:hover {
+      transform: scale(1.06);
+      filter: brightness(1.1);
+    }
   </style>
 </head>
 
 <body class="bg-background text-secondary selection:bg-primary selection:text-on-primary font-body overflow-x-hidden">
   <!-- Navigation -->
   <nav class="fixed top-0 w-full z-[100] bg-white/90 backdrop-blur-xl border-b border-outline">
-    <div class="max-w-[1400px] mx-auto px-6 md:px-12 h-24 flex justify-between items-center">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12 h-20 flex justify-between items-center">
       <a href="index.html" class="flex items-center gap-4 group">
         <img src="assets/logo.png" alt="Logo"
           class="h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-110" />
@@ -178,7 +196,8 @@
   <!-- Hero -->
   <section class="hero-luxury h-screen min-h-[800px] flex items-center relative">
     <div class="absolute inset-0 z-0">
-      <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1920&q=80"
+      <img
+        src="https://images.unsplash.com/photo-1710587385309-f264b4d503cd?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         class="w-full h-full object-cover opacity-60" alt="Luxury Setup" />
       <div class="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/80 to-transparent"></div>
     </div>
@@ -187,12 +206,12 @@
       <div class="max-w-4xl reveal-up" id="hero-trigger">
         <span class="block text-primary font-bold text-xs uppercase tracking-[0.6em] mb-8">Est. 2022 — Bhopal</span>
         <h1 class="hero-title mb-10 text-white">
-          Creating <br />Atmospheres <br />of <span
-            class="italic font-display font-light text-white/90">Distinction.</span>
+          Luxury <br />Events<br /> <span class="italic font-display font-light text-white/90">Flawless
+            Execution</span>
         </h1>
         <p class="text-white/60 text-xl md:text-2xl max-w-2xl mb-12 font-light leading-relaxed">
-          Premier event architecture and strategic brand activations for those who demand <span
-            class="text-white font-medium">absolute perfection</span> in every frame.
+          Transforming ideas into extraordinary events. <span class="text-white font-medium">Weddings | Corporate |
+            Music Concerts | Birthdays |</span> Advertising — Executed with perfection.
         </p>
         <div class="flex flex-wrap gap-6 mt-8">
           <a href="#services"
@@ -219,25 +238,25 @@
   <!-- Trust Marquee -->
   <div class="bg-primary text-white py-12 overflow-hidden">
     <div class="marquee flex gap-24 items-center">
-      <span class="text-xs font-bold uppercase tracking-[0.4em] text-white/80 whitespace-nowrap">MILLENNIUM
-        COLLEGE</span>
-      <span class="text-xs font-bold uppercase tracking-[0.4em] text-white/80 whitespace-nowrap">NAFED INDIA</span>
-      <span class="text-xs font-bold uppercase tracking-[0.4em] text-white/80 whitespace-nowrap">ANGEL EVENT
-        SOLUTION</span>
-      <span class="text-xs font-bold uppercase tracking-[0.4em] text-white/80 whitespace-nowrap">PAN INDIA
-        REACH</span>
-      <span class="text-xs font-bold uppercase tracking-[0.4em] text-white/80 whitespace-nowrap">PREMIUM
-        ADVERTISING</span>
+      <span class="text-xs font-bold uppercase tracking-[0.4em] text-white/80 whitespace-nowrap">5 STAR RATED</span>
+      <span class="text-xs font-bold uppercase tracking-[0.4em] text-white/80 whitespace-nowrap">1000+ EVENTS
+        COMPLETED</span>
+      <span class="text-xs font-bold uppercase tracking-[0.4em] text-white/80 whitespace-nowrap">50+ CORPORATE
+        CLIENTS</span>
+      <span class="text-xs font-bold uppercase tracking-[0.4em] text-white/80 whitespace-nowrap">10+ YEARS
+        EXPERIENCE</span>
+      <span class="text-xs font-bold uppercase tracking-[0.4em] text-white/80 whitespace-nowrap">24/7
+        SUPPORT</span>
       <!-- Duplicate for infinite -->
-      <span class="text-xs font-bold uppercase tracking-[0.4em] text-white/80 whitespace-nowrap">MILLENNIUM
-        COLLEGE</span>
-      <span class="text-xs font-bold uppercase tracking-[0.4em] text-white/80 whitespace-nowrap">NAFED INDIA</span>
-      <span class="text-xs font-bold uppercase tracking-[0.4em] text-white/80 whitespace-nowrap">ANGEL EVENT
-        SOLUTION</span>
-      <span class="text-xs font-bold uppercase tracking-[0.4em] text-white/80 whitespace-nowrap">PAN INDIA
-        REACH</span>
-      <span class="text-xs font-bold uppercase tracking-[0.4em] text-white/80 whitespace-nowrap">PREMIUM
-        ADVERTISING</span>
+      <span class="text-xs font-bold uppercase tracking-[0.4em] text-white/80 whitespace-nowrap">5 STAR RATED</span>
+      <span class="text-xs font-bold uppercase tracking-[0.4em] text-white/80 whitespace-nowrap">1000+ EVENTS
+        COMPLETED</span>
+      <span class="text-xs font-bold uppercase tracking-[0.4em] text-white/80 whitespace-nowrap">50+ CORPORATE
+        CLIENTS</span>
+      <span class="text-xs font-bold uppercase tracking-[0.4em] text-white/80 whitespace-nowrap">10+ YEARS
+        EXPERIENCE</span>
+      <span class="text-xs font-bold uppercase tracking-[0.4em] text-white/80 whitespace-nowrap">24/7
+        SUPPORT</span>
     </div>
   </div>
 
@@ -249,11 +268,10 @@
           <h2 class="font-display text-4xl md:text-6xl mb-12 leading-tight">Our Philosophy <span
               class="text-primary italic">Of Quiet Luxury.</span></h2>
           <div class="space-y-8 text-secondary/70 text-lg leading-relaxed max-w-xl">
-            <p>Angel Event Solution was founded in 2022 with a clear objective: to redefine the landscape of event
-              management in India through disciplined planning and artistic execution.</p>
+            <p>Angel Event Solution was founded with a clear objective: to redefine the landscape of event management in
+              India through disciplined planning and artistic execution.</p>
             <p>We specialize in end-to-end orchestration, from conceptual mood-boarding to on-ground technical
-              management. Our team operates with surgical precision, ensuring that whether it's a corporate summit or a
-              private gala, the transition from idea to reality is seamless.</p>
+              management. Our team operates with surgical precision.</p>
             <ul class="space-y-4 pt-4">
               <li class="flex items-start gap-4">
                 <span
@@ -281,15 +299,47 @@
         </div>
         <div class="grid grid-cols-2 gap-4 editorial-reveal" style="transition-delay: 200ms;">
           <img src="assets/ceo2.jpeg" class="w-full aspect-[3/4] object-cover transition-all duration-700"
-            alt="Excellence" />
-          <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80"
+            alt="Event Excellence" />
+          <img
+            src="https://plus.unsplash.com/premium_photo-1664303684636-77e29786329b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGluZGlhbiUyMG11c2ljJTIwY29uY2VydHxlbnwwfHwwfHx8MA%3D%3D"
             class="w-full aspect-[3/4] object-cover transition-all duration-700 mt-12" alt="Artistry" />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Services Section (Rearranged & Sharp) -->
+  <!-- Featured Moments / Mini Gallery -->
+  <section class="py-24 bg-white border-b">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="flex justify-between items-end mb-16">
+        <div>
+          <span class="text-primary font-bold text-xs uppercase tracking-[0.5em]">Moments Captured</span>
+          <h2 class="font-display text-4xl md:text-5xl mt-2">Signature Experiences</h2>
+        </div>
+        <a href="gallery.html"
+          class="text-primary text-sm font-bold uppercase tracking-widest border-b border-primary pb-1 hover:text-secondary transition-colors">
+          View Full Gallery →
+        </a>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <img
+          src="https://images.unsplash.com/photo-1633104502699-b2ecf0fee294?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aW5kaWFuJTIwd2VkZGluZyUyMGNlbGVicmF0aW9ufGVufDB8fDB8fHww"
+          class="gallery-img w-full aspect-square object-cover" alt="Wedding Ceremony" />
+        <img
+          src="https://images.unsplash.com/photo-1768396855390-0728fa9c21e1?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          class="gallery-img w-full aspect-square object-cover" alt="Corporate Event" />
+        <img
+          src="https://images.unsplash.com/photo-1601482441062-b9f13131f33a?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          class="gallery-img w-full aspect-square object-cover" alt="Stage Setup" />
+        <img
+          src="https://images.unsplash.com/photo-1474692295473-66ba4d54e0d3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTR8fG11c2ljJTIwc2hvd3xlbnwwfHwwfHx8MA%3D%3D"
+          class="gallery-img w-full aspect-square object-cover" alt="Music Show" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
   <section id="services" class="py-section-gap bg-secondary text-white border-y border-white/10">
     <div class="max-w-[1400px] mx-auto px-6 md:px-12">
       <div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
@@ -299,115 +349,113 @@
           <h2 class="font-display text-4xl md:text-6xl">Our Service Array.</h2>
         </div>
         <div class="editorial-reveal md:max-w-sm text-right">
-          <p class="text-white/60 italic">From high-impact corporate activations to bespoke wedding planning, we
-            deliver perfection at scale.</p>
+          <p class="text-white/60 italic">From high-impact corporate activations to bespoke wedding planning, we deliver
+            perfection at scale.</p>
         </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-l border-t border-white/10">
-        <!-- Service Block -->
-        <div
-          class="group border-r border-b border-white/10 p-12 hover:bg-primary transition-all duration-700 editorial-reveal">
-          <span
-            class="material-symbols-outlined text-primary text-4xl mb-8 group-hover:text-white transition-colors">domain</span>
-          <h3 class="font-display text-2xl mb-6 group-hover:text-white transition-colors">Corporate Events</h3>
-          <p class="text-white/60 group-hover:text-white/90 transition-colors mb-8 text-sm leading-relaxed">
-            Conferences, launches, and summits designed for global brand positioning.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Service Cards with Images -->
+        <div class="service-card group bg-white/5 border border-white/10 overflow-hidden">
+          <div class="h-64 overflow-hidden">
+            <img
+              src="https://plus.unsplash.com/premium_photo-1754337716737-08612f7c002f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGluZGlhbiUyMGNhdGVyaW5nJTIwc2VydmljZXxlbnwwfHwwfHx8MA%3D%3D"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              alt="catering service" />
+          </div>
+
+          <div class="p-10">
+            <span class="material-symbols-outlined text-primary text-4xl mb-6">domain</span>
+            <h3 class="font-display text-2xl mb-4">Catering Service</h3>
+            <p class="text-white/70 text-sm leading-relaxed">We provide high-quality catering services for all types of
+              events, including weddings, corporate events, and private parties.</p>
+          </div>
         </div>
-        <div
-          class="group border-r border-b border-white/10 p-12 hover:bg-primary transition-all duration-700 editorial-reveal">
-          <span
-            class="material-symbols-outlined text-primary text-4xl mb-8 group-hover:text-white transition-colors">favorite</span>
-          <h3 class="font-display text-2xl mb-6 group-hover:text-white transition-colors">Wedding Planning</h3>
-          <p class="text-white/60 group-hover:text-white/90 transition-colors mb-8 text-sm leading-relaxed">Creating
-            timeless bridal experiences with meticulous aesthetic control.</p>
+
+        <div class="service-card group bg-white/5 border border-white/10 overflow-hidden">
+          <div class="h-64 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1665960213508-48f07086d49c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aW5kaWFuJTIwd2VkZGluZyUyMHBsYW5uaW5nfGVufDB8fDB8fHww"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              alt="Wedding Planning" />
+          </div>
+          <div class="p-10">
+            <span class="material-symbols-outlined text-primary text-4xl mb-6">favorite</span>
+            <h3 class="font-display text-2xl mb-4">Wedding Planning</h3>
+            <p class="text-white/70 text-sm leading-relaxed">Timeless destination and destination weddings with
+              meticulous attention to every aesthetic and emotional detail.</p>
+          </div>
         </div>
-        <div
-          class="group border-r border-b border-white/10 p-12 hover:bg-primary transition-all duration-700 editorial-reveal">
-          <span
-            class="material-symbols-outlined text-primary text-4xl mb-8 group-hover:text-white transition-colors">campaign</span>
-          <h3 class="font-display text-2xl mb-6 group-hover:text-white transition-colors">Strategic Ads</h3>
-          <p class="text-white/60 group-hover:text-white/90 transition-colors mb-8 text-sm leading-relaxed">PAN
-            India advertising across print, electronic, and radio channels.</p>
-        </div>
-        <div
-          class="group border-r border-b border-white/10 p-12 hover:bg-primary transition-all duration-700 editorial-reveal">
-          <span
-            class="material-symbols-outlined text-primary text-4xl mb-8 group-hover:text-white transition-colors">star</span>
-          <h3 class="font-display text-2xl mb-6 group-hover:text-white transition-colors">Celebrity Mgmt</h3>
-          <p class="text-white/60 group-hover:text-white/90 transition-colors mb-8 text-sm leading-relaxed">
-            Exclusive talent procurement for guest appearances and performances.</p>
-        </div>
-        <div
-          class="group border-r border-b border-white/10 p-12 hover:bg-primary transition-all duration-700 editorial-reveal">
-          <span
-            class="material-symbols-outlined text-primary text-4xl mb-8 group-hover:text-white transition-colors">photo_camera</span>
-          <h3 class="font-display text-2xl mb-6 group-hover:text-white transition-colors">Photoshoots</h3>
-          <p class="text-white/60 group-hover:text-white/90 transition-colors mb-8 text-sm leading-relaxed">
-            Editorial and commercial shoot logistics and creative direction.</p>
-        </div>
-        <div
-          class="group border-r border-b border-white/10 p-12 hover:bg-primary transition-all duration-700 editorial-reveal">
-          <span
-            class="material-symbols-outlined text-primary text-4xl mb-8 group-hover:text-white transition-colors">restaurant</span>
-          <h3 class="font-display text-2xl mb-6 group-hover:text-white transition-colors">Catering Service</h3>
-          <p class="text-white/60 group-hover:text-white/90 transition-colors mb-8 text-sm leading-relaxed">Bespoke
-            culinary experiences tailored for high-end hospitality.</p>
+
+        <div class="service-card group bg-white/5 border border-white/10 overflow-hidden">
+          <div class="h-64 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1565035010268-a3816f98589a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fG11c2ljJTIwY29uY2VydHxlbnwwfHwwfHx8MA%3D%3D"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              alt="Music Concert" />
+          </div>
+          <div class="p-10">
+            <span class="material-symbols-outlined text-primary text-4xl mb-6">campaign</span>
+            <h3 class="font-display text-2xl mb-4">Music Concert</h3>
+            <p class="text-white/70 text-sm leading-relaxed">We provide high-quality music concert services for all
+              types
+              of events, including weddings, corporate events, and private parties.</p>
+          </div>
         </div>
       </div>
 
-      <div class="mt-20 text-center">
+      <div class="mt-16 text-center">
         <a href="services.html"
           class="inline-block text-[10px] uppercase tracking-[0.4em] font-bold text-primary border-b border-primary pb-2 hover:opacity-50 transition-opacity">Explore
-          All Capabilities</a>
+          All 12+ Capabilities</a>
       </div>
     </div>
   </section>
 
-  <!-- Advertising Detail (Creative Layout) -->
+  <!-- Advertising + Reach -->
   <section class="py-section-gap relative overflow-hidden bg-white">
     <div class="max-w-[1400px] mx-auto px-6 md:px-12">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-element-gap">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-element-gap items-center">
         <div class="lg:col-span-5 editorial-reveal">
           <h2 class="font-display text-4xl md:text-6xl mb-12 leading-tight">National Reach.<br /><span
               class="text-primary">Strategic Depth.</span></h2>
           <p class="text-lg text-secondary mb-12 font-light leading-relaxed">Since 2012, our advertising division has
-            bridged the gap between brands and their audiences across India. We don't just place ads; we curate
-            visibility.</p>
+            delivered unmatched visibility for brands across India.</p>
+
           <div class="space-y-12">
-            <div class="flex items-center gap-8 border-b border-outline pb-8">
-              <span class="text-4xl font-display text-primary">01</span>
+            <div class="flex gap-8">
+              <span class="text-5xl font-display text-primary font-light">01</span>
               <div>
-                <h4 class="font-bold text-xs uppercase tracking-widest mb-2">Print Media</h4>
-                <p class="text-sm text-secondary/60">National newspaper placement and magazine features.</p>
+                <h4 class="font-bold uppercase tracking-widest text-sm mb-3">Print &amp; Magazine</h4>
+                <p class="text-secondary/70">Strategic placements in leading national dailies and lifestyle magazines.
+                </p>
               </div>
             </div>
-            <div class="flex items-center gap-8 border-b border-outline pb-8">
-              <span class="text-4xl font-display text-primary">02</span>
+            <div class="flex gap-8">
+              <span class="text-5xl font-display text-primary font-light">02</span>
               <div>
-                <h4 class="font-bold text-xs uppercase tracking-widest mb-2">Electronic Media</h4>
-                <p class="text-sm text-secondary/60">Television airtime and dynamic digital screens.</p>
+                <h4 class="font-bold uppercase tracking-widest text-sm mb-3">Television &amp; Digital</h4>
+                <p class="text-secondary/70">High-impact TV commercials and dynamic digital OOH screens.</p>
               </div>
             </div>
-            <div class="flex items-center gap-8 border-b border-outline pb-8">
-              <span class="text-4xl font-display text-primary">03</span>
+            <div class="flex gap-8">
+              <span class="text-5xl font-display text-primary font-light">03</span>
               <div>
-                <h4 class="font-bold text-xs uppercase tracking-widest mb-2">On-Air Ads</h4>
-                <p class="text-sm text-secondary/60">Radio spots and podcast partnerships across all major stations.</p>
+                <h4 class="font-bold uppercase tracking-widest text-sm mb-3">Radio &amp; Influencer</h4>
+                <p class="text-secondary/70">Targeted radio campaigns and premium influencer partnerships.</p>
               </div>
             </div>
           </div>
         </div>
-        <!-- Large Image Content -->
-        <div class="lg:col-span-7 editorial-reveal lg:pl-12" style="transition-delay: 200ms;">
+
+        <div class="lg:col-span-7 editorial-reveal" style="transition-delay: 200ms;">
           <div class="relative">
-            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
-              class="w-full aspect-[4/3] object-cover" alt="Strategic Planning" />
-            <div class="absolute -bottom-10 -left-10 bg-secondary p-12 text-white hidden xl:block max-w-sm">
-              <h4 class="font-display text-2xl mb-4 italic">Client Spotlight</h4>
-              <p class="text-white/60 text-sm mb-6">Partnering with NAFED India and Millennium College for successful
-                nationwide campaigns since 2012.</p>
-              <span class="text-[10px] uppercase tracking-[0.3em] font-bold text-primary">Media Excellence</span>
+            <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1200&q=80"
+              class="w-full aspect-video object-cover shadow-2xl" alt="Advertising Campaign" />
+            <div class="absolute -bottom-8 -right-8 bg-secondary p-10 text-white max-w-xs hidden xl:block">
+              <p class="text-sm italic">"Angel transformed our brand visibility across India. Exceptional execution."
+              </p>
+              <p class="text-xs mt-6 text-primary font-bold">— Marketing Director, NAFED India</p>
             </div>
           </div>
         </div>
@@ -415,8 +463,71 @@
     </div>
   </section>
 
-  <!-- FAQ Accordion (Sharp) -->
-  <section class="py-section-gap bg-primary text-white border-none">
+  <!-- Testimonials -->
+  <section class="py-24 bg-[#f8f7f3]">
+    <div class="max-w-[1100px] mx-auto px-6 md:px-12">
+      <div class="text-center mb-16">
+        <span class="uppercase tracking-[0.4em] text-primary text-xs font-bold">Voices of Trust</span>
+        <h2 class="font-display text-4xl mt-4">What Our Clients Say</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-10">
+          <div class="flex gap-1 text-amber-400 mb-6">★★★★★</div>
+          <p class="italic text-secondary/70">"The most professional and creative event team we've ever worked with. Our
+            corporate summit was flawless."</p>
+          <div class="mt-10 flex items-center gap-4">
+            <div class="w-12 h-12 bg-zinc-200 rounded-full overflow-hidden">
+              <img
+                src="https://plus.unsplash.com/premium_photo-1770505526166-911a4ffa6975?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmFoZXNoJTIwc2hhcm1hfGVufDB8fDB8fHww"
+                alt="" class="object-cover">
+            </div>
+            <div>
+              <p class="font-semibold">Dr. Rajesh Sharma</p>
+              <p class="text-xs text-secondary/60">Millennium College</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-10">
+          <div class="flex gap-1 text-amber-400 mb-6">★★★★★</div>
+          <p class="italic text-secondary/70">"They turned our dream wedding into reality beyond our imagination. Every
+            guest was amazed."</p>
+          <div class="mt-10 flex items-center gap-4">
+            <div class="w-12 h-12 bg-zinc-200 rounded-full overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1674471807618-674027abc710?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJpeWF8ZW58MHx8MHx8fDA%3D"
+                alt="" class="object-cover">
+            </div>
+            <div>
+              <p class="font-semibold">Priya &amp; Arjun Mehra</p>
+              <p class="text-xs text-secondary/60">Destination Wedding, Udaipur</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-10">
+          <div class="flex gap-1 text-amber-400 mb-6">★★★★★</div>
+          <p class="italic text-secondary/70">"Outstanding media planning and execution. Our campaign ROI exceeded
+            expectations."</p>
+          <div class="mt-10 flex items-center gap-4">
+            <div class="w-12 h-12 bg-zinc-200 rounded-full overflow-hidden">
+              <img
+                src="https://plus.unsplash.com/premium_photo-1706803193101-f10b46f97ef7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dmlrcmFtJTIwbWFuaG90cmF8ZW58MHx8MHx8fDA%3D"
+                alt="" class="object-cover">
+            </div>
+            <div>
+              <p class="font-semibold">Vikram Malhotra</p>
+              <p class="text-xs text-secondary/60">Brand Head, NAFED</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion -->
+  <section class="py-section-gap bg-primary text-white">
     <div class="max-w-[900px] mx-auto px-6">
       <div class="text-center mb-24 editorial-reveal">
         <span class="text-white/80 font-bold text-xs uppercase tracking-[0.5em] mb-4 block">Knowledge Base</span>
@@ -424,7 +535,8 @@
       </div>
 
       <div class="space-y-4 editorial-reveal">
-        <!-- FAQ 1 (Weddings) -->
+
+        <!-- 1 -->
         <div class="accordion-item bg-[#1a1a1a] border border-white/20 transition-all duration-500">
           <button class="w-full flex justify-between items-center p-8 text-left group" onclick="toggleAccordion(this)">
             <span class="font-bold text-xs uppercase tracking-widest group-hover:text-white/70 transition-colors">What
@@ -433,88 +545,153 @@
           </button>
           <div class="accordion-content">
             <div class="px-8 pb-8 text-white/80 text-sm leading-relaxed font-light">
-              Our wedding planning covers every detail from conceptual mood-boarding and aesthetic decor styling to
-              technical orchestration, vendor coordination, and seamless on-ground guest management on your big day.
+              Our wedding planning covers everything from conceptual mood-boarding and aesthetic decor styling to
+              technical orchestration, vendor coordination, and seamless on-ground guest management.
             </div>
           </div>
         </div>
-        <!-- FAQ 2 (Corporate) -->
-        <div class="accordion-item bg-[#1a1a1a] border border-white/20 transition-all duration-500">
-          <button class="w-full flex justify-between items-center p-8 text-left group" onclick="toggleAccordion(this)">
-            <span class="font-bold text-xs uppercase tracking-widest group-hover:text-white/70 transition-colors">How do
-              you approach large-scale corporate events and launches?</span>
-            <span class="material-symbols-outlined text-sm transition-transform duration-500 text-white">add</span>
-          </button>
-          <div class="accordion-content">
-            <div class="px-8 pb-8 text-white/80 text-sm leading-relaxed font-light">
-              We approach corporate events with surgical precision, managing everything from brand messaging and stage
-              architecture to technical execution for conferences, media reveals, and strategic summits globally.
-            </div>
-          </div>
-        </div>
-        <!-- FAQ 3 (Celebrity) -->
-        <div class="accordion-item bg-[#1a1a1a] border border-white/20 transition-all duration-500">
-          <button class="w-full flex justify-between items-center p-8 text-left group" onclick="toggleAccordion(this)">
-            <span class="font-bold text-xs uppercase tracking-widest group-hover:text-white/70 transition-colors">Can
-              you procure celebrities and perform exclusive talent management?</span>
-            <span class="material-symbols-outlined text-sm transition-transform duration-500 text-white">add</span>
-          </button>
-          <div class="accordion-content">
-            <div class="px-8 pb-8 text-white/80 text-sm leading-relaxed font-light">
-              Absolutely. We offer exclusive talent procurement and comprehensive coordination for high-profile guest
-              appearances, live concerts, and influencer-led outreach while ensuring a flawless hospitality experience.
-            </div>
-          </div>
-        </div>
-        <!-- FAQ 4 (Advertising) -->
+
+        <!-- 2 -->
         <div class="accordion-item bg-[#1a1a1a] border border-white/20 transition-all duration-500">
           <button class="w-full flex justify-between items-center p-8 text-left group" onclick="toggleAccordion(this)">
             <span class="font-bold text-xs uppercase tracking-widest group-hover:text-white/70 transition-colors">What
-              channels does your PAN India advertising division cover?</span>
+              makes your wedding planning different from others?</span>
             <span class="material-symbols-outlined text-sm transition-transform duration-500 text-white">add</span>
           </button>
           <div class="accordion-content">
             <div class="px-8 pb-8 text-white/80 text-sm leading-relaxed font-light">
-              We curate comprehensive visibility across multiple mediums, including national print media, electronic
-              television airtime, dynamic digital screens, and on-air radio spots customized for your brand.
+              We focus on quiet luxury and personalization. Every wedding is designed with a unique theme, custom
+              fabrication, and emotional storytelling — creating unforgettable experiences.
             </div>
           </div>
         </div>
-        <!-- FAQ 5 (Catering & Fabrication) -->
+
+        <!-- 3 -->
         <div class="accordion-item bg-[#1a1a1a] border border-white/20 transition-all duration-500">
           <button class="w-full flex justify-between items-center p-8 text-left group" onclick="toggleAccordion(this)">
             <span class="font-bold text-xs uppercase tracking-widest group-hover:text-white/70 transition-colors">Do you
-              handle custom stage fabrication and elite catering?</span>
+              handle destination events across India?</span>
             <span class="material-symbols-outlined text-sm transition-transform duration-500 text-white">add</span>
           </button>
           <div class="accordion-content">
             <div class="px-8 pb-8 text-white/80 text-sm leading-relaxed font-light">
-              Yes. Our in-house design team handles 3D stage rendering and bespoke decor fabrication. We also provide
-              elite culinary catering services tailored specifically for high-end hospitality at your event.
+              Yes. We have successfully executed destination weddings and corporate events in Udaipur, Goa, Rajasthan,
+              Kerala, Jaisalmer, and international locations.
             </div>
           </div>
         </div>
-        <!-- FAQ 6 (Location/Reach) -->
+
+        <!-- 4 -->
         <div class="accordion-item bg-[#1a1a1a] border border-white/20 transition-all duration-500">
           <button class="w-full flex justify-between items-center p-8 text-left group" onclick="toggleAccordion(this)">
-            <span class="font-bold text-xs uppercase tracking-widest group-hover:text-white/70 transition-colors">Are
-              your services limited to Bhopal, or do you manage destination events?</span>
+            <span class="font-bold text-xs uppercase tracking-widest group-hover:text-white/70 transition-colors">Do you
+              provide catering services?</span>
             <span class="material-symbols-outlined text-sm transition-transform duration-500 text-white">add</span>
           </button>
           <div class="accordion-content">
             <div class="px-8 pb-8 text-white/80 text-sm leading-relaxed font-light">
-              While headquartered in Bhopal, we possess robust nationwide reach. We confidently orchestrate destination
-              weddings, corporate retreats, and strategic road shows across India and beyond.
+              Yes. We offer premium bespoke catering with multi-cuisine options, live counters, plated dinners, and
+              customized menus according to your theme and guest preferences.
             </div>
           </div>
         </div>
+
+        <!-- 5 -->
+        <div class="accordion-item bg-[#1a1a1a] border border-white/20 transition-all duration-500">
+          <button class="w-full flex justify-between items-center p-8 text-left group" onclick="toggleAccordion(this)">
+            <span class="font-bold text-xs uppercase tracking-widest group-hover:text-white/70 transition-colors">Can
+              you organize birthday parties and private celebrations?</span>
+            <span class="material-symbols-outlined text-sm transition-transform duration-500 text-white">add</span>
+          </button>
+          <div class="accordion-content">
+            <div class="px-8 pb-8 text-white/80 text-sm leading-relaxed font-light">
+              Absolutely. From extravagant milestone birthdays to intimate private parties, we create spectacular themed
+              experiences with custom decor, entertainment, and memorable surprises.
+            </div>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="accordion-item bg-[#1a1a1a] border border-white/20 transition-all duration-500">
+          <button class="w-full flex justify-between items-center p-8 text-left group" onclick="toggleAccordion(this)">
+            <span class="font-bold text-xs uppercase tracking-widest group-hover:text-white/70 transition-colors">Do you
+              manage music concerts and live performances?</span>
+            <span class="material-symbols-outlined text-sm transition-transform duration-500 text-white">add</span>
+          </button>
+          <div class="accordion-content">
+            <div class="px-8 pb-8 text-white/80 text-sm leading-relaxed font-light">
+              Yes. We provide end-to-end concert management including artist coordination, stage design, professional
+              sound & lighting, crowd management, and full production services.
+            </div>
+          </div>
+        </div>
+
+        <!-- 7 New -->
+        <div class="accordion-item bg-[#1a1a1a] border border-white/20 transition-all duration-500">
+          <button class="w-full flex justify-between items-center p-8 text-left group" onclick="toggleAccordion(this)">
+            <span class="font-bold text-xs uppercase tracking-widest group-hover:text-white/70 transition-colors">How do
+              you handle event budgeting and pricing?</span>
+            <span class="material-symbols-outlined text-sm transition-transform duration-500 text-white">add</span>
+          </button>
+          <div class="accordion-content">
+            <div class="px-8 pb-8 text-white/80 text-sm leading-relaxed font-light">
+              We provide transparent, detailed quotations with multiple packages. Our team works closely with you to
+              create the best possible experience within your budget without compromising quality.
+            </div>
+          </div>
+        </div>
+
+        <!-- 8 New -->
+        <div class="accordion-item bg-[#1a1a1a] border border-white/20 transition-all duration-500">
+          <button class="w-full flex justify-between items-center p-8 text-left group" onclick="toggleAccordion(this)">
+            <span class="font-bold text-xs uppercase tracking-widest group-hover:text-white/70 transition-colors">What
+              is your event planning process and timeline?</span>
+            <span class="material-symbols-outlined text-sm transition-transform duration-500 text-white">add</span>
+          </button>
+          <div class="accordion-content">
+            <div class="px-8 pb-8 text-white/80 text-sm leading-relaxed font-light">
+              We follow a structured 4-phase process: Concept & Planning → Vendor Finalization & Design → Execution
+              Rehearsals → On-ground Delivery & Post-event closure. Timelines vary from 3 months to 12+ months depending
+              on the event scale.
+            </div>
+          </div>
+        </div>
+
+        <!-- 9 New -->
+        <div class="accordion-item bg-[#1a1a1a] border border-white/20 transition-all duration-500">
+          <button class="w-full flex justify-between items-center p-8 text-left group" onclick="toggleAccordion(this)">
+            <span class="font-bold text-xs uppercase tracking-widest group-hover:text-white/70 transition-colors">Do you
+              provide photography and videography services?</span>
+            <span class="material-symbols-outlined text-sm transition-transform duration-500 text-white">add</span>
+          </button>
+          <div class="accordion-content">
+            <div class="px-8 pb-8 text-white/80 text-sm leading-relaxed font-light">
+              Yes. We have a team of professional photographers and cinematographers who capture your event with
+              cinematic excellence. We also offer drone shooting and highlight reels.
+            </div>
+          </div>
+        </div>
+
+        <!-- 10 New -->
+        <div class="accordion-item bg-[#1a1a1a] border border-white/20 transition-all duration-500">
+          <button class="w-full flex justify-between items-center p-8 text-left group" onclick="toggleAccordion(this)">
+            <span class="font-bold text-xs uppercase tracking-widest group-hover:text-white/70 transition-colors">What
+              is your cancellation and refund policy?</span>
+            <span class="material-symbols-outlined text-sm transition-transform duration-500 text-white">add</span>
+          </button>
+          <div class="accordion-content">
+            <div class="px-8 pb-8 text-white/80 text-sm leading-relaxed font-light">
+              We understand unforeseen circumstances. Our cancellation policy is flexible and depends on the notice
+              period. We recommend discussing this during the initial consultation for complete clarity.
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
-
   <!-- Final Contact Form -->
   <section id="contact" class="py-section-gap bg-secondary text-white relative overflow-hidden">
-    <!-- Abstract Decoration -->
     <div class="absolute inset-0 bg-primary/5 -skew-y-12 origin-top-left"></div>
 
     <div class="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
@@ -522,19 +699,25 @@
         <div class="editorial-reveal">
           <h2 class="font-display text-5xl md:text-7xl mb-8 leading-tight">Start Your <br /><span
               class="text-primary italic text-6xl md:text-8xl">Consultation.</span></h2>
-          <p class="text-white/60 text-lg mb-12 max-w-sm">Secure your engagement with the leading event studio. We are
-            currently accepting inquiries for 2025-2026 seasons.</p>
+          <p class="text-white/60 text-lg mb-12 max-w-sm">Secure your date with Bhopal's most awarded event studio.
+            2025–2026 dates filling fast.</p>
+
           <div class="space-y-6">
             <div class="flex items-center gap-6">
               <span class="material-symbols-outlined text-primary">location_on</span>
-              <span class="text-xs uppercase tracking-widest font-bold">Bhopal, MP, India</span>
+              <span class="text-xs uppercase tracking-widest font-bold">Bhopal, Madhya Pradesh</span>
             </div>
             <div class="flex items-center gap-6">
               <span class="material-symbols-outlined text-primary">mail</span>
               <span class="text-xs uppercase tracking-widest font-bold">contact@angeleventsolution.com</span>
             </div>
+            <div class="flex items-center gap-6">
+              <span class="material-symbols-outlined text-primary">call</span>
+              <span class="text-xs uppercase tracking-widest font-bold">+91 99999 99999</span>
+            </div>
           </div>
         </div>
+
         <div class="editorial-reveal" style="transition-delay: 200ms;">
           <form action="contact.php" method="post" class="space-y-8 relative z-20">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -543,11 +726,13 @@
               <input type="tel" name="number" placeholder="PHONE NUMBER" required
                 class="bg-transparent border-white/20 border-b py-4 focus:border-primary focus:ring-0 text-[10px] tracking-[0.2em] font-bold placeholder:text-white/30" />
             </div>
+            <input type="email" name="email" placeholder="EMAIL ADDRESS" required
+              class="w-full bg-transparent border-white/20 border-b py-4 focus:border-primary focus:ring-0 text-[10px] tracking-[0.2em] font-bold placeholder:text-white/30" />
             <input type="date" name="date" required
               class="w-full bg-transparent border-white/20 border-b py-4 focus:border-primary focus:ring-0 text-[10px] tracking-[0.2em] font-bold text-white/30" />
             <button type="submit"
               class="w-full bg-primary text-white py-6 text-[10px] uppercase tracking-[0.4em] font-bold hover:bg-white hover:text-secondary transition-all duration-500">
-              Submit Inquiry
+              SUBMIT INQUIRY
             </button>
           </form>
         </div>
@@ -557,12 +742,11 @@
 
   <!-- Footer -->
   <footer class="flex flex-col">
-    <!-- Main Footer Area -->
     <div class="bg-primary text-white pt-24 pb-20">
       <div class="max-w-[1400px] mx-auto px-6 md:px-12 text-center md:text-left">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div class="col-span-1 md:col-span-1">
-            <img src="assets/logo.png" alt="Logo" class="h-16 w-auto mb-8 mx-auto md:mx-0 brightness-0 invert" />
+            <img src="assets/logo.png" alt="Logo" class="h-16 w-auto mb-8 mx-auto md:mx-0" />
             <p
               class="text-xs text-white/80 uppercase tracking-[0.1em] font-bold leading-relaxed max-w-[200px] mx-auto md:mx-0">
               Architecting prestigious experiences since 2012.
@@ -583,6 +767,7 @@
               <li><a href="#" class="hover:text-secondary transition-colors">Instagram</a></li>
               <li><a href="#" class="hover:text-secondary transition-colors">Facebook</a></li>
               <li><a href="#" class="hover:text-secondary transition-colors">LinkedIn</a></li>
+              <li><a href="#" class="hover:text-secondary transition-colors">YouTube</a></li>
             </ul>
           </div>
           <div>
@@ -597,15 +782,14 @@
         </div>
       </div>
     </div>
-    <!-- Copyright Area -->
     <div class="bg-[#252525] text-white py-12">
       <div
         class="max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center text-center">
         <p class="text-[10px] uppercase tracking-[0.4em] font-bold text-white/60 mb-6 md:mb-0">© 2026 ANGEL EVENT
-          SOLUTION.</p>
+          SOLUTION. All Rights Reserved.</p>
         <div class="flex gap-12 text-[10px] uppercase tracking-[0.4em] font-bold text-white/60">
-          <a href="#" class="hover:text-primary transition-colors">Policy</a>
-          <a href="#" class="hover:text-primary transition-colors">Terms</a>
+          <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
         </div>
       </div>
     </div>
@@ -621,7 +805,9 @@
 
     const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
     }, observerOptions);
 
     document.querySelectorAll('.editorial-reveal').forEach(el => observer.observe(el));
