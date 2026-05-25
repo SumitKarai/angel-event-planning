@@ -12,26 +12,28 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
+
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
-                    "colors": {
-                        "primary": "#c1001f",
-                        "secondary": "#1a1a1a",
-                        "outline": "#e5e5e5",
-                        "surface": "#f8f8f8"
+                    colors: {
+                        primary: "#c1001f",
+                        secondary: "#1a1a1a",
+                        outline: "#e5e5e5",
+                        surface: "#f8f8f8"
                     },
-                    "borderRadius": { "none": "0px", "DEFAULT": "0px" },
-                    "fontFamily": {
-                        "display": ["Literata", "serif"],
-                        "body": ["Nunito Sans", "sans-serif"]
+                    borderRadius: { none: "0px", DEFAULT: "0px" },
+                    fontFamily: {
+                        display: ["Literata", "serif"],
+                        body: ["Nunito Sans", "sans-serif"]
                     }
-                },
-            },
+                }
+            }
         }
     </script>
+
     <style>
         * {
             border-radius: 0 !important;
@@ -74,6 +76,10 @@
         #mobile-menu.hidden-menu {
             transform: translateX(100%);
         }
+
+        .map-container {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
     </style>
 </head>
 
@@ -84,19 +90,21 @@
             <a href="index.html" class="flex items-center gap-4 group">
                 <img src="assets/logo.png" alt="Logo"
                     class="h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-110" />
-                <div class="block">
+                <div>
                     <span class="block font-display text-lg sm:text-xl font-bold tracking-tight leading-none">ANGEL
                         EVENT</span>
                     <span
                         class="block text-[8px] sm:text-[10px] uppercase tracking-[0.4em] font-bold text-primary">Solution</span>
                 </div>
             </a>
+
             <div class="hidden lg:flex items-center gap-12 text-[10px] uppercase tracking-[0.2em] font-bold">
                 <a href="index.html" class="nav-link hover:text-primary transition-colors">Home</a>
                 <a href="services.html" class="nav-link hover:text-primary transition-colors">Services</a>
                 <a href="gallery.html" class="nav-link hover:text-primary transition-colors">Gallery</a>
                 <a href="contact.html" class="nav-link text-primary">Contact</a>
             </div>
+
             <div class="flex items-center gap-6">
                 <a href="contact.html"
                     class="hidden sm:inline-block bg-secondary text-white px-8 py-4 text-[10px] uppercase tracking-[0.2em] font-bold hover:bg-primary transition-all duration-500">
@@ -109,7 +117,7 @@
         </div>
     </nav>
 
-    <!-- Mobile Menu Overlay -->
+    <!-- Mobile Menu -->
     <div id="mobile-menu" class="fixed inset-0 z-[100] bg-secondary text-white hidden-menu flex flex-col p-12">
         <div class="flex justify-between items-center mb-20">
             <img src="assets/logo.png" alt="Logo" class="h-10 w-auto brightness-0 invert" />
@@ -117,111 +125,124 @@
                 <span class="material-symbols-outlined text-3xl">close</span>
             </button>
         </div>
-        <div class="flex flex-col gap-8">
-            <a href="index.html" class="font-display text-4xl hover:text-primary transition-colors">Home</a>
-            <a href="services.html" class="font-display text-4xl hover:text-primary transition-colors">Services</a>
-            <a href="gallery.html" class="font-display text-4xl hover:text-primary transition-colors">Gallery</a>
-            <a href="contact.html" class="font-display text-4xl hover:text-primary transition-colors">Contact</a>
-        </div>
-        <div class="mt-auto border-t border-white/10 pt-12">
-            <p class="text-[10px] uppercase tracking-[0.4em] font-bold text-white/40 mb-4">Direct Contact</p>
-            <a href="tel:+919999999999" class="text-xl font-bold">+91 99999 99999</a>
+        <div class="flex flex-col gap-8 text-4xl font-display">
+            <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+            <a href="services.html" class="hover:text-primary transition-colors">Services</a>
+            <a href="gallery.html" class="hover:text-primary transition-colors">Gallery</a>
+            <a href="contact.html" class="hover:text-primary transition-colors">Contact</a>
         </div>
     </div>
 
-    <!-- Main -->
+    <!-- Main Content -->
     <main class="pt-48 pb-32">
         <div class="max-w-[1400px] mx-auto px-6 md:px-12">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
-                <!-- Contact Info -->
-                <div class="editorial-reveal">
-                    <span class="text-primary font-bold text-xs uppercase tracking-[0.5em] mb-6 block">Get in
-                        Touch</span>
-                    <h1 class="font-display text-5xl md:text-8xl leading-[0.95] tracking-tighter mb-12">
-                        Contact<br /><span class="italic text-primary">Our Studio.</span></h1>
+            <div class="flex flex-col lg:grid lg:grid-cols-2 gap-16 lg:gap-24">
 
-                    <div class="space-y-16">
-                        <div class="flex items-start gap-8">
-                            <span class="material-symbols-outlined text-primary">location_on</span>
-                            <div>
-                                <h4 class="text-[10px] uppercase tracking-widest font-bold text-secondary/40 mb-4">
-                                    Location</h4>
-                                <p class="text-lg font-display">Bhopal, MP, India</p>
-                                <p class="text-sm text-secondary/60 italic">Corporate Office & Studio</p>
+                <!-- Header (Mobile: 1, Desktop: Left Col Top) -->
+                <div class="editorial-reveal order-1 flex flex-col justify-start">
+                    <div>
+                        <span class="text-primary font-bold text-xs uppercase tracking-[0.5em] mb-6 block">Get in
+                            Touch</span>
+                        <h1
+                            class="font-display text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tighter mb-0 lg:mb-12">
+                            Contact<br><span class="italic text-primary">Our Studio.</span>
+                        </h1>
+                    </div>
+                </div>
+
+                <!-- Right Column: WhatsApp Form (Mobile: 2, Desktop: Right Col) -->
+                <div class="editorial-reveal order-2 lg:col-start-2 lg:row-start-1 lg:row-span-3"
+                    style="transition-delay: 150ms;">
+                    <div
+                        class="bg-secondary text-white p-10 md:p-16 lg:p-20 border border-white/10 flex flex-col justify-center">
+                        <form id="whatsappForm" class="space-y-12">
+                            <div class="space-y-4">
+                                <label class="text-[10px] uppercase tracking-widest font-bold text-white/40">Full
+                                    Name</label>
+                                <input type="text" id="name" placeholder="YOUR NAME" required
+                                    class="w-full bg-transparent border-b border-white/10 py-4 focus:border-primary focus:ring-0 text-sm tracking-widest font-light placeholder:text-white/30" />
                             </div>
+
+                            <div class="space-y-4">
+                                <label class="text-[10px] uppercase tracking-widest font-bold text-white/40">Your
+                                    Message</label>
+                                <textarea id="message" rows="7"
+                                    placeholder="Tell us about your event, requirements, and preferred date..." required
+                                    class="w-full bg-transparent border-b border-white/10 py-4 focus:border-primary focus:ring-0 text-sm tracking-widest font-light placeholder:text-white/30 resize-none"></textarea>
+                            </div>
+
+                            <button type="submit"
+                                class="w-full bg-primary hover:bg-white hover:text-secondary text-white py-6 text-[10px] uppercase tracking-[0.4em] font-bold transition-all duration-500">
+                                Send via WhatsApp
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Contact Details (Mobile: 3, Desktop: Left Col Middle) -->
+                <div
+                    class="editorial-reveal order-3 lg:col-start-1 lg:row-start-2 space-y-10 lg:space-y-12 pb-4 lg:pb-0">
+                    <div class="flex items-start gap-8">
+                        <span class="material-symbols-outlined text-primary text-3xl">location_on</span>
+                        <div>
+                            <h4 class="text-[10px] uppercase tracking-widest font-bold text-secondary/40 mb-3">
+                                Location</h4>
+                            <p class="text-lg font-display">Bhopal, Madhya Pradesh, India</p>
+                            <p class="text-sm text-secondary/60">Corporate Office & Studio</p>
                         </div>
-                        <div class="flex items-start gap-8">
-                            <span class="material-symbols-outlined text-primary">mail</span>
-                            <div>
-                                <h4 class="text-[10px] uppercase tracking-widest font-bold text-secondary/40 mb-4">
-                                    Inquiries</h4>
-                                <a href="mailto:contact@angeleventsolution.com"
-                                    class="text-lg font-display hover:text-primary transition-colors">contact@angeleventsolution.com</a>
-                            </div>
+                    </div>
+
+                    <div class="flex items-start gap-8">
+                        <span class="material-symbols-outlined text-primary text-3xl">mail</span>
+                        <div>
+                            <h4 class="text-[10px] uppercase tracking-widest font-bold text-secondary/40 mb-3">
+                                Inquiries</h4>
+                            <a href="mailto:contact@angeleventsolution.com"
+                                class="text-lg font-display hover:text-primary transition-colors">contact@angeleventsolution.com</a>
                         </div>
-                        <div class="flex items-start gap-8">
-                            <span class="material-symbols-outlined text-primary">call</span>
-                            <div>
-                                <h4 class="text-[10px] uppercase tracking-widest font-bold text-secondary/40 mb-4">
-                                    Direct Line</h4>
-                                <p class="text-lg font-display">+91 99999 99999</p>
-                                <p class="text-sm text-secondary/60 italic">Available on WhatsApp</p>
-                            </div>
+                    </div>
+
+                    <div class="flex items-start gap-8">
+                        <span class="material-symbols-outlined text-primary text-3xl">call</span>
+                        <div>
+                            <h4 class="text-[10px] uppercase tracking-widest font-bold text-secondary/40 mb-3">
+                                Direct Line</h4>
+                            <p class="text-lg font-display">+91 99999 99999</p>
+                            <p class="text-sm text-secondary/60">Available on WhatsApp</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Form -->
-                <div class="editorial-reveal bg-secondary text-white p-12 lg:p-20 border border-white/10"
-                    style="transition-delay: 200ms;">
-                    <form action="contact.php" method="post" class="space-y-12">
-                        <div class="space-y-4">
-                            <label class="text-[10px] uppercase tracking-widest font-bold text-white/40">Full
-                                Name</label>
-                            <input type="text" name="name" placeholder="YOUR NAME" required
-                                class="w-full bg-transparent border-b border-white/10 py-4 focus:border-primary focus:ring-0 text-sm tracking-widest font-light placeholder:text-white/20" />
-                        </div>
-                        <div class="space-y-4">
-                            <label class="text-[10px] uppercase tracking-widest font-bold text-white/40">Email
-                                Address</label>
-                            <input type="email" name="email" placeholder="YOUR EMAIL" required
-                                class="w-full bg-transparent border-b border-white/10 py-4 focus:border-primary focus:ring-0 text-sm tracking-widest font-light placeholder:text-white/20" />
-                        </div>
-                        <div class="space-y-4">
-                            <label class="text-[10px] uppercase tracking-widest font-bold text-white/40">Phone
-                                Number</label>
-                            <input type="tel" name="number" placeholder="YOUR PHONE" required
-                                class="w-full bg-transparent border-b border-white/10 py-4 focus:border-primary focus:ring-0 text-sm tracking-widest font-light placeholder:text-white/20" />
-                        </div>
-                        <div class="space-y-4">
-                            <label class="text-[10px] uppercase tracking-widest font-bold text-white/40">Event
-                                Date</label>
-                            <input type="date" name="date" required
-                                class="w-full bg-transparent border-b border-white/10 py-4 focus:border-primary focus:ring-0 text-sm tracking-widest font-light text-white/40" />
-                        </div>
-                        <button type="submit"
-                            class="w-full bg-primary text-white py-6 text-[10px] uppercase tracking-[0.4em] font-bold hover:bg-white hover:text-secondary transition-all">Submit
-                            Inquiry</button>
-                    </form>
+                <!-- Google Maps (Mobile: 4, Desktop: Left Col Bottom) -->
+                <div class="editorial-reveal order-4 lg:col-start-1 lg:row-start-3 lg:pt-8 flex flex-col justify-end">
+                    <h4 class="text-[10px] uppercase tracking-widest font-bold text-secondary/40 mb-6">Find Us Here
+                    </h4>
+                    <div class="map-container aspect-video w-full bg-black/5 overflow-hidden border border-outline">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.1234567890123!2d77.412!3d23.2599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c425b2c2c2c2d%3A0x123456789abcdef!2sBhopal%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1716500000000"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
                 </div>
+
             </div>
         </div>
     </main>
 
     <!-- Footer -->
     <footer class="bg-secondary pt-24 pb-12 border-t border-white/10">
-        <div class="max-w-[1400px] mx-auto px-6 md:px-12 text-center md:text-left">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-24">
-                <div class="col-span-1 md:col-span-1">
-                    <img src="assets/logo.png" alt="Logo"
-                        class="h-16 w-auto mb-8 mx-auto md:mx-0 brightness-0 invert" />
-                    <p
-                        class="text-xs text-white/40 uppercase tracking-[0.1em] font-bold leading-relaxed max-w-[200px] mx-auto md:mx-0">
+                <div>
+                    <img src="assets/logo.png" alt="Logo" class="h-16 w-auto mb-8" />
+                    <p class="text-xs text-white/40 uppercase tracking-[0.1em] font-bold leading-relaxed max-w-[220px]">
                         Architecting prestigious experiences since 2012.
                     </p>
                 </div>
+
                 <div>
-                    <h4 class="text-[10px] uppercase tracking-[0.5em] font-bold text-primary mb-12">Discover</h4>
+                    <h4 class="text-[10px] uppercase tracking-[0.5em] font-bold text-primary mb-8">Discover</h4>
                     <ul class="space-y-4 text-[10px] uppercase tracking-[0.2em] font-bold text-white/60">
                         <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
                         <li><a href="services.html" class="hover:text-primary transition-colors">Services</a></li>
@@ -229,29 +250,32 @@
                         <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
                     </ul>
                 </div>
+
                 <div>
-                    <h4 class="text-[10px] uppercase tracking-[0.5em] font-bold text-primary mb-12">Social</h4>
+                    <h4 class="text-[10px] uppercase tracking-[0.5em] font-bold text-primary mb-8">Social</h4>
                     <ul class="space-y-4 text-[10px] uppercase tracking-[0.2em] font-bold text-white/60">
                         <li><a href="#" class="hover:text-primary transition-colors">Instagram</a></li>
                         <li><a href="#" class="hover:text-primary transition-colors">Facebook</a></li>
                         <li><a href="#" class="hover:text-primary transition-colors">LinkedIn</a></li>
                     </ul>
                 </div>
+
                 <div>
-                    <h4 class="text-[10px] uppercase tracking-[0.5em] font-bold text-primary mb-12">Office</h4>
+                    <h4 class="text-[10px] uppercase tracking-[0.5em] font-bold text-primary mb-8">Office</h4>
                     <address
                         class="not-italic text-[10px] uppercase tracking-[0.2em] font-bold text-white/60 leading-loose">
                         Bhopal, MP, India<br />
                         <a href="mailto:contact@angeleventsolution.com"
-                            class="hover:text-primary transition-colors">contact@angeleventsolution.com</a><br />
-                        <a href="tel:+919999999999" class="hover:text-primary transition-colors">+91 99999 99999</a>
+                            class="hover:text-primary">contact@angeleventsolution.com</a><br />
+                        <a href="tel:+919999999999" class="hover:text-primary">+91 99999 99999</a>
                     </address>
                 </div>
             </div>
-            <div class="flex flex-col md:flex-row justify-between items-center border-t border-white/10 pt-12">
-                <p class="text-[10px] uppercase tracking-[0.4em] font-bold text-white/40 mb-6 md:mb-0">© 2026 ANGEL
-                    EVENT SOLUTION.</p>
-                <div class="flex gap-12 text-[10px] uppercase tracking-[0.4em] font-bold text-white/40">
+
+            <div
+                class="flex flex-col md:flex-row justify-between items-center border-t border-white/10 pt-12 text-[10px] uppercase tracking-[0.4em] font-bold text-white/40">
+                <p>© 2026 ANGEL EVENT SOLUTION.</p>
+                <div class="flex gap-8 mt-6 md:mt-0">
                     <a href="#" class="hover:text-primary transition-colors">Policy</a>
                     <a href="#" class="hover:text-primary transition-colors">Terms</a>
                 </div>
@@ -260,12 +284,16 @@
     </footer>
 
     <script>
-        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        // Intersection Observer
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-        }, observerOptions);
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
         document.querySelectorAll('.editorial-reveal').forEach(el => observer.observe(el));
 
+        // Mobile Menu
         function toggleMobileMenu(show) {
             const menu = document.getElementById('mobile-menu');
             if (show) {
@@ -276,6 +304,26 @@
                 document.body.style.overflow = '';
             }
         }
+
+        // WhatsApp Form
+        document.getElementById('whatsappForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (!name || !message) return;
+
+            const phoneNumber = "919999999999"; // ← Change to your real number
+
+            const whatsappMessage = `Hello Angel Event Solution!%0A%0A` +
+                `Name: ${encodeURIComponent(name)}%0A` +
+                `Message: ${encodeURIComponent(message)}%0A%0A` +
+                `Looking forward to your reply.`;
+
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
+            window.open(whatsappURL, '_blank');
+        });
     </script>
 </body>
 
