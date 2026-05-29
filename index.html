@@ -194,26 +194,26 @@
   </div>
 
   <!-- Hero -->
-  <section class="hero-luxury h-screen min-h-[800px] flex items-center relative">
+  <section class="hero-luxury h-screen flex items-center justify-center relative">
     <div class="absolute inset-0 z-0">
       <img
         src="https://images.unsplash.com/photo-1710587385309-f264b4d503cd?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         class="w-full h-full object-cover opacity-60" alt="Luxury Setup" />
-      <div class="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/80 to-transparent"></div>
+      <div class="absolute inset-0 bg-secondary/70"></div>
     </div>
 
-    <div class="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 w-full">
-      <div class="max-w-4xl reveal-up" id="hero-trigger">
+    <div class="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 w-full text-center flex flex-col items-center">
+      <div class="max-w-4xl reveal-up mx-auto flex flex-col items-center" id="hero-trigger">
         <span class="block text-primary font-bold text-xs uppercase tracking-[0.6em] mb-8">Est. 2022 — Bhopal</span>
         <h1 class="hero-title mb-10 text-white">
-          Luxury <br />Events<br /> <span class="italic font-display font-light text-white/90">Flawless
+          Luxury Events<br /> <span class="italic font-display font-light text-white/90">Flawless
             Execution</span>
         </h1>
-        <p class="text-white/60 text-xl md:text-2xl max-w-2xl mb-12 font-light leading-relaxed">
+        <p class="text-white/60 text-xl md:text-2xl max-w-2xl mb-12 font-light leading-relaxed mx-auto">
           Transforming ideas into extraordinary events. <span class="text-white font-medium">Weddings | Corporate |
             Music Concerts | Birthdays |</span> Advertising — Executed with perfection.
         </p>
-        <div class="flex flex-wrap gap-6 mt-8">
+        <div class="flex flex-wrap justify-center gap-6 mt-8">
           <a href="#services"
             class="bg-primary text-white px-12 py-5 text-[10px] uppercase tracking-[0.3em] font-bold hover:bg-white hover:text-secondary transition-all duration-700">
             Explore Services
@@ -259,6 +259,172 @@
         SUPPORT</span>
     </div>
   </div>
+
+  <!-- Services Section -->
+  <section id="services" class="py-section-gap bg-secondary text-white border-y border-white/10">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
+        <div class="editorial-reveal">
+          <span class="text-primary font-bold text-xs uppercase tracking-[0.5em] mb-4 block">Specialized
+            Solutions</span>
+          <h2 class="font-display text-4xl md:text-6xl">Our Service Array.</h2>
+        </div>
+        <div class="editorial-reveal md:max-w-sm text-right">
+          <p class="text-white/60 italic">From high-impact corporate activations to bespoke wedding planning, we deliver
+            perfection at scale.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Service 1 -->
+        <div class="service-card group bg-white/5 border border-white/10 overflow-hidden">
+          <div class="h-64 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1722952934661-dde241aeb591?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fGluZGlhbiUyMHdlZGRpbmd8ZW58MHx8MHx8fDA%3D"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              alt="Wedding Planning" />
+          </div>
+          <div class="p-10">
+            <span class="material-symbols-outlined text-primary text-4xl mb-6">favorite</span>
+            <h3 class="font-display text-2xl mb-4">Wedding Planning</h3>
+            <p class="text-white/70 text-sm leading-relaxed">Curating weddings that are a direct reflection of your
+              aesthetic, values, and shared journey.</p>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-card group bg-white/5 border border-white/10 overflow-hidden">
+          <div class="h-64 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1583795311768-2ef98ac78740?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTR8fG11c2ljJTIwc2hvd3N8ZW58MHx8MHx8fDA%3D"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              alt="Music Shows" />
+          </div>
+          <div class="p-10">
+            <span class="material-symbols-outlined text-primary text-4xl mb-6">headphones</span>
+            <h3 class="font-display text-2xl mb-4">Music Shows</h3>
+            <p class="text-white/70 text-sm leading-relaxed">Extraordinary music shows with state-of-the-art sound,
+              lighting, and stage production.</p>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-card group bg-white/5 border border-white/10 overflow-hidden">
+          <div class="h-64 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1560117531-2304cfbbe9f6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDN8fGluZGlhbiUyMGNhdGVyaW5nfGVufDB8fDB8fHww"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              alt="Elite Catering" />
+          </div>
+          <div class="p-10">
+            <span class="material-symbols-outlined text-primary text-4xl mb-6">restaurant</span>
+            <h3 class="font-display text-2xl mb-4">Elite Catering</h3>
+            <p class="text-white/70 text-sm leading-relaxed">Premium catering services with exquisite flavors and
+              elegant presentation. Making events deliciously unforgettable.</p>
+          </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-card group bg-white/5 border border-white/10 overflow-hidden">
+          <div class="h-64 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=1000&q=80"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              alt="Strategic Photoshoots" />
+          </div>
+          <div class="p-10">
+            <span class="material-symbols-outlined text-primary text-4xl mb-6">photo_camera</span>
+            <h3 class="font-display text-2xl mb-4">Strategic Photoshoots</h3>
+            <p class="text-white/70 text-sm leading-relaxed">Creative direction and logistical execution for
+              high-fashion editorial campaigns and premium commercial shoots.</p>
+          </div>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="service-card group bg-white/5 border border-white/10 overflow-hidden">
+          <div class="h-64 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1000&q=80"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              alt="Corporate Events" />
+          </div>
+          <div class="p-10">
+            <span class="material-symbols-outlined text-primary text-4xl mb-6">business</span>
+            <h3 class="font-display text-2xl mb-4">Corporate Events</h3>
+            <p class="text-white/70 text-sm leading-relaxed">Designing corporate experiences that foster connection and
+              reflect your company's prestige on a global scale.</p>
+          </div>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="service-card group bg-white/5 border border-white/10 overflow-hidden">
+          <div class="h-64 overflow-hidden">
+            <img
+              src="https://media.istockphoto.com/id/559536551/photo/celebrity-waving-at-paparazzi-photographers-at-event.jpg?s=612x612&w=0&k=20&c=SMuMmg6v331dovOjBGfQydPGrZ2Re2BRoYsGhavcuHI="
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              alt="Celebrity Management" />
+          </div>
+          <div class="p-10">
+            <span class="material-symbols-outlined text-primary text-4xl mb-6">star</span>
+            <h3 class="font-display text-2xl mb-4">Celebrity Management</h3>
+            <p class="text-white/70 text-sm leading-relaxed">Exclusive talent procurement and coordination for
+              prestigious appearances, ensuring a seamless experience.</p>
+          </div>
+        </div>
+
+        <!-- Service 7 -->
+        <div class="service-card group bg-white/5 border border-white/10 overflow-hidden">
+          <div class="h-64 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1774437679561-ea821856acd2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTY0fHxpbmRpYW4lMjByb2FkJTIwc2hvd3N8ZW58MHx8MHx8fDA%3D"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              alt="Road Shows" />
+          </div>
+          <div class="p-10">
+            <span class="material-symbols-outlined text-primary text-4xl mb-6">directions_car</span>
+            <h3 class="font-display text-2xl mb-4">Road Shows</h3>
+            <p class="text-white/70 text-sm leading-relaxed">Large-scale mobile branding and nationwide outreach
+              support, connecting your brand directly with target demographics.</p>
+          </div>
+        </div>
+
+        <!-- Service 8 -->
+        <div class="service-card group bg-white/5 border border-white/10 overflow-hidden">
+          <div class="h-64 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?auto=format&fit=crop&w=1000&q=80"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              alt="Trade Shows" />
+          </div>
+          <div class="p-10">
+            <span class="material-symbols-outlined text-primary text-4xl mb-6">storefront</span>
+            <h3 class="font-display text-2xl mb-4">Trade Shows</h3>
+            <p class="text-white/70 text-sm leading-relaxed">Strategic exhibition booths that command attention in busy
+              trade environments, driving engagement and maximizing ROI.</p>
+          </div>
+        </div>
+
+        <!-- Service 9 -->
+        <div class="service-card group bg-white/5 border border-white/10 overflow-hidden">
+          <div class="h-64 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1563841930606-67e2bce48b78?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bGl2ZSUyMGNvbmNlcnR8ZW58MHx8MHx8fDA%3D"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              alt="Live Concerts" />
+          </div>
+          <div class="p-10">
+            <span class="material-symbols-outlined text-primary text-4xl mb-6">festival</span>
+            <h3 class="font-display text-2xl mb-4">Live Concerts</h3>
+            <p class="text-white/70 text-sm leading-relaxed">High-energy live concerts and influencer-led events,
+              featuring top-tier artists and flawless technical execution.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-16 text-center">
+        <a href="services.html"
+          class="inline-block text-[10px] uppercase tracking-[0.4em] font-bold text-primary border-b border-primary pb-2 hover:opacity-50 transition-opacity">Explore
+          All Capabilities</a>
+      </div>
+    </div>
+  </section>
 
   <!-- About Detailed -->
   <section class="py-section-gap bg-white">
@@ -339,78 +505,7 @@
     </div>
   </section>
 
-  <!-- Services Section -->
-  <section id="services" class="py-section-gap bg-secondary text-white border-y border-white/10">
-    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
-      <div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
-        <div class="editorial-reveal">
-          <span class="text-primary font-bold text-xs uppercase tracking-[0.5em] mb-4 block">Specialized
-            Solutions</span>
-          <h2 class="font-display text-4xl md:text-6xl">Our Service Array.</h2>
-        </div>
-        <div class="editorial-reveal md:max-w-sm text-right">
-          <p class="text-white/60 italic">From high-impact corporate activations to bespoke wedding planning, we deliver
-            perfection at scale.</p>
-        </div>
-      </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Service Cards with Images -->
-        <div class="service-card group bg-white/5 border border-white/10 overflow-hidden">
-          <div class="h-64 overflow-hidden">
-            <img
-              src="https://plus.unsplash.com/premium_photo-1754337716737-08612f7c002f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGluZGlhbiUyMGNhdGVyaW5nJTIwc2VydmljZXxlbnwwfHwwfHx8MA%3D%3D"
-              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-              alt="catering service" />
-          </div>
-
-          <div class="p-10">
-            <span class="material-symbols-outlined text-primary text-4xl mb-6">domain</span>
-            <h3 class="font-display text-2xl mb-4">Catering Service</h3>
-            <p class="text-white/70 text-sm leading-relaxed">We provide high-quality catering services for all types of
-              events, including weddings, corporate events, and private parties.</p>
-          </div>
-        </div>
-
-        <div class="service-card group bg-white/5 border border-white/10 overflow-hidden">
-          <div class="h-64 overflow-hidden">
-            <img
-              src="https://images.unsplash.com/photo-1665960213508-48f07086d49c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aW5kaWFuJTIwd2VkZGluZyUyMHBsYW5uaW5nfGVufDB8fDB8fHww"
-              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-              alt="Wedding Planning" />
-          </div>
-          <div class="p-10">
-            <span class="material-symbols-outlined text-primary text-4xl mb-6">favorite</span>
-            <h3 class="font-display text-2xl mb-4">Wedding Planning</h3>
-            <p class="text-white/70 text-sm leading-relaxed">Timeless destination and destination weddings with
-              meticulous attention to every aesthetic and emotional detail.</p>
-          </div>
-        </div>
-
-        <div class="service-card group bg-white/5 border border-white/10 overflow-hidden">
-          <div class="h-64 overflow-hidden">
-            <img
-              src="https://images.unsplash.com/photo-1565035010268-a3816f98589a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fG11c2ljJTIwY29uY2VydHxlbnwwfHwwfHx8MA%3D%3D"
-              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-              alt="Music Concert" />
-          </div>
-          <div class="p-10">
-            <span class="material-symbols-outlined text-primary text-4xl mb-6">campaign</span>
-            <h3 class="font-display text-2xl mb-4">Music Concert</h3>
-            <p class="text-white/70 text-sm leading-relaxed">We provide high-quality music concert services for all
-              types
-              of events, including weddings, corporate events, and private parties.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="mt-16 text-center">
-        <a href="services.html"
-          class="inline-block text-[10px] uppercase tracking-[0.4em] font-bold text-primary border-b border-primary pb-2 hover:opacity-50 transition-opacity">Explore
-          All 12+ Capabilities</a>
-      </div>
-    </div>
-  </section>
 
   <!-- Advertising + Reach -->
   <section class="py-section-gap relative overflow-hidden bg-white">
