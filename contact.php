@@ -4,7 +4,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-$to = 'sumitkarari4@gmail.com';
+$to = 'angelevent2211@gmail.com';
 $subject = 'New Consultation Request - Angel Event Planning';
 
 $name = isset($_POST['name']) ? trim($_POST['name']) : '';
