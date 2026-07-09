@@ -607,57 +607,110 @@
         <h2 class="font-display text-4xl mt-4">What Our Clients Say</h2>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- <div class="bg-white p-10">
-          <div class="flex gap-1 text-amber-400 mb-6">★★★★★</div>
-          <p class="italic text-secondary/70">"The most professional and creative event team we've ever worked with. Our
-            corporate summit was flawless."</p>
-          <div class="mt-10 flex items-center gap-4">
-            <div class="w-12 h-12 bg-zinc-200 rounded-full overflow-hidden">
-              <img
-                src="https://plus.unsplash.com/premium_photo-1770505526166-911a4ffa6975?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmFoZXNoJTIwc2hhcm1hfGVufDB8fDB8fHww"
-                alt="" class="object-cover">
-            </div>
-            <div>
-              <p class="font-semibold">Dr. Rajesh Sharma</p>
-              <p class="text-xs text-secondary/60">Millennium College</p>
+      <div class="relative group">
+        <!-- Scroll Left Button -->
+        <button onclick="scrollReviews(-1)"
+          class="flex absolute left-2 md:left-[-2rem] top-1/2 -translate-y-1/2 bg-white/90 md:bg-white text-primary w-10 h-10 md:w-12 md:h-12 items-center justify-center rounded-full shadow-lg z-10 transition-transform hover:scale-110">
+          <span class="material-symbols-outlined">chevron_left</span>
+        </button>
+
+        <div id="review-container"
+          class="flex overflow-x-auto gap-8 pb-8 snap-x snap-mandatory scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+          <div class="bg-white p-10 flex-none w-[85vw] md:w-[calc(33.333%-1.34rem)] snap-start">
+            <div class="flex gap-1 text-amber-400 mb-6">★★★★★</div>
+            <p class="italic text-secondary/70">"Angel Events by Arshi Naaz Ansari delivered an outstanding experience
+              from start to finish. Her decorations strike a lovely balance between elegant and modern, with many
+              contemporary design choices that feel fresh and tasteful. The food stood out every day — flavorful,
+              well-presented, and truly the event’s USP. Arshi is also exceptionally reliable: when she promises
+              something, she makes it happen. One quality that sets her apart is her knack for bringing in the right
+              help
+              at the right time, which keeps large, complex functions like mehndi and shaadi running smoothly even if
+              issues pop up. Highly recommended for anyone looking for stylish décor, great food, and a team that gets
+              things done."</p>
+            <div class="mt-10 flex items-center gap-4">
+              <div class="w-12 h-12 bg-zinc-200 rounded-full overflow-hidden">
+                <img src="assets/reviews/review-1.jpeg" alt="" class="object-cover">
+              </div>
+              <div>
+                <p class="font-semibold">Rahul Jain</p>
+              </div>
             </div>
           </div>
-        </div> -->
 
-        <div class="bg-white p-10">
-          <div class="flex gap-1 text-amber-400 mb-6">★★★★★</div>
-          <p class="italic text-secondary/70">"They turned our dream wedding into reality beyond our imagination. Every
-            guest was amazed."</p>
-          <div class="mt-10 flex items-center gap-4">
-            <div class="w-12 h-12 bg-zinc-200 rounded-full overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1674471807618-674027abc710?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJpeWF8ZW58MHx8MHx8fDA%3D"
-                alt="" class="object-cover">
+          <div class="bg-white p-10 flex-none w-[85vw] md:w-[calc(33.333%-1.34rem)] snap-start">
+            <div class="flex gap-1 text-amber-400 mb-6">★★★★★</div>
+            <p class="italic text-secondary/70">"They turned our dream wedding into reality beyond our imagination.
+              Every
+              guest was amazed."</p>
+            <div class="mt-10 flex items-center gap-4">
+              <div class="w-12 h-12 bg-zinc-200 rounded-full overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1674471807618-674027abc710?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJpeWF8ZW58MHx8MHx8fDA%3D"
+                  alt="" class="object-cover">
+              </div>
+              <div>
+                <p class="font-semibold">Priya &amp; Arjun Mehra</p>
+              </div>
             </div>
-            <div>
-              <p class="font-semibold">Priya &amp; Arjun Mehra</p>
-              <p class="text-xs text-secondary/60">Destination Wedding, Udaipur</p>
+          </div>
+
+          <div class="bg-white p-10 flex-none w-[85vw] md:w-[calc(33.333%-1.34rem)] snap-start">
+            <div class="flex gap-1 text-amber-400 mb-6">★★★★★</div>
+            <p class="italic text-secondary/70">"Naye office ke liye bahut-bahut badhai! Angle Event solution ki
+              professionalism aur creativity behad lajawab hai. Inka naya setup aur bhi behtar services ka wada karta
+              hai.
+              Meri shubhkaamnayein hain ki aapki company har event ko naye milestone tak le jaye."</p>
+            <div class="mt-10 flex items-center gap-4">
+              <div class="w-12 h-12 bg-zinc-200 rounded-full overflow-hidden">
+                <img src="assets/reviews/review-3.jpeg" alt="" class="object-cover">
+              </div>
+              <div>
+                <p class="font-semibold">Rekha Meena</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-10 flex-none w-[85vw] md:w-[calc(33.333%-1.34rem)] snap-start">
+            <div class="flex gap-1 text-amber-400 mb-6">★★★★★</div>
+            <p class="italic text-secondary/70">Angel Event Solution exceeded my expectations. Their attention to detail
+              and flawless execution made our event truly memorable. Highly recommended!"</p>
+            <div class="mt-10 flex items-center gap-4">
+              <div class="w-12 h-12 bg-zinc-200 rounded-full overflow-hidden">
+                <img src="assets/reviews/review-4.jpeg" alt="" class="object-cover">
+              </div>
+              <div>
+                <p class="font-semibold">Mahendra Thakur</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-10 flex-none w-[85vw] md:w-[calc(33.333%-1.34rem)] snap-start">
+            <div class="flex gap-1 text-amber-400 mb-6">★★★★★</div>
+            <p class="italic text-secondary/70">Angle event solution
+              Has compatibility to manage proper event events to fulfils a requirement in a short time also.
+              As a big event like marriage functions is really challenging.
+              Angle Event solution given personal attention before during and after wedding functions to make all
+              arrangements very easier.
+              The service as expected is matched accordingly in a smart budget plan.
+              I personally prefer and would like to recommend a service of Angle event solution in such all aspects.
+              Thanks
+              Angle event solution</p>
+            <div class="mt-10 flex items-center gap-4">
+              <div class="w-12 h-12 bg-zinc-200 rounded-full overflow-hidden">
+                <img src="assets/reviews/review-2.jpeg" alt="" class="object-cover">
+              </div>
+              <div>
+                <p class="font-semibold">PREM NARAYAN AHIRWAL</p>
+
+              </div>
             </div>
           </div>
         </div>
-
-        <!-- <div class="bg-white p-10">
-          <div class="flex gap-1 text-amber-400 mb-6">★★★★★</div>
-          <p class="italic text-secondary/70">"Outstanding media planning and execution. Our campaign ROI exceeded
-            expectations."</p>
-          <div class="mt-10 flex items-center gap-4">
-            <div class="w-12 h-12 bg-zinc-200 rounded-full overflow-hidden">
-              <img
-                src="https://plus.unsplash.com/premium_photo-1706803193101-f10b46f97ef7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dmlrcmFtJTIwbWFuaG90cmF8ZW58MHx8MHx8fDA%3D"
-                alt="" class="object-cover">
-            </div>
-            <div>
-              <p class="font-semibold">Vikram Malhotra</p>
-              <p class="text-xs text-secondary/60">Brand Head, NAFED</p>
-            </div>
-          </div>
-        </div> -->
+        <!-- Scroll Right Button -->
+        <button onclick="scrollReviews(1)"
+          class="flex absolute right-2 md:right-[-2rem] top-1/2 -translate-y-1/2 bg-white/90 md:bg-white text-primary w-10 h-10 md:w-12 md:h-12 items-center justify-center rounded-full shadow-lg z-10 transition-transform hover:scale-110">
+          <span class="material-symbols-outlined">chevron_right</span>
+        </button>
       </div>
     </div>
   </section>
@@ -985,6 +1038,13 @@
       const whatsappURL = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
       window.open(whatsappURL, '_blank');
     });
+
+    function scrollReviews(direction) {
+      const container = document.getElementById('review-container');
+      const itemWidth = container.querySelector('div').offsetWidth;
+      const scrollAmount = itemWidth + 32; // 32px is the gap (gap-8 is 2rem = 32px)
+      container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+    }
   </script>
   <!-- WhatsApp Floating Button -->
   <a href="https://wa.me/917722811133" target="_blank" rel="noopener noreferrer"
