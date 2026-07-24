@@ -1,55 +1,56 @@
 ﻿<?php
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: Content-Type");
+header("Content-Type: application/json; charset=UTF-8");
+
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit;
+}
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: index.html');
+    http_response_code(405);
+    echo json_encode(["status" => "error", "message" => "Method not allowed"]);
     exit;
 }
 
-$to = 'angelevent2211@gmail.com';
-$subject = 'New Consultation Request - Angel Event Planning';
+$input = file_get_contents("php://input");
+$data = json_decode($input, true);
 
-$name = isset($_POST['name']) ? trim($_POST['name']) : '';
-$number = isset($_POST['number']) ? trim($_POST['number']) : '';
-$date = isset($_POST['date']) ? trim($_POST['date']) : '';
+if (!is_array($data)) {
+    $data = $_POST;
+}
 
-if ($name === '' || $number === '' || $date === '') {
-    header('Location: index.html?status=error');
+$name = isset($data['name']) ? trim($data['name']) : '';
+$message = isset($data['message']) ? trim($data['message']) : '';
+$number = isset($data['number']) ? trim($data['number']) : '';
+$date = isset($data['date']) ? trim($data['date']) : '';
+
+if (empty($name) && empty($message) && empty($number)) {
+    http_response_code(400);
+    echo json_encode(["status" => "error", "message" => "Required fields missing"]);
     exit;
 }
 
-if (!preg_match('/^[0-9+\-()\s]{7,20}$/', $number)) {
-    header('Location: index.html?status=error');
-    exit;
-}
+$to = "angelevent2211@gmail.com";
+$subject = "New Inquiry from " . ($name ? $name : "Website Visitor");
 
-if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $date)) {
-    header('Location: index.html?status=error');
-    exit;
-}
+$body = "You have received a new consultation inquiry from your website:\n\n";
+if ($name) $body .= "Name: " . strip_tags($name) . "\n";
+if ($number) $body .= "Phone Number: " . strip_tags($number) . "\n";
+if ($date) $body .= "Preferred Date: " . strip_tags($date) . "\n";
+if ($message) $body .= "Message:\n" . strip_tags($message) . "\n";
+$body .= "\nSubmitted At: " . date("Y-m-d H:i:s") . "\n";
 
-$safeName = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
-$safeNumber = htmlspecialchars($number, ENT_QUOTES, 'UTF-8');
-$safeDate = htmlspecialchars($date, ENT_QUOTES, 'UTF-8');
+$headers = "From: Angel Event Solution <no-reply@angeleventsolution.in>\r\n" .
+           "Reply-To: angelevent2211@gmail.com\r\n" .
+           "X-Mailer: PHP/" . phpversion();
 
-$message = "You received a new consultation request:\n\n";
-$message .= "Name: {$safeName}\n";
-$message .= "Number: {$safeNumber}\n";
-$message .= "Preferred Date: {$safeDate}\n";
-$message .= "Submitted At: " . date('Y-m-d H:i:s') . "\n";
+$sent = @mail($to, $subject, $body, $headers);
 
-$headers = [];
-$headers[] = 'MIME-Version: 1.0';
-$headers[] = 'Content-Type: text/plain; charset=UTF-8';
-$headers[] = 'From: Angel Event Planning <no-reply@localhost>';
-$headers[] = 'Reply-To: no-reply@localhost';
-$headersString = implode("\r\n", $headers);
-
-$sent = mail($to, $subject, $message, $headersString);
-
-if ($sent) {
-    header('Location: index.html?status=success');
-    exit;
-}
-
-header('Location: index.html?status=error');
+echo json_encode([
+    "status" => $sent ? "success" : "sent_attempted",
+    "message" => "Inquiry processed successfully."
+]);
 exit;
 ?>

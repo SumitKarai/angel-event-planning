@@ -227,6 +227,12 @@
                     Listing</span>
                 <h2 class="font-display text-4xl md:text-5xl">Google My Business</h2>
                 <p class="text-secondary/60 mt-4 max-w-2xl mx-auto italic">Best Event Planner in Bhopal</p>
+                <div class="mt-6">
+                    <a href="https://share.google/Wb8ONfX0XbVjohKeQ" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center gap-2 bg-secondary text-white px-6 py-3 text-[10px] uppercase tracking-[0.2em] font-bold hover:bg-primary transition-all duration-500">
+                        <i class="fa-brands fa-google text-sm"></i> See Profile
+                    </a>
+                </div>
             </div>
 
             <div class="max-w-4xl mx-auto bg-surface p-8 md:p-12 border border-outline editorial-reveal shadow-sm">
@@ -429,8 +435,8 @@
                     <div class="w-full h-[250px] bg-surface border border-outline relative overflow-hidden group">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29345.549934026276!2d77.402728683875!3d23.163127965874683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c438966c4f759%3A0xb24bcb4498be1f43!2sAngel%20Event%20Solution%3ABest%20Event%20Planner%20in%20Bhopal%20%7CWedding%20Planner%7CBirthday%20Decoration%7CCatering%20Service!5e0!3m2!1sen!2sin!4v1784262157532!5m2!1sen!2sin"
-                            class="w-full h-full border-0 grayscale hover:grayscale-0 transition-all duration-700"
-                            allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin">
+                            class="w-full h-full border-0" allowfullscreen="" loading="lazy"
+                            referrerpolicy="strict-origin-when-cross-origin">
                         </iframe>
                     </div>
                 </div>
@@ -458,11 +464,11 @@
                     </div>
 
                     <div class="pt-4 flex flex-col sm:flex-row gap-4">
-                        <a href="YOUR_GMB_REVIEW_URL_HERE" target="_blank"
+                        <a href="https://share.google/Wb8ONfX0XbVjohKeQ" target="_blank"
                             class="flex-1 bg-secondary text-white text-center py-4 text-[10px] uppercase tracking-[0.2em] font-bold hover:bg-primary transition-all duration-500 flex items-center justify-center gap-2">
                             <span class="material-symbols-outlined text-base">rate_review</span> Write A Review
                         </a>
-                        <a href="https://maps.app.goo.gl/Bhopal_Example" target="_blank"
+                        <a href="https://maps.app.goo.gl/vNmBqz8om8dbxyFm7" target="_blank"
                             class="flex-1 border border-secondary text-secondary text-center py-4 text-[10px] uppercase tracking-[0.2em] font-bold hover:bg-secondary hover:text-white transition-all duration-500 flex items-center justify-center gap-2">
                             <span class="material-symbols-outlined text-base">directions</span> Get Directions
                         </a>
@@ -552,8 +558,10 @@
             }
         }
 
-        // WhatsApp Form
-        document.getElementById('whatsappForm').addEventListener('submit', function (e) {
+        // Form Submission: Email (Vercel / Web3Forms compatible) + WhatsApp
+        const WEB3FORMS_ACCESS_KEY = "YOUR_WEB3FORMS_ACCESS_KEY"; // Replace with key from https://web3forms.com/
+
+        document.getElementById('whatsappForm').addEventListener('submit', async function (e) {
             e.preventDefault();
 
             const name = document.getElementById('name').value.trim();
@@ -561,7 +569,40 @@
 
             if (!name || !message) return;
 
-            const phoneNumber = "917722811133"; // ← Change to your real number
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerText;
+            submitBtn.innerText = "SENDING...";
+            submitBtn.disabled = true;
+
+            // 1. Send Email silently in background
+            try {
+                if (WEB3FORMS_ACCESS_KEY && WEB3FORMS_ACCESS_KEY !== "YOUR_WEB3FORMS_ACCESS_KEY") {
+                    await fetch("https://api.web3forms.com/submit", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json", Accept: "application/json" },
+                        body: JSON.stringify({
+                            access_key: WEB3FORMS_ACCESS_KEY,
+                            name: name,
+                            message: message,
+                            subject: `New Inquiry from ${name}`
+                        })
+                    });
+                } else {
+                    await fetch('contact.php', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ name: name, message: message })
+                    });
+                }
+            } catch (err) {
+                console.log('Email processing attempted:', err);
+            }
+
+            submitBtn.innerText = originalBtnText;
+            submitBtn.disabled = false;
+
+            // 2. Open WhatsApp with pre-filled message
+            const phoneNumber = "917722811133";
 
             const whatsappMessage = `Hello Angel Event Solution!%0A%0A` +
                 `Name: ${encodeURIComponent(name)}%0A` +
@@ -594,7 +635,8 @@
     </script>
     <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/917722811133" target="_blank" rel="noopener noreferrer"
-        class="fixed bottom-6 right-6 z-[100] bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform duration-300 flex items-center justify-center">
+        class="fixed bottom-6 right-6 z-[100] bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform duration-300 flex items-center justify-center"
+        style="border-radius: 50% !important;">
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-whatsapp"
             viewBox="0 0 16 16">
             <path
