@@ -90,28 +90,26 @@
             transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
+        /* Video category spans full width */
         .gallery-item[data-category="video"] {
             column-span: all;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
             width: 100%;
         }
 
-        .gallery-item[data-category="video"] video {
+        /* All videos in the gallery get consistent sizing */
+        .gallery-item video {
             width: 100%;
             height: auto;
-            max-height: 65vh;
-            /* Prevents overflow on mobile */
+            max-height: 60vh;
             object-fit: contain;
-            /* Centers video inside its box without cropping */
             background-color: #050505;
-            /* Black background for letterboxing portrait videos */
-            border-radius: 8px;
+            display: block;
         }
 
         @media (min-width: 1024px) {
-            .gallery-item[data-category="video"] video {
-                max-height: 450px;
-                /* Constrains height on Desktop grids */
+            .gallery-item video {
+                max-height: 300px;
             }
         }
 
@@ -374,9 +372,16 @@
                     alt="concert18" />
             </div>
 
-            <!-- Videos -->
-            <div class="my-4 gallery-item mb-5 editorial-reveal" data-category="video">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 w-full">
+            <!-- Birthday Video -->
+            <div class="gallery-item mb-5 editorial-reveal" data-category="birthday">
+                <video class="w-full transition-all duration-700 cursor-pointer shadow-lg outline-none" playsinline
+                    controls>
+                    <source src="assets/videos/birthday-1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="gallery-item mb-5 editorial-reveal" data-category="video">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full">
                     <video class="w-full transition-all duration-700 cursor-pointer shadow-lg outline-none" playsinline
                         controls>
                         <source src="assets/videos/MVI_4708.mp4" type="video/mp4">
